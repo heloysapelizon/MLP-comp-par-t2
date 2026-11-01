@@ -1,0 +1,12 @@
+# dependencias baixadas por scripts/preparar.sh
+MNIST/
+eigen/
+# binarios
+sequencial
+mestre_escravo
+pingpong
+demo
+NN
+*.o
+# saidas de teste local (as do cluster vao em resultados/)
+__pycache__/

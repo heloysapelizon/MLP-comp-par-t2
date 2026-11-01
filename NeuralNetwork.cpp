@@ -4,9 +4,6 @@
 
 void NeuralNetwork::initialize(const std::vector<int>& layers){
 
-    std::random_device rd;
-    std::mt19937 mt(rd());
-
     for (std::size_t l {1}; l < layers.size(); ++l){
         int in = layers[l-1]; //layer input size
         int out = layers[l]; //layer output size
@@ -152,9 +149,6 @@ MatrixXd NeuralNetwork::softmax(const MatrixXd& z){
 void NeuralNetwork::shuffle(const MatrixXd& non_shuffled_features, MatrixXd& store_shuffled_features, 
     const MatrixXd& non_shuffled_labels, MatrixXd& store_shuffled_labels){
 
-    std::random_device rd;
-    std::mt19937 mt(rd());
-
     //Indicies of Data  
     std::vector<int> indicies(non_shuffled_features.rows());
     for (std::size_t i {}; i<non_shuffled_features.rows(); ++i){
@@ -236,9 +230,6 @@ void NeuralNetwork::backpropagate(const MatrixXd& batch, const MatrixXd& labels,
 
         //if layer is output layer, calculate error of output layer
         if (l==layers.size()-2){
-
-            //number of rows in output layer
-            int rows {static_cast<int>(layers_activations.back().rows())};
 
             // ∂C/∂a
             MatrixXd loss_wrt_activations (batch_size, labels.cols());
@@ -330,7 +321,7 @@ void NeuralNetwork::learn(const MatrixXd& training_data, const MatrixXd& trainin
 
     learning_rate=eta;
 
-    std::cout<<"Learning..\n";
+    if (verbose) std::cout<<"Learning..\n";
 
     int rows {static_cast<int>(training_data_s.rows())};
 
@@ -368,7 +359,7 @@ void NeuralNetwork::learn(const MatrixXd& training_data, const MatrixXd& trainin
         }
     
     }
-    std::cout << "Learning complete!\n";
+    if (verbose) std::cout << "Learning complete!\n";
 }
 
 //----------------------PREDICTION FUNCTION----------------------

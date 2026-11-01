@@ -1,8 +1,13 @@
+#pragma once
+
 #include <Eigen/Dense>
+#include <algorithm>
 #include <iostream>
 #include <random>
 #include <functional>
 #include <cmath>
+#include <string>
+#include <vector>
 
 using namespace Eigen;
 
@@ -27,6 +32,9 @@ class NeuralNetwork{
 
     double learning_rate {};
 
+    //T2: generator shared by initialize() and shuffle(); a fixed seed makes training reproducible
+    std::mt19937 mt;
+
     const std::vector<int> layers;
     std::vector<std::string> activation_function;
 
@@ -48,7 +56,13 @@ class NeuralNetwork{
 public:
 
     NeuralNetwork(const std::vector<int>& layers, const std::vector<std::string>& activation_function)
-    :layers{layers}, activation_function {activation_function}{
+    :mt{std::random_device{}()}, layers{layers}, activation_function {activation_function}{
+        initialize(layers);
+    }
+
+    //T2: same network, but with a fixed seed (weights and shuffling become deterministic)
+    NeuralNetwork(const std::vector<int>& layers, const std::vector<std::string>& activation_function, unsigned seed)
+    :mt{seed}, layers{layers}, activation_function {activation_function}{
         initialize(layers);
     }
 
