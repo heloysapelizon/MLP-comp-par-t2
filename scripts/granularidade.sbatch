@@ -13,8 +13,12 @@
 cd "$SLURM_SUBMIT_DIR"
 source scripts/comum.sh
 G_LISTA=${G_LISTA:-"1 2 4 8 16 32 64 128 256 512"}
+# P da varredura: 32 e o do enunciado. P_GRAN=64 testa se um g maior alivia o
+# mestre, que com 2 processos por thread virou gargalo (ocupacao 0,85 na forte).
+P_GRAN=${P_GRAN:-32}
 registra_ambiente
 for r in $(seq 1 "$REPS"); do
+    [ "$P_GRAN" -eq 32 ] || break   # o pingpong so precisa rodar uma vez
     echo "== pingpong dentro do no ($r)"
     lancar 2 1 ./pingpong $G_LISTA
     echo "== pingpong entre nos ($r)"
@@ -22,7 +26,7 @@ for r in $(seq 1 "$REPS"); do
 done
 for r in $(seq 1 "$REPS"); do
     for g in $(na_ordem "$r" $G_LISTA); do
-        echo "RUN,granularidade,32,16,$r"
-        lancar 32 2 ./mestre_escravo "$g" "$TAREFAS" "$AMOSTRAS" "$EPOCAS"
+        echo "RUN,granularidade,$P_GRAN,$(( P_GRAN / 2 )),$r"
+        lancar "$P_GRAN" 2 ./mestre_escravo "$g" "$TAREFAS" "$AMOSTRAS" "$EPOCAS"
     done
 done

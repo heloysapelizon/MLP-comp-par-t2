@@ -195,37 +195,40 @@ def main():
                                                           "min (s)", "max (s)", "E fraca", "ms/tarefa", *FATORES],
                          linhas))
 
-    # ---- Granularidade e balanceamento ----
-    por_g = defaultdict(list)
-    for e in por_exp.get("granularidade", []):
-        por_g[e["g"]].append(e)
-    linhas = []
-    for g in sorted(por_g):
-        es = por_g[g]
-        med, mn, mx = resumo([e["tempo"] for e in es])
+    # ---- Granularidade e balanceamento (uma tabela por P) ----
+    gran = por_exp.get("granularidade", [])
+    for P_g in sorted({e["P"] for e in gran}):
+        por_g = defaultdict(list)
+        for e in gran:
+            if e["P"] == P_g:
+                por_g[e["g"]].append(e)
+        linhas = []
+        for g in sorted(por_g):
+            es = por_g[g]
+            med, mn, mx = resumo([e["tempo"] for e in es])
 
-        def mediana_por_rep(fn):
-            return statistics.median(fn(e) for e in es)
-        tar_min = mediana_por_rep(lambda e: min(s["tarefas"] for s in e["escravos"]))
-        tar_max = mediana_por_rep(lambda e: max(s["tarefas"] for s in e["escravos"]))
-        oc_min = mediana_por_rep(lambda e: min(s["ocupado"] for s in e["escravos"]))
-        oc_max = mediana_por_rep(lambda e: max(s["ocupado"] for s in e["escravos"]))
-        msgs = mediana_por_rep(lambda e: sum(s["mensagens"] for s in e["escravos"]))
-        # Ociosidade no fim do saco: quanto antes do ultimo resultado cada escravo
-        # terminou; a media sobre os escravos e o tempo perdido por desbalanceamento.
-        ocioso = mediana_por_rep(lambda e: statistics.mean(e["tempo"] - s["fim"] for s in e["escravos"]))
-        por_tarefa = mediana_por_rep(lambda e: sum(s["ocupado"] for s in e["escravos"])
-                                     / max(1, sum(s["tarefas"] for s in e["escravos"])))
-        linhas.append([g, len(es), f3(med), f3(mn), f3(mx), int(msgs), f"{tar_min:g}-{tar_max:g}",
-                       f"{oc_min:.2f}-{oc_max:.2f}", f3(ocioso), f"{por_tarefa:.4f}"])
-    if linhas:
-        p_gran = sorted({e["P"] for es in por_g.values() for e in es})
-        md.append(tabela(f"Granularidade, P = {', '.join(map(str, p_gran))}"
-                         " (valores por escravo: mediana das repeticoes)",
+            def mediana_por_rep(fn):
+                return statistics.median(fn(e) for e in es)
+            tar_min = mediana_por_rep(lambda e: min(s["tarefas"] for s in e["escravos"]))
+            tar_max = mediana_por_rep(lambda e: max(s["tarefas"] for s in e["escravos"]))
+            oc_min = mediana_por_rep(lambda e: min(s["ocupado"] for s in e["escravos"]))
+            oc_max = mediana_por_rep(lambda e: max(s["ocupado"] for s in e["escravos"]))
+            msgs = mediana_por_rep(lambda e: sum(s["mensagens"] for s in e["escravos"]))
+            # Ociosidade no fim do saco: quanto antes do ultimo resultado cada escravo
+            # terminou; a media sobre os escravos e o tempo perdido por desbalanceamento.
+            ocioso = mediana_por_rep(lambda e: statistics.mean(e["tempo"] - s["fim"] for s in e["escravos"]))
+            linhas.append([g, len(es), f3(med), f3(mn), f3(mx), int(msgs), f"{tar_min:g}-{tar_max:g}",
+                           f"{oc_min:.2f}-{oc_max:.2f}", f3(ocioso), f"{ms_por_tarefa(es) / 1e3:.4f}",
+                           f"{ocupacao(es):.3f}"])
+        md.append(tabela(f"Granularidade, P = {P_g} (valores por escravo: mediana das repeticoes)",
                          ["g", "n", "mediana (s)", "min (s)", "max (s)", "mensagens", "tarefas/escravo",
-                          "ocupado/escravo (s)", "ocioso no fim, media (s)", "tempo/tarefa (s)"], linhas))
+                          "ocupado/escravo (s)", "ocioso no fim, media (s)", "tempo/tarefa (s)", "ocupacao"],
+                         linhas))
 
-        # Carga por escravo com o g escolhido (o da forte; sem forte, o de menor mediana).
+        # Carga por escravo com o g escolhido (o da forte; sem forte, o de menor
+        # mediana), so para o menor P da varredura (o do enunciado, 32).
+        if P_g != min(e["P"] for e in gran):
+            continue
         g_tab = g_escolhido if g_escolhido in por_g else min(
             por_g, key=lambda g: statistics.median(e["tempo"] for e in por_g[g]))
         por_rank = defaultdict(list)
@@ -238,8 +241,7 @@ def main():
             linhas.append([r, v[0][0]["host"], f"{statistics.median(x['tarefas'] for x, _ in v):g}",
                            f3(statistics.median(x["ocupado"] for x, _ in v)),
                            f3(statistics.median(t - x["fim"] for x, t in v))])
-        md.append(tabela(f"Carga por escravo, P = {', '.join(map(str, p_gran))}, g = {g_tab} "
-                         "(mediana das repeticoes)",
+        md.append(tabela(f"Carga por escravo, P = {P_g}, g = {g_tab} (mediana das repeticoes)",
                          ["rank", "host", "tarefas", "ocupado (s)", "ocioso no fim (s)"], linhas))
 
     if pingpong:
