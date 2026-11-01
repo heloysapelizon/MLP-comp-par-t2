@@ -317,7 +317,7 @@ def graficos(diretorio, forte, fraca):
         s = [forte[p][0] for p in ps]
         erro = [[forte[p][0] - forte[p][1] for p in ps], [forte[p][2] - forte[p][0] for p in ps]]
         ax.errorbar(ps, s, yerr=erro, color=AZUL, marker="o", markersize=4, linewidth=2, capsize=2,
-                    label="medido (mediana, min-max)")
+                    label="medido (mediana, mín.–máx.)")
         ax.set_yscale("log", base=2)
         ax.set_yticks([1] + ps)
         ax.set_yticklabels([str(p) for p in [1] + ps])
@@ -344,7 +344,7 @@ def graficos(diretorio, forte, fraca):
         # Eficiencia acima de 1 nao deve acontecer; se acontecer, fica visivel.
         maior = max([forte[p][0] / p for p in forte] + list(fraca.values()))
         ax.set_ylim(0, max(1.1, maior * 1.05))
-        ax.set_ylabel("eficiencia")
+        ax.set_ylabel("eficiência")
         eixo_p(ax, ps)
         ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.22), ncol=3, handlelength=1.6)
         fig.tight_layout()
