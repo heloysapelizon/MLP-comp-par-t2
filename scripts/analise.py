@@ -333,12 +333,14 @@ def graficos(diretorio, forte, fraca):
         ps = sorted(set(forte) | set(fraca))
         fig, ax = plt.subplots(figsize=(3.4, 2.7))
         ax.axhline(1, linestyle="--", color=CINZA, linewidth=1, label="ideal")
-        if forte:
-            ax.plot(sorted(forte), [forte[p][0] / p for p in sorted(forte)], color=AZUL, marker="o",
-                    markersize=4, linewidth=2, label="forte (S/P)")
+        # As duas curvas podem coincidir: a fraca vai embaixo, mais grossa, e a
+        # forte por cima, fina e com marcador vazado, para as duas aparecerem.
         if fraca:
             ax.plot(sorted(fraca), [fraca[p] for p in sorted(fraca)], color=LARANJA, marker="s",
-                    markersize=4, linewidth=2, label="fraca (T1/TP)")
+                    markersize=7, linewidth=4, label="fraca (T1/TP)", zorder=2)
+        if forte:
+            ax.plot(sorted(forte), [forte[p][0] / p for p in sorted(forte)], color=AZUL, marker="o",
+                    markersize=4, markerfacecolor="white", linewidth=1.5, label="forte (S/P)", zorder=3)
         # Eficiencia acima de 1 nao deve acontecer; se acontecer, fica visivel.
         maior = max([forte[p][0] / p for p in forte] + list(fraca.values()))
         ax.set_ylim(0, max(1.1, maior * 1.05))
