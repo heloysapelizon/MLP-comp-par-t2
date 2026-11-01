@@ -63,6 +63,22 @@ def f3(x):
     return f"{x:.3f}"
 
 
+def ocupacao(es):
+    """Mediana da fracao do tempo em que os escravos calcularam:
+    soma(ocupado) / ((P-1) * tempo). O resto e espera por comunicacao, pelo
+    mestre ou pelo fim do saco."""
+    return statistics.median(sum(s["ocupado"] for s in e["escravos"]) / ((e["P"] - 1) * e["tempo"])
+                             for e in es)
+
+
+def fatores(P, es, ms_seq):
+    """Decomposicao da eficiencia: E = (P-1)/P * t_seq/t_tarefa * ocupacao."""
+    return [f"{(P - 1) / P:.3f}", f"{ms_seq / ms_por_tarefa(es):.3f}", f"{ocupacao(es):.3f}"]
+
+
+FATORES = ["(P-1)/P", "t_seq/t_tarefa", "ocupacao"]
+
+
 def ms_por_tarefa(es):
     """Mediana, entre repeticoes, do tempo de calculo por tarefa (ms): separa a
     perda por disputa de nucleo, HT e memoria das perdas por comunicacao e fim do saco."""
@@ -91,6 +107,8 @@ def main():
         ok = "OK" if len(cks) == 1 and tem_seq else ("DIVERGE" if len(cks) > 1 else "sem sequencial")
         linhas.append([n, am, ep, len(es), "; ".join(f"{s}/{o}" for s, o in cks),
                        "sim" if tem_seq else "nao", ok])
+    md.append("E = (P-1)/P x t_seq/t_tarefa x ocupacao: nucleo do mestre, calculo mais lento com "
+              "varios processos no no (HT, cache, memoria) e espera por comunicacao, mestre ou fim do saco.\n")
     md.append(tabela("Equivalencia (checksum soma/ordem por entrada)",
                      ["tarefas", "amostras", "epocas", "execucoes", "soma/ordem", "tem sequencial", "situacao"],
                      linhas))
@@ -149,12 +167,13 @@ def main():
             nos = len({e["mestre"] for e in por_p[P]} | {s["host"] for e in por_p[P] for s in e["escravos"]})
             linhas.append([P, exp.replace("forte_1no", "1 no").replace("forte", "2 nos"), nos,
                            len(por_p[P]), f3(med), f3(mn), f3(mx), f"{S:.2f}", f"{S / P:.3f}",
-                           f"{S / (P - 1):.3f}", f"{ms_por_tarefa(por_p[P]):.1f}"])
+                           f"{S / (P - 1):.3f}", f"{ms_por_tarefa(por_p[P]):.1f}",
+                           *fatores(P, por_p[P], 1e3 * tempo_tarefa)])
     if linhas:
         md.append(tabela(f"Escalabilidade forte (g = {g_escolhido}; sequencial: "
                          f"{1e3 * tempo_tarefa:.1f} ms/tarefa)", ["P", "distribuicao", "hosts vistos", "n", "mediana (s)",
                                               "min (s)", "max (s)", "S", "E = S/P",
-                                              "E por escravo = S/(P-1)", "ms/tarefa"], linhas))
+                                              "E por escravo = S/(P-1)", "ms/tarefa", *FATORES], linhas))
 
     # ---- Fraca ----
     fraca = {}
@@ -169,11 +188,11 @@ def main():
         trabalho = es[0]["N"] * es[0]["amostras"] * es[0]["epocas"]
         fraca[P] = T1 / med
         linhas.append([P, es[0]["N"], trabalho, f"{trabalho / trabalho_ref:.1f}", len(es), f3(med), f3(mn),
-                       f3(mx), f"{T1 / med:.3f}", f"{ms_por_tarefa(es):.1f}"])
+                       f3(mx), f"{T1 / med:.3f}", f"{ms_por_tarefa(es):.1f}", *fatores(P, es, 1e3 * tempo_tarefa)])
     if linhas:
         md.append(tabela(f"Escalabilidade fraca (E = T1/TP, g = {g_escolhido})", ["P", "tarefas", "amostras treinadas",
                                                           "trabalho / referencia", "n", "mediana (s)",
-                                                          "min (s)", "max (s)", "E fraca", "ms/tarefa"],
+                                                          "min (s)", "max (s)", "E fraca", "ms/tarefa", *FATORES],
                          linhas))
 
     # ---- Granularidade e balanceamento ----
