@@ -11,7 +11,7 @@ cd "$SLURM_SUBMIT_DIR"
 source scripts/comum.sh
 registra_ambiente
 for r in $(seq 1 "$REPS"); do
-    for P in ${P_LISTA:-2 4 8 16 32 64}; do
+    for P in $(na_ordem "$r" ${P_LISTA:-2 4 8 16 32 64}); do
         echo "RUN,forte,$P,$(( P / 2 )),$r"
         lancar "$P" 2 ./mestre_escravo "$G" "$TAREFAS" "$AMOSTRAS" "$EPOCAS"
     done

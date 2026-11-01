@@ -31,6 +31,22 @@ registra_ambiente() {
     echo "TOPOLOGIA,$NUCLEOS_POR_NO,$THREADS_POR_NO"
 }
 
+# na_ordem REP lista...: a lista em ordem crescente nas repeticoes impares e
+# decrescente nas pares. Sem isso, cada configuracao rodaria sempre depois da
+# mesma vizinha (g = 1 logo apos g = 512, que deixa o no quase ocioso), e um
+# efeito de ordem (temperatura, turbo) se confundiria com o da configuracao.
+na_ordem() {
+    local rep=$1
+    shift
+    local lista=("$@") i
+    if [ $(( rep % 2 )) -eq 1 ]; then
+        echo "${lista[@]}"
+    else
+        for (( i = ${#lista[@]} - 1; i >= 0; i-- )); do printf '%s ' "${lista[i]}"; done
+        echo
+    fi
+}
+
 # Topologia lida do proprio no. O enunciado fala em 2 x 8 nucleos com HT, mas
 # os nos da Atlantica medidos tem 2 x 4 nucleos com HT (8 fisicos, 16 threads).
 NUCLEOS_POR_NO=$(lscpu | awk -F: '/^Socket\(s\)/{s=$2} /^Core\(s\) per socket/{c=$2} END{print s*c}')

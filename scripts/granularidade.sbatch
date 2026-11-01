@@ -21,7 +21,7 @@ for r in $(seq 1 "$REPS"); do
     lancar 2 2 ./pingpong $G_LISTA
 done
 for r in $(seq 1 "$REPS"); do
-    for g in $G_LISTA; do
+    for g in $(na_ordem "$r" $G_LISTA); do
         echo "RUN,granularidade,32,16,$r"
         lancar 32 2 ./mestre_escravo "$g" "$TAREFAS" "$AMOSTRAS" "$EPOCAS"
     done

@@ -63,6 +63,13 @@ def f3(x):
     return f"{x:.3f}"
 
 
+def ms_por_tarefa(es):
+    """Mediana, entre repeticoes, do tempo de calculo por tarefa (ms): separa a
+    perda por disputa de nucleo, HT e memoria das perdas por comunicacao e fim do saco."""
+    return statistics.median(1e3 * sum(s["ocupado"] for s in e["escravos"])
+                             / max(1, sum(s["tarefas"] for s in e["escravos"])) for e in es)
+
+
 def main():
     diretorio = sys.argv[1] if len(sys.argv) > 1 else "resultados"
     execucoes, pingpong = le_saidas(diretorio)
@@ -142,10 +149,12 @@ def main():
             nos = len({e["mestre"] for e in por_p[P]} | {s["host"] for e in por_p[P] for s in e["escravos"]})
             linhas.append([P, exp.replace("forte_1no", "1 no").replace("forte", "2 nos"), nos,
                            len(por_p[P]), f3(med), f3(mn), f3(mx), f"{S:.2f}", f"{S / P:.3f}",
-                           f"{S / (P - 1):.3f}"])
-    md.append(tabela(f"Escalabilidade forte (g = {g_escolhido})", ["P", "distribuicao", "hosts vistos", "n", "mediana (s)",
+                           f"{S / (P - 1):.3f}", f"{ms_por_tarefa(por_p[P]):.1f}"])
+    if linhas:
+        md.append(tabela(f"Escalabilidade forte (g = {g_escolhido}; sequencial: "
+                         f"{1e3 * tempo_tarefa:.1f} ms/tarefa)", ["P", "distribuicao", "hosts vistos", "n", "mediana (s)",
                                               "min (s)", "max (s)", "S", "E = S/P",
-                                              "E por escravo = S/(P-1)"], linhas))
+                                              "E por escravo = S/(P-1)", "ms/tarefa"], linhas))
 
     # ---- Fraca ----
     fraca = {}
@@ -160,10 +169,12 @@ def main():
         trabalho = es[0]["N"] * es[0]["amostras"] * es[0]["epocas"]
         fraca[P] = T1 / med
         linhas.append([P, es[0]["N"], trabalho, f"{trabalho / trabalho_ref:.1f}", len(es), f3(med), f3(mn),
-                       f3(mx), f"{T1 / med:.3f}"])
-    md.append(tabela(f"Escalabilidade fraca (E = T1/TP, g = {g_escolhido})", ["P", "tarefas", "amostras treinadas",
+                       f3(mx), f"{T1 / med:.3f}", f"{ms_por_tarefa(es):.1f}"])
+    if linhas:
+        md.append(tabela(f"Escalabilidade fraca (E = T1/TP, g = {g_escolhido})", ["P", "tarefas", "amostras treinadas",
                                                           "trabalho / referencia", "n", "mediana (s)",
-                                                          "min (s)", "max (s)", "E fraca"], linhas))
+                                                          "min (s)", "max (s)", "E fraca", "ms/tarefa"],
+                         linhas))
 
     # ---- Granularidade e balanceamento ----
     por_g = defaultdict(list)
