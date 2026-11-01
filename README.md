@@ -17,22 +17,18 @@ Uma **tarefa** (a unidade de trabalho) treina uma MLP `784-h-h-10` e conta os ac
 - uma das 50 fatias de `amostras` imagens do treino (100 na entrada de referência);
 - 2 épocas, lote 8, semente = índice.
 
-Com 100 imagens, o acerto médio é de cerca de 30%, contra 10% do acaso; com 200, cerca de 50%. As tarefas são independentes. Cada
-mensagem leva um bloco de **g** tarefas consecutivas, descrito por 2 inteiros
-`{inicio, qtd}`, porque cada escravo lê o MNIST antes da região medida.
+Com 100 imagens, o acerto médio é de cerca de 30%, contra 10% do acaso. As tarefas são
+independentes. Cada mensagem leva um bloco de **g** tarefas consecutivas, descrito por 2
+inteiros `{inicio, qtd}`, porque cada escravo lê o MNIST antes da região medida.
 
-**Por que tarefas de poucos milissegundos.** O enunciado pede comparar a granularidade
-escolhida com uma bem menor e uma bem maior. Com tarefas de dezenas de ms, g = 1 já seria o
-melhor e não haveria granularidade menor para comparar. Com tarefas de alguns ms, os dois
-lados aparecem:
-- g pequeno paga, a cada tarefa, uma ida e volta e um atendimento do mestre, que atende os
-  escravos em série;
-- g grande deixa escravos ociosos no fim do saco.
-
-O `granularidade.sbatch` varre g de 1 a 512 com P = 32. O g de menor mediana vai para `G` em
-`scripts/comum.sh` antes da forte e da fraca. Se no cluster g = 1 ainda for o melhor, a rede
-é rápida o bastante para esconder o custo das mensagens; nesse caso, reduza `AMOSTRAS`
-(por exemplo, para 100), o que barateia a tarefa, e repita a varredura.
+**Granularidade.** A tarefa foi reduzida ao mínimo que ainda treina (10,5 ms na Atlântica),
+para dar a g pequeno a maior chance de pesar. O `granularidade.sbatch` varre g de 1 a 512
+com P = 32, e o g de menor mediana vai para `G` em `scripts/comum.sh` antes da forte e da
+fraca. O escolhido foi **g = 1**:
+- a ida e volta entre nós (~190 µs) custa 0,6% de uma tarefa com P = 32, então agrupar não
+  tem o que economizar;
+- com g grande, os escravos ficam ociosos no fim do saco; com g = 256 e 512 há menos blocos
+  que escravos, e o tempo vai de 4 s para 10 s e 20 s.
 
 Checksum impresso em toda execução: `soma` = Σ acertos[i] e `ordem` = Σ (i+1)·acertos[i].
 O segundo só coincide com o da sequencial se cada resultado voltou para a sua posição no saco.
@@ -47,12 +43,14 @@ O segundo só coincide com o da sequencial se cada resultado voltou para a sua p
 | `scripts/comum.sh` | Entrada de referência e a forma de lançar os processos nos nós |
 | `scripts/*.sbatch` | Um script por experimento |
 | `scripts/analise.py` | Tabelas (mediana, mín., máx.), speed-up, eficiência e gráficos |
-| `resultados/` | Saídas brutas do Slurm e o que `analise.py` gera |
+| `resultados/` | Saídas brutas do Slurm usadas nas tabelas e o que `analise.py` gera |
+| `resultados/ordem_fixa/` | 1ª granularidade (job 41640), com os g sempre na mesma ordem; refeita com a ordem alternada e mantida como registro |
+| `resultados/extra/` | Granularidade submetida em duplicata (job 41672) e cancelada no meio |
 
 ## Preparar e compilar (na Atlântica)
 
 ```bash
-git clone <url-deste-repositorio> && cd MLP-comp-par-t2
+git clone https://github.com/heloysapelizon/MLP-comp-par-t2.git && cd MLP-comp-par-t2
 bash scripts/preparar.sh          # Eigen em eigen/, MNIST em MNIST/
 module load <openmpi>             # se o cluster exigir; confira com `module avail`
 make                              # sequencial, mestre_escravo, pingpong
@@ -138,13 +136,14 @@ python3 scripts/analise.py resultados    # precisa de matplotlib
 Gera `resultados/tabelas.md`, com mediana, mínimo e máximo em todas as tabelas:
 - equivalência de checksums;
 - sequencial;
-- forte, com E = S/P e E por escravo = S/(P−1);
+- forte, com E = S/P, E por escravo = S/(P−1) e a decomposição E = (P−1)/P × t_seq/t_tarefa × ocupação;
 - fraca, com o trabalho relativo à referência;
 - granularidade;
 - carga por escravo no g escolhido;
 - pingpong, com a razão computação/comunicação.
 
-Gera também `resultados/escravos.csv`, com todas as linhas por escravo, e os gráficos
+O `analise.py` só lê os `.out` que estão diretamente em `resultados/`; os das subpastas ficam
+guardados sem entrar nas tabelas. Gera também `resultados/escravos.csv`, com todas as linhas por escravo, e os gráficos
 `speedup.pdf` e `eficiencia.pdf`.
 
 A entrada de referência é a da sequencial. Execuções da forte, da fraca ou da granularidade

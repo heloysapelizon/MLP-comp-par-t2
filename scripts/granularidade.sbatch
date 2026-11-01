@@ -2,8 +2,8 @@
 # Granularidade e balanceamento com P = 32 (16 por no), como pede o enunciado:
 #  (a) ida e volta com as mensagens do mestre/escravo, dentro do no e entre nos
 #      (o tempo de uma tarefa sai da sequencial e das linhas ESCRAVO);
-#  (b) varredura de g de 1 a 512: a escolhida (G em comum.sh) contra as bem
-#      menores (sobrecarga de mensagens) e as bem maiores (fim do saco);
+#  (b) varredura de g de 1 a 512: g pequeno paga mais mensagens, g grande deixa
+#      escravos ociosos no fim do saco; a de menor mediana vira G em comum.sh;
 #  (c) tarefas e tempo ocupado por escravo nas linhas ESCRAVO.
 #SBATCH --job-name=t2-gran
 #SBATCH --nodes=2

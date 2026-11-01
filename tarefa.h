@@ -6,12 +6,11 @@
 // descreve um bloco de tarefas e so {inicio, qtd}, porque cada processo
 // carrega o MNIST antes da regiao medida.
 //
-// Por que tarefas de poucos milissegundos: o enunciado pede comparar a
-// granularidade escolhida (g tarefas por mensagem) com uma bem menor e uma bem
-// maior. Com tarefas longas (dezenas de ms) g = 1 ja seria o melhor e nao
-// haveria granularidade menor para comparar; com tarefas de poucos ms, g = 1
-// paga uma ida e volta e um atendimento do mestre a cada tarefa, e um g grande
-// deixa escravos ociosos no fim do saco.
+// Tamanho da tarefa: o mais barato que ainda treina de fato (10,5 ms na
+// Atlantica com 100 imagens), para que o custo das mensagens com g pequeno
+// fosse o maior possivel. Mesmo assim a ida e volta entre nos (~190 us) ficou
+// em 2% de uma tarefa (0,6% com P = 32, em que a tarefa leva 31 ms), e a
+// varredura de granularidade escolheu g = 1 (ver scripts/comum.sh).
 #pragma once
 
 #include <string>

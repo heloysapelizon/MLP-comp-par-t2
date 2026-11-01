@@ -8,5 +8,5 @@ pingpong
 demo
 NN
 *.o
-# saidas de teste local (as do cluster vao em resultados/)
+# cache do Python
 __pycache__/
