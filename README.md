@@ -88,13 +88,13 @@ Os nós são passados na linha de comando, sempre os mesmos dois:
 ```bash
 NOS=<no1>,<no2>
 # 1. referência e escolha de g
-sbatch --nodelist=${NOS%%,*} scripts/sequencial.sbatch      # T1, 10 repetições, 1 nó       (~10 x T1)
-sbatch --nodelist=$NOS scripts/granularidade.sbatch         # P = 32, g = 1..512, pingpong  (~5 x T1)
+sbatch --nodelist=${NOS%%,*} scripts/sequencial.sbatch      # T1, 10 repetições, 1 nó       (~7 min)
+sbatch --nodelist=$NOS scripts/granularidade.sbatch         # P = 32, g = 1..512, pingpong  (~15 min)
 python3 scripts/analise.py resultados                       # escolha g e fixe G em scripts/comum.sh
 # 2. escalabilidade, já com o G escolhido
-sbatch --nodelist=$NOS scripts/forte.sbatch                 # P = 2..64, mais P = 8 em 1 nó  (~17 x T1)
-sbatch --nodelist=$NOS scripts/fraca.sbatch                 # tarefas = TAREFAS * P         (~80 x T1)
-sbatch --nodelist=${NOS%%,*} scripts/checksum_fraca.sbatch  # checksums de referência da fraca (~64 x T1)
+sbatch --nodelist=$NOS scripts/forte.sbatch                 # P = 2..64, mais P = 8 em 1 nó  (~15 min na Atlântica)
+sbatch --nodelist=$NOS scripts/fraca.sbatch                 # tarefas = TAREFAS * P         (~1h50)
+sbatch --nodelist=${NOS%%,*} scripts/checksum_fraca.sbatch  # checksums de referência da fraca (~45 min)
 ```
 
 Se o tempo máximo da partição não comportar a fraca, divida o job pelos valores de P:
