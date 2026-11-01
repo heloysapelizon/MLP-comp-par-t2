@@ -11,10 +11,11 @@ EPOCAS=${EPOCAS:-1}       # epocas por tarefa
 #  - g pequeno: cada tarefa paga uma ida e volta e um atendimento do mestre,
 #    que atende 31 escravos em serie. Entre nos a ida e volta medida e de
 #    ~190 us (1 us dentro do no): ~11% de uma tarefa de 1,7 ms com g = 1;
-#  - g grande: menos blocos que escravos * algumas rodadas, e no fim do saco
-#    escravos ficam ociosos esperando o ultimo bloco (ate g * tempo da tarefa).
-# PROVISORIO: escolher de novo com granularidade.sbatch para a tarefa curta.
-G=${G:-1}
+#  - g grande: poucos blocos por escravo, e no fim do saco escravos ficam
+#    ociosos esperando o ultimo bloco (ate g * tempo da tarefa).
+# PROVISORIO: fixe aqui o g de menor mediana em granularidade.sbatch (e
+# atualize este comentario com os numeros) antes de rodar a forte e a fraca.
+G=${G:-16}
 REPS=${REPS:-10}
 
 # Registra o ambiente no inicio de cada saida do Slurm.

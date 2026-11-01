@@ -5,8 +5,13 @@ eigen/
 sequencial
 mestre_escravo
 pingpong
-demo
-NN
 *.o
+# calibragens e testes rapidos (fora das saidas usadas no relatorio)
+testes/
 # cache do Python
 __pycache__/
+# arquivos gerados pelo analise.py na rodada antiga
+resultados/v1_tarefa_10ms/*.png
+resultados/v1_tarefa_10ms/*.pdf
+resultados/v1_tarefa_10ms/*.csv
+resultados/v1_tarefa_10ms/tabelas.md

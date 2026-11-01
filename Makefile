@@ -2,7 +2,6 @@
 # Sem -fopenmp: o Eigen fica com uma thread por processo.
 # Sem -march=native: os nos poderiam gerar codigo de ponto flutuante diferente
 # e o checksum deixaria de bater entre execucoes.
-CXX      ?= g++
 MPICXX   ?= mpicxx
 EIGEN    ?= eigen
 CXXFLAGS  = -std=c++17 -O3 -Wall -DNDEBUG
@@ -24,11 +23,7 @@ mestre_escravo: mestre_escravo.cpp $(COMUM) $(HEADERS)
 pingpong: pingpong.cpp
 	$(MPICXX) $(CXXFLAGS) pingpong.cpp -o $@
 
-# Programa original do MLP-From-Scratch (treino completo no MNIST)
-demo: main.cpp NeuralNetwork.cpp $(HEADERS) loadcsv.h
-	$(CXX) $(CXXFLAGS) $(INCLUDES) main.cpp NeuralNetwork.cpp -o $@
-
 clean:
-	rm -f sequencial mestre_escravo pingpong demo
+	rm -f sequencial mestre_escravo pingpong
 
 .PHONY: all clean

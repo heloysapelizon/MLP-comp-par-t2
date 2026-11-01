@@ -3,32 +3,31 @@
 Versão paralela, no modelo mestre/escravo com MPI, de uma busca de hiperparâmetros
 de uma rede MLP treinada no MNIST. É executada e medida no cluster Atlântica (LAD).
 
-**Origem do código.** A rede neural (`NeuralNetwork.h/.cpp`, `load_mnist.h`, `loadcsv.h`,
-`main.cpp`) vem de [muchlakshay/MLP-From-Scratch](https://github.com/muchlakshay/MLP-From-Scratch)
+**Origem do código.** A rede neural (`NeuralNetwork.h/.cpp` e `load_mnist.h`) vem de
+[muchlakshay/MLP-From-Scratch](https://github.com/muchlakshay/MLP-From-Scratch)
 (licença MIT, arquivo `LICENSE`). No T2 ela mudou em três pontos: semente fixa opcional,
 `learn()` silencioso quando `verbose=false` e leitura parcial do MNIST. O resto é deste trabalho.
 
 ## O problema
 
 Uma **tarefa** (a unidade de trabalho) treina uma MLP `784-h-h-10` e conta os acertos nas
-200 primeiras imagens de teste do MNIST. A configuração sai do índice da tarefa
+20 primeiras imagens de teste do MNIST. A configuração sai do índice da tarefa
 (`config_da_tarefa` em `tarefa.cpp`):
 - `h` ∈ {16, 32} e taxa ∈ {0,05; 0,1; 0,2};
-- uma das 50 fatias de `amostras` imagens do treino (100 na entrada de referência);
-- 2 épocas, lote 8, semente = índice.
+- uma das 500 fatias de `amostras` imagens do treino (20 na entrada de referência);
+- 1 época, lote 8, semente = índice.
 
-Com 100 imagens, o acerto médio é de cerca de 30%, contra 10% do acaso. As tarefas são
-independentes. Cada mensagem leva um bloco de **g** tarefas consecutivas, descrito por 2
-inteiros `{inicio, qtd}`, porque cada escravo lê o MNIST antes da região medida.
+As tarefas são independentes. Cada mensagem leva um bloco de **g** tarefas consecutivas,
+descrito por 2 inteiros `{inicio, qtd}`, porque cada escravo lê o MNIST antes da região
+medida.
 
-**Granularidade.** A tarefa foi reduzida ao mínimo que ainda treina (10,5 ms na Atlântica),
-para dar a g pequeno a maior chance de pesar. O `granularidade.sbatch` varre g de 1 a 512
-com P = 32, e o g de menor mediana vai para `G` em `scripts/comum.sh` antes da forte e da
-fraca. O escolhido foi **g = 1**:
-- a ida e volta entre nós (~190 µs) custa 0,6% de uma tarefa com P = 32, então agrupar não
-  tem o que economizar;
-- com g grande, os escravos ficam ociosos no fim do saco; com g = 256 e 512 há menos blocos
-  que escravos, e o tempo vai de 4 s para 10 s e 20 s.
+**Por que uma tarefa tão curta.** O enunciado pede comparar a granularidade escolhida com
+uma bem menor e uma bem maior. Na primeira rodada (`resultados/v1_tarefa_10ms/`), a tarefa
+levava 10,5 ms. A ida e volta entre nós (~190 µs) pesava só 0,6%, e g = 1 já era o melhor,
+sem granularidade menor para comparar. A tarefa foi então reduzida ao mínimo que ainda
+aprende alguma coisa (~14% de acerto, contra 10% do acaso), para que g = 1 pague de verdade
+pelas mensagens. O `granularidade.sbatch` varre g de 1 a 2048 com P = 32, e o g de menor
+mediana vai para `G` em `scripts/comum.sh` antes da forte e da fraca.
 
 Checksum impresso em toda execução: `soma` = Σ acertos[i] e `ordem` = Σ (i+1)·acertos[i].
 O segundo só coincide com o da sequencial se cada resultado voltou para a sua posição no saco.
@@ -44,8 +43,7 @@ O segundo só coincide com o da sequencial se cada resultado voltou para a sua p
 | `scripts/*.sbatch` | Um script por experimento |
 | `scripts/analise.py` | Tabelas (mediana, mín., máx.), speed-up, eficiência e gráficos |
 | `resultados/` | Saídas brutas do Slurm usadas nas tabelas e o que `analise.py` gera |
-| `resultados/ordem_fixa/` | 1ª granularidade (job 41640), com os g sempre na mesma ordem; refeita com a ordem alternada e mantida como registro |
-| `resultados/extra/` | Granularidade submetida em duplicata (job 41672) e cancelada no meio |
+| `resultados/v1_tarefa_10ms/` | Primeira rodada, com a tarefa de 10 ms (ver o LEIAME da pasta) |
 
 ## Preparar e compilar (na Atlântica)
 
@@ -72,22 +70,31 @@ srun -N 1 -n 7 ./mestre_escravo 4 13
 Uso dos programas:
 
 ```
-./sequencial [tarefas=4000] [amostras=100] [epocas=2] [passo=0]    # passo: checksums dos prefixos passo*2^k
-srun -n P ./mestre_escravo g [tarefas=4000] [amostras=100] [epocas=2]   # P >= 2, g = tarefas por mensagem
+./sequencial [tarefas=25000] [amostras=20] [epocas=1] [passo=0]    # passo: checksums dos prefixos passo*2^k
+srun -n P ./mestre_escravo g [tarefas=25000] [amostras=20] [epocas=1]   # P >= 2, g = tarefas por mensagem
 srun -n 2 ./pingpong g1 [g2 ...]
 ```
 
 ## Experimentos
 
 A entrada de referência e a granularidade ficam em `scripts/comum.sh` (`TAREFAS`, `AMOSTRAS`,
-`EPOCAS`, `G`, `REPS`). Ajuste `TAREFAS` até a mediana da sequencial ficar entre 30 e 60 s.
-Os nós são passados na linha de comando, sempre os mesmos dois:
+`EPOCAS`, `G`, `REPS`). Os nós são passados na linha de comando, sempre os mesmos dois.
+
+Calibragem, com as saídas em `testes/`, fora do git: ajuste `TAREFAS` até T1 ficar entre
+30 e 60 s.
+
+```bash
+mkdir -p testes
+srun -N 1 --exclusive ./sequencial 5000 | grep tempo     # tempo por tarefa; TAREFAS ≈ 42 s / esse tempo
+```
+
+Experimentos, nesta ordem:
 
 ```bash
 NOS=<no1>,<no2>
 # 1. referência e escolha de g
 sbatch --nodelist=${NOS%%,*} scripts/sequencial.sbatch      # T1, 10 repetições, 1 nó       (~7 min)
-sbatch --nodelist=$NOS scripts/granularidade.sbatch         # P = 32, g = 1..512, pingpong  (~15 min)
+sbatch --nodelist=$NOS scripts/granularidade.sbatch         # P = 32, g = 1..2048, pingpong (~20 min)
 python3 scripts/analise.py resultados                       # escolha g e fixe G em scripts/comum.sh
 # 2. escalabilidade, já com o G escolhido
 sbatch --nodelist=$NOS scripts/forte.sbatch                 # P = 2..64, mais P = 8 em 1 nó  (~15 min na Atlântica)
@@ -161,4 +168,3 @@ ESCRAVO,P,tarefas,g,rank,host,tarefas_proc,mensagens,ocupado_s,ultimo_resultado_
 PINGPONG,g,bytes_ida,bytes_volta,host0,host1,ida_e_volta_us
 ```
 
-O programa original de treino completo no MNIST continua disponível com `make demo && ./demo`.
