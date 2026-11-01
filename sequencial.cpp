@@ -13,9 +13,9 @@
 #include "tarefa.h"
 
 int main(int argc, char** argv) {
-    const int num_tarefas = argc > 1 ? std::atoi(argv[1]) : 4000;
-    const int amostras    = argc > 2 ? std::atoi(argv[2]) : 100;
-    const int epocas      = argc > 3 ? std::atoi(argv[3]) : 2;
+    const int num_tarefas = argc > 1 ? std::atoi(argv[1]) : 25000;
+    const int amostras    = argc > 2 ? std::atoi(argv[2]) : 20;
+    const int epocas      = argc > 3 ? std::atoi(argv[3]) : 1;
     const int passo       = argc > 4 ? std::atoi(argv[4]) : 0;
     if (num_tarefas < 0 || amostras < 1 || amostras > 60000 || epocas < 1 || passo < 0) {
         std::fprintf(stderr, "uso: %s [tarefas] [amostras <= 60000] [epocas] [passo]\n", argv[0]);

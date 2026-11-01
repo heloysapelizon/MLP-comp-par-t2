@@ -1,22 +1,19 @@
 # Parametros e funcoes compartilhados pelos scripts sbatch (source scripts/comum.sh).
 
 # ---- Entrada de referencia (ajuste ate a sequencial ficar entre 30 e 60 s) ----
-# Medido na Atlantica (Xeon E5520): 10,4 ms por tarefa com 100 imagens,
-# entao 4000 tarefas dao T1 de cerca de 42 s.
-TAREFAS=${TAREFAS:-4000}  # tarefas no saco
-AMOSTRAS=${AMOSTRAS:-100} # imagens de treino por tarefa
-EPOCAS=${EPOCAS:-2}       # epocas por tarefa
+# Tarefa curta (ver tarefa.h): estimada em ~1,7 ms na Atlantica (Xeon E5520),
+# entao ~25000 tarefas dao T1 de ~42 s. CALIBRAR na Atlantica.
+TAREFAS=${TAREFAS:-25000} # tarefas no saco
+AMOSTRAS=${AMOSTRAS:-20}  # imagens de treino por tarefa
+EPOCAS=${EPOCAS:-1}       # epocas por tarefa
 # Granularidade escolhida (tarefas por mensagem). E um compromisso entre dois
 # custos que granularidade.sbatch mede com P = 32:
 #  - g pequeno: cada tarefa paga uma ida e volta e um atendimento do mestre,
 #    que atende 31 escravos em serie. Entre nos a ida e volta medida e de
-#    ~200 us (0,9 us dentro do no): 2% de uma tarefa de 10 ms com g = 1;
+#    ~190 us (1 us dentro do no): ~11% de uma tarefa de 1,7 ms com g = 1;
 #  - g grande: menos blocos que escravos * algumas rodadas, e no fim do saco
 #    escravos ficam ociosos esperando o ultimo bloco (ate g * tempo da tarefa).
-# Escolha medida (jobs 41640 e 41671, P = 32, 10 repeticoes cada): g = 1 teve
-# a menor mediana, 4,03 s, contra 4,28 s (g = 2), 4,49 s (g = 32) e 23,1 s
-# (g = 512). A ida e volta entre nos (182 us) e so 0,6% de uma tarefa de 31 ms,
-# entao agrupar nao tem o que economizar e so aumenta a espera no fim do saco.
+# PROVISORIO: escolher de novo com granularidade.sbatch para a tarefa curta.
 G=${G:-1}
 REPS=${REPS:-10}
 

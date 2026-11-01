@@ -101,9 +101,9 @@ int main(int argc, char** argv) {
     MPI_Comm_size(MPI_COMM_WORLD, &P);
 
     const int g           = argc > 1 ? std::atoi(argv[1]) : 1;
-    const int num_tarefas = argc > 2 ? std::atoi(argv[2]) : 4000;
-    const int amostras    = argc > 3 ? std::atoi(argv[3]) : 100;
-    const int epocas      = argc > 4 ? std::atoi(argv[4]) : 2;
+    const int num_tarefas = argc > 2 ? std::atoi(argv[2]) : 25000;
+    const int amostras    = argc > 3 ? std::atoi(argv[3]) : 20;
+    const int epocas      = argc > 4 ? std::atoi(argv[4]) : 1;
     if (P < 2 || g < 1 || num_tarefas < 0 || amostras < 1 || amostras > 60000 || epocas < 1) {
         if (rank == 0)
             std::fprintf(stderr, "uso: srun -n P ./mestre_escravo g [tarefas] [amostras] [epocas]  (P >= 2, g >= 1)\n");

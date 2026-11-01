@@ -6,11 +6,13 @@
 // descreve um bloco de tarefas e so {inicio, qtd}, porque cada processo
 // carrega o MNIST antes da regiao medida.
 //
-// Tamanho da tarefa: o mais barato que ainda treina de fato (10,5 ms na
-// Atlantica com 100 imagens), para que o custo das mensagens com g pequeno
-// fosse o maior possivel. Mesmo assim a ida e volta entre nos (~190 us) ficou
-// em 2% de uma tarefa (0,6% com P = 32, em que a tarefa leva 31 ms), e a
-// varredura de granularidade escolheu g = 1 (ver scripts/comum.sh).
+// Tamanho da tarefa: o enunciado pede comparar a granularidade escolhida com
+// uma bem menor e uma bem maior. Com a tarefa anterior (100 imagens, 2 epocas,
+// validacao em 200: 10,5 ms na Atlantica) a ida e volta entre nos (~190 us)
+// pesava 0,6% e g = 1 ja era o melhor, sem granularidade menor para comparar
+// (resultados em resultados/v1_tarefa_10ms). A tarefa foi reduzida ao minimo
+// que ainda aprende algo (20 imagens, 1 epoca, validacao em 20; ~14% de acerto
+// contra 10% do acaso) para que g = 1 pague de verdade pelas mensagens.
 #pragma once
 
 #include <string>
@@ -19,14 +21,13 @@
 
 // Quantas fatias disjuntas do conjunto de treino as tarefas usam (no maximo).
 // Limita a memoria por processo: amostras * NUM_FATIAS imagens de 784 doubles
-// (100 * 50 = 5 mil imagens, 31 MB).
-constexpr int NUM_FATIAS = 50;
+// (20 * 500 = 10 mil imagens, 63 MB).
+constexpr int NUM_FATIAS = 500;
 // Imagens de validacao (as primeiras do t10k), iguais para todas as tarefas.
 // Pequeno para a validacao nao dominar o custo de uma tarefa curta.
-constexpr int NUM_VALIDACAO = 200;
-// Lote pequeno: com poucas imagens, mais atualizacoes por epoca fazem a rede
-// aprender de fato (acerto medio de ~30% com 100 imagens e ~50% com 200,
-// contra 10% do acaso).
+constexpr int NUM_VALIDACAO = 20;
+// Lote pequeno: com poucas imagens, mais atualizacoes por epoca ajudam a rede
+// a aprender alguma coisa.
 constexpr int TAMANHO_LOTE = 8;
 
 struct Dados {

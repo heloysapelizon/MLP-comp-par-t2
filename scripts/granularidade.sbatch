@@ -2,7 +2,7 @@
 # Granularidade e balanceamento com P = 32 (16 por no), como pede o enunciado:
 #  (a) ida e volta com as mensagens do mestre/escravo, dentro do no e entre nos
 #      (o tempo de uma tarefa sai da sequencial e das linhas ESCRAVO);
-#  (b) varredura de g de 1 a 512: g pequeno paga mais mensagens, g grande deixa
+#  (b) varredura de g de 1 a 2048: g pequeno paga mais mensagens, g grande deixa
 #      escravos ociosos no fim do saco; a de menor mediana vira G em comum.sh;
 #  (c) tarefas e tempo ocupado por escravo nas linhas ESCRAVO.
 #SBATCH --job-name=t2-gran
@@ -12,7 +12,7 @@
 #SBATCH --output=resultados/granularidade_%j.out
 cd "$SLURM_SUBMIT_DIR"
 source scripts/comum.sh
-G_LISTA=${G_LISTA:-"1 2 4 8 16 32 64 128 256 512"}
+G_LISTA=${G_LISTA:-"1 2 4 8 16 32 64 128 256 512 1024 2048"}
 # P da varredura: 32 e o do enunciado. P_GRAN=64 testa se um g maior alivia o
 # mestre, que com 2 processos por thread virou gargalo (ocupacao 0,85 na forte).
 P_GRAN=${P_GRAN:-32}
