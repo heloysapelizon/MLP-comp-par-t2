@@ -20,13 +20,14 @@
 
 // Quantas fatias disjuntas do conjunto de treino as tarefas usam (no maximo).
 // Limita a memoria por processo: amostras * NUM_FATIAS imagens de 784 doubles
-// (200 * 50 = 10 mil imagens, 63 MB).
+// (100 * 50 = 5 mil imagens, 31 MB).
 constexpr int NUM_FATIAS = 50;
 // Imagens de validacao (as primeiras do t10k), iguais para todas as tarefas.
 // Pequeno para a validacao nao dominar o custo de uma tarefa curta.
 constexpr int NUM_VALIDACAO = 200;
-// Lote pequeno: com so 200 imagens, mais atualizacoes por epoca fazem a rede
-// aprender de fato (cerca de 50% de acerto medio contra 10% do acaso).
+// Lote pequeno: com poucas imagens, mais atualizacoes por epoca fazem a rede
+// aprender de fato (acerto medio de ~30% com 100 imagens e ~50% com 200,
+// contra 10% do acaso).
 constexpr int TAMANHO_LOTE = 8;
 
 struct Dados {

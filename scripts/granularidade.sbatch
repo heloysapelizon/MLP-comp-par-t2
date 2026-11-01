@@ -1,5 +1,5 @@
 #!/bin/bash
-# Granularidade e balanceamento com P = 32 (16 por no):
+# Granularidade e balanceamento com P = 32 (16 por no), como pede o enunciado:
 #  (a) ida e volta com as mensagens do mestre/escravo, dentro do no e entre nos
 #      (o tempo de uma tarefa sai da sequencial e das linhas ESCRAVO);
 #  (b) varredura de g de 1 a 512: a escolhida (G em comum.sh) contra as bem
@@ -7,7 +7,6 @@
 #  (c) tarefas e tempo ocupado por escravo nas linhas ESCRAVO.
 #SBATCH --job-name=t2-gran
 #SBATCH --nodes=2
-#SBATCH --ntasks-per-node=32
 #SBATCH --exclusive
 #SBATCH --time=01:00:00
 #SBATCH --output=resultados/granularidade_%j.out

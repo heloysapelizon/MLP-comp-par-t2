@@ -1,13 +1,16 @@
 # Parametros e funcoes compartilhados pelos scripts sbatch (source scripts/comum.sh).
 
 # ---- Entrada de referencia (ajuste ate a sequencial ficar entre 30 e 60 s) ----
-TAREFAS=${TAREFAS:-6000}  # tarefas no saco (cada uma leva alguns ms)
-AMOSTRAS=${AMOSTRAS:-200} # imagens de treino por tarefa
+# Medido na Atlantica (Xeon E5520): 10,4 ms por tarefa com 100 imagens,
+# entao 4000 tarefas dao T1 de cerca de 42 s.
+TAREFAS=${TAREFAS:-4000}  # tarefas no saco
+AMOSTRAS=${AMOSTRAS:-100} # imagens de treino por tarefa
 EPOCAS=${EPOCAS:-2}       # epocas por tarefa
 # Granularidade escolhida (tarefas por mensagem). E um compromisso entre dois
 # custos que granularidade.sbatch mede com P = 32:
 #  - g pequeno: cada tarefa paga uma ida e volta e um atendimento do mestre,
-#    que atende 31 escravos em serie;
+#    que atende 31 escravos em serie. Entre nos a ida e volta medida e de
+#    ~200 us (0,9 us dentro do no): 2% de uma tarefa de 10 ms com g = 1;
 #  - g grande: menos blocos que escravos * algumas rodadas, e no fim do saco
 #    escravos ficam ociosos esperando o ultimo bloco (ate g * tempo da tarefa).
 # Fixe aqui o g de menor mediana em granularidade.sbatch antes de rodar a
@@ -24,24 +27,34 @@ registra_ambiente() {
     srun --version
     ${MPICXX:-mpicxx} --version | head -1
     lscpu | grep -E '^(Model name|Socket|Core|Thread|CPU\(s\))'
+    # lido por analise.py para marcar nos graficos onde comecam HT e sobrecarga
+    echo "TOPOLOGIA,$NUCLEOS_POR_NO,$THREADS_POR_NO"
 }
+
+# Topologia lida do proprio no. O enunciado fala em 2 x 8 nucleos com HT, mas
+# os nos da Atlantica medidos tem 2 x 4 nucleos com HT (8 fisicos, 16 threads).
+NUCLEOS_POR_NO=$(lscpu | awk -F: '/^Socket\(s\)/{s=$2} /^Core\(s\) per socket/{c=$2} END{print s*c}')
+THREADS_POR_NO=$(lscpu | awk -F: '/^CPU\(s\)/{print $2+0}')
 
 # lancar P NOS programa args...
 # P processos divididos igualmente entre NOS nos, em bloco (ranks 0..P/NOS-1 no
-# primeiro no, o mestre incluido), com srun como no Lab 3. Ate 16 por no, um
-# processo por nucleo fisico; acima disso (P = 64) os processos ocupam as
-# threads de HT. Sem --hint=nomultithread o Slurm pode colocar dois ranks nas
-# duas threads do mesmo nucleo ja com 16 por no, e a curva cairia antes da hora.
-# "verbose" escreve na saida a mascara de CPUs de cada rank: confira no primeiro
-# job que, com P <= 32, cada rank ficou num nucleo fisico diferente.
-# Se o Slurm da Atlantica contar so os 16 nucleos fisicos por no, o sbatch com
-# --ntasks-per-node=32 sera recusado: nesse caso acrescente --overcommit aqui
-# e no cabecalho dos scripts.
+# primeiro no, o mestre incluido), com srun como no Lab 3. Tres regimes,
+# conforme os processos por no (PPN):
+#  - PPN <= nucleos fisicos: um processo por nucleo (--hint=nomultithread; sem
+#    isso o Slurm pode por dois ranks nas duas threads do mesmo nucleo);
+#  - PPN <= threads: os processos ocupam as threads de HT;
+#  - PPN > threads: mais processos que threads (--overcommit), o SO reveza.
+# Nos nos de 8 nucleos/16 threads: P <= 16, P = 32 e P = 64, respectivamente.
+# "verbose" escreve na saida a mascara de CPUs de cada rank.
 lancar() {
     local P=$1 NOS=$2
     shift 2
     local PPN=$(( (P + NOS - 1) / NOS ))
-    local HINT=nomultithread
-    [ "$PPN" -gt 16 ] && HINT=multithread
-    srun -N "$NOS" -n "$P" --ntasks-per-node="$PPN" --distribution=block --hint="$HINT" --cpu-bind=verbose "$@"
+    local EXTRA=(--hint=nomultithread)
+    if [ "$PPN" -gt "$THREADS_POR_NO" ]; then
+        EXTRA=(--hint=multithread --overcommit)
+    elif [ "$PPN" -gt "$NUCLEOS_POR_NO" ]; then
+        EXTRA=(--hint=multithread)
+    fi
+    srun -N "$NOS" -n "$P" --ntasks-per-node="$PPN" --distribution=block "${EXTRA[@]}" --cpu-bind=verbose "$@"
 }

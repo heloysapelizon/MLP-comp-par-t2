@@ -4,7 +4,6 @@
 # comprova que o trabalho cresceu na proporcao de P.
 #SBATCH --job-name=t2-fraca
 #SBATCH --nodes=2
-#SBATCH --ntasks-per-node=32
 #SBATCH --exclusive
 #SBATCH --time=04:00:00
 #SBATCH --output=resultados/fraca_%j.out

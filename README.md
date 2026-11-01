@@ -14,10 +14,10 @@ Uma **tarefa** (a unidade de trabalho) treina uma MLP `784-h-h-10` e conta os ac
 200 primeiras imagens de teste do MNIST. A configuração sai do índice da tarefa
 (`config_da_tarefa` em `tarefa.cpp`):
 - `h` ∈ {16, 32} e taxa ∈ {0,05; 0,1; 0,2};
-- uma das 50 fatias de 200 imagens do treino;
+- uma das 50 fatias de `amostras` imagens do treino (100 na entrada de referência);
 - 2 épocas, lote 8, semente = índice.
 
-O acerto médio é de cerca de 50%, contra 10% do acaso. As tarefas são independentes. Cada
+Com 100 imagens, o acerto médio é de cerca de 30%, contra 10% do acaso; com 200, cerca de 50%. As tarefas são independentes. Cada
 mensagem leva um bloco de **g** tarefas consecutivas, descrito por 2 inteiros
 `{inicio, qtd}`, porque cada escravo lê o MNIST antes da região medida.
 
@@ -74,8 +74,8 @@ srun -N 1 -n 7 ./mestre_escravo 4 13
 Uso dos programas:
 
 ```
-./sequencial [tarefas=6000] [amostras=200] [epocas=2] [passo=0]    # passo: checksums dos prefixos passo*2^k
-srun -n P ./mestre_escravo g [tarefas=6000] [amostras=200] [epocas=2]   # P >= 2, g = tarefas por mensagem
+./sequencial [tarefas=4000] [amostras=100] [epocas=2] [passo=0]    # passo: checksums dos prefixos passo*2^k
+srun -n P ./mestre_escravo g [tarefas=4000] [amostras=100] [epocas=2]   # P >= 2, g = tarefas por mensagem
 srun -n 2 ./pingpong g1 [g2 ...]
 ```
 
@@ -92,7 +92,7 @@ sbatch --nodelist=${NOS%%,*} scripts/sequencial.sbatch      # T1, 10 repetiçõe
 sbatch --nodelist=$NOS scripts/granularidade.sbatch         # P = 32, g = 1..512, pingpong  (~5 x T1)
 python3 scripts/analise.py resultados                       # escolha g e fixe G em scripts/comum.sh
 # 2. escalabilidade, já com o G escolhido
-sbatch --nodelist=$NOS scripts/forte.sbatch                 # P = 2..64, mais P = 16 em 1 nó (~17 x T1)
+sbatch --nodelist=$NOS scripts/forte.sbatch                 # P = 2..64, mais P = 8 em 1 nó  (~17 x T1)
 sbatch --nodelist=$NOS scripts/fraca.sbatch                 # tarefas = TAREFAS * P         (~80 x T1)
 sbatch --nodelist=${NOS%%,*} scripts/checksum_fraca.sbatch  # checksums de referência da fraca (~64 x T1)
 ```
@@ -108,10 +108,24 @@ então essa execução única serve de referência para todos os tamanhos da fra
 
 Todos usam `--exclusive`. Os processos se dividem igualmente entre os 2 nós, em bloco: ranks
 `0..P/2-1` no primeiro nó, com o mestre, e o resto no segundo
-(`srun --distribution=block`, como no Lab 3). Com P ≤ 32 fica 1 processo por núcleo físico;
-com P = 64, 32 por nó, usando o HT (`--hint=nomultithread` / `multithread`).
+(`srun --distribution=block`, como no Lab 3).
+
+**Topologia medida.** Os nós da Atlântica são Xeon E5520, com 2 × 4 núcleos com HT: 8 núcleos
+físicos e 16 threads por nó, e não os 2 × 8 do enunciado. A ida e volta medida é de ~0,9 µs
+dentro do nó e ~200 µs entre nós. Os scripts leem a topologia com `lscpu` e escolhem o
+regime pelo número de processos por nó:
+
+| P | Processos por nó | Regime |
+| --- | --- | --- |
+| 2 a 16 | até 8 | um processo por núcleo físico (`--hint=nomultithread`) |
+| 32 | 16 | HT (`--hint=multithread`) |
+| 64 | 32 | mais processos que threads (`--overcommit`) |
+
+A "forte em 1 nó" usa P = 8, um processo por núcleo de um único nó, para comparar com P = 8
+dividido entre os 2 nós.
+
 `--cpu-bind=verbose` registra na saída onde cada rank ficou. **No primeiro job, confira**
-que com P = 32 cada rank caiu num núcleo físico diferente, sem dois ranks nas duas threads
+que com P = 16 cada rank caiu num núcleo físico diferente, sem dois ranks nas duas threads
 do mesmo núcleo. Para mudar a distribuição, altere só a função `lancar` em
 `scripts/comum.sh`.
 

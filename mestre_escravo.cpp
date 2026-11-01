@@ -101,8 +101,8 @@ int main(int argc, char** argv) {
     MPI_Comm_size(MPI_COMM_WORLD, &P);
 
     const int g           = argc > 1 ? std::atoi(argv[1]) : 1;
-    const int num_tarefas = argc > 2 ? std::atoi(argv[2]) : 6000;
-    const int amostras    = argc > 3 ? std::atoi(argv[3]) : 200;
+    const int num_tarefas = argc > 2 ? std::atoi(argv[2]) : 4000;
+    const int amostras    = argc > 3 ? std::atoi(argv[3]) : 100;
     const int epocas      = argc > 4 ? std::atoi(argv[4]) : 2;
     if (P < 2 || g < 1 || num_tarefas < 0 || amostras < 1 || amostras > 60000 || epocas < 1) {
         if (rank == 0)

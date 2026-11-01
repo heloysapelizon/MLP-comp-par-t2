@@ -18,6 +18,9 @@ import sys
 from collections import defaultdict
 
 
+TOPOLOGIA = {}  # nucleos e threads por no, da linha TOPOLOGIA dos scripts
+
+
 def le_saidas(diretorio):
     execucoes, pingpong = [], []
     for arquivo in sorted(glob.glob(os.path.join(diretorio, "*.out"))):
@@ -38,6 +41,8 @@ def le_saidas(diretorio):
                     execucoes[-1]["escravos"].append(dict(
                         rank=int(c[4]), host=c[5], tarefas=int(c[6]), mensagens=int(c[7]),
                         ocupado=float(c[8]), fim=float(c[9])))
+                elif c[0] == "TOPOLOGIA" and len(c) == 3 and c[1].isdigit():
+                    TOPOLOGIA.update(nucleos=int(c[1]), threads=int(c[2]))
                 elif c[0] == "PINGPONG" and len(c) == 7:
                     pingpong.append(dict(g=int(c[1]), intra=c[4] == c[5], rtt_us=float(c[6])))
     return execucoes, pingpong
@@ -263,9 +268,17 @@ def graficos(diretorio, forte, fraca):
         ax.set_xticklabels([str(p) for p in ps])
         ax.set_xlabel("processos (P)")
         ax.grid(axis="y", color="#e5e4e0", linewidth=0.6)
-        if max(ps) > 32:  # acima de 32 processos, 2 por nucleo fisico
-            ax.axvspan(45, max(ps) * 1.15, color="#f0efec", zorder=0)
-            ax.text(64, ax.get_ylim()[1], "HT", ha="center", va="top", color=TEXTO)
+        # Com 2 nos: ate 2*nucleos, um processo por nucleo fisico; ate
+        # 2*threads, HT; acima disso, mais processos que threads.
+        nuc, thr = 2 * TOPOLOGIA.get("nucleos", 16), 2 * TOPOLOGIA.get("threads", 32)
+        for inicio, fim, rotulo, cor in ((nuc, thr, "HT", "#f0efec"), (thr, None, "sobrecarga", "#e2e1dc")):
+            acima = [p for p in ps if p > inicio and (fim is None or p <= fim)]
+            if acima:
+                esq = (inicio * min(acima)) ** 0.5  # meio do caminho em escala log
+                dir_ = (fim * min(p for p in ps if p > fim)) ** 0.5 if fim and max(ps) > fim else max(ps) * 1.15
+                ax.axvspan(esq, dir_, color=cor, zorder=0)
+                ax.text((esq * dir_) ** 0.5, 0.02, rotulo, transform=ax.get_xaxis_transform(),
+                        ha="center", va="bottom", color=TEXTO, fontsize=7)
 
     if forte:
         ps = sorted(forte)
