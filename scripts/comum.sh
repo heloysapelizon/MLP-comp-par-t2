@@ -13,9 +13,11 @@ EPOCAS=${EPOCAS:-2}       # epocas por tarefa
 #    ~200 us (0,9 us dentro do no): 2% de uma tarefa de 10 ms com g = 1;
 #  - g grande: menos blocos que escravos * algumas rodadas, e no fim do saco
 #    escravos ficam ociosos esperando o ultimo bloco (ate g * tempo da tarefa).
-# Fixe aqui o g de menor mediana em granularidade.sbatch antes de rodar a
-# forte e a fraca.
-G=${G:-4}
+# Escolha medida (jobs 41640 e 41671, P = 32, 10 repeticoes cada): g = 1 teve
+# a menor mediana, 4,03 s, contra 4,28 s (g = 2), 4,49 s (g = 32) e 23,1 s
+# (g = 512). A ida e volta entre nos (182 us) e so 0,6% de uma tarefa de 31 ms,
+# entao agrupar nao tem o que economizar e so aumenta a espera no fim do saco.
+G=${G:-1}
 REPS=${REPS:-10}
 
 # Registra o ambiente no inicio de cada saida do Slurm.
