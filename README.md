@@ -45,6 +45,8 @@ O segundo só coincide com o da sequencial se cada resultado voltou para a sua p
 | `resultados/` | Saídas brutas do Slurm usadas nas tabelas e o que `analise.py` gera |
 | `resultados/v1_tarefa_10ms/` | Primeira rodada, com a tarefa de 10 ms (ver o LEIAME da pasta) |
 
+**Passo a passo completo** (login, calibragem, rodada oficial e coleta dos resultados): [COMO_RODAR.md](COMO_RODAR.md).
+
 ## Preparar e compilar (na Atlântica)
 
 ```bash
