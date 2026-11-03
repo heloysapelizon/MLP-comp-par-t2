@@ -1,0 +1,3042 @@
+== job 41931 em 2026-11-02T19:51:32-03:00
+== nos: atlantica13 atlantica14 
+== git: 2488100
+== entrada: TAREFAS=20000 AMOSTRAS=20 EPOCAS=1 G=16 REPS=10
+slurm-wlm 19.05.5
+g++ (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0
+CPU(s):                          16
+Thread(s) per core:              2
+Core(s) per socket:              4
+Socket(s):                       2
+Model name:                      Intel(R) Xeon(R) CPU           E5520  @ 2.27GHz
+TOPOLOGIA,8,16
+RUN,forte,2,1,1
+cpu-bind=MASK - atlantica13, task  0  0 [305330]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  1  0 [205422]: mask 0x1 set
+P=2 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=35.361082 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,2,20000,16,20,1,35.361082,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,2,20000,16,1,atlantica14,20000,1250,35.085839,35.352310
+RUN,forte,4,2,1
+cpu-bind=MASK - atlantica14, task  2  0 [205442]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  0  0 [305360]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  3  1 [205443]: mask 0x2 set
+cpu-bind=MASK - atlantica13, task  1  1 [305361]: mask 0x2 set
+P=4 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=11.930522 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,4,20000,16,20,1,11.930522,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,4,20000,16,1,atlantica13,6560,410,11.927198,11.930543
+ESCRAVO,4,20000,16,2,atlantica14,6688,418,11.828106,11.906743
+ESCRAVO,4,20000,16,3,atlantica14,6752,422,11.820010,11.908156
+RUN,forte,8,4,1
+cpu-bind=MASK - atlantica13, task  1  1 [305392]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task  4  0 [205464]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  3  3 [305394]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task  5  1 [205465]: mask 0x2 set
+cpu-bind=MASK - atlantica13, task  0  0 [305391]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  7  3 [205467]: mask 0x8 set
+cpu-bind=MASK - atlantica13, task  2  2 [305393]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task  6  2 [205466]: mask 0x4 set
+P=8 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=5.230177 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,8,20000,16,20,1,5.230177,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,8,20000,16,1,atlantica13,2816,176,5.214790,5.217083
+ESCRAVO,8,20000,16,2,atlantica13,2816,176,5.228150,5.230327
+ESCRAVO,8,20000,16,3,atlantica13,2816,176,5.211352,5.220530
+ESCRAVO,8,20000,16,4,atlantica14,2896,181,5.194936,5.229019
+ESCRAVO,8,20000,16,5,atlantica14,2912,182,5.189137,5.226938
+ESCRAVO,8,20000,16,6,atlantica14,2848,178,5.183739,5.219975
+ESCRAVO,8,20000,16,7,atlantica14,2896,181,5.179678,5.225782
+RUN,forte,16,8,1
+cpu-bind=MASK - atlantica13, task  5  5 [305433]: mask 0x20 set
+cpu-bind=MASK - atlantica13, task  1  1 [305429]: mask 0x2 set
+cpu-bind=MASK - atlantica13, task  3  3 [305431]: mask 0x8 set
+cpu-bind=MASK - atlantica13, task  7  7 [305435]: mask 0x80 set
+cpu-bind=MASK - atlantica13, task  0  0 [305428]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  2  2 [305430]: mask 0x4 set
+cpu-bind=MASK - atlantica13, task  4  4 [305432]: mask 0x10 set
+cpu-bind=MASK - atlantica13, task  6  6 [305434]: mask 0x40 set
+cpu-bind=MASK - atlantica14, task 11  3 [205493]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task  9  1 [205491]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task 13  5 [205495]: mask 0x20 set
+cpu-bind=MASK - atlantica14, task 15  7 [205497]: mask 0x80 set
+cpu-bind=MASK - atlantica14, task  8  0 [205490]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task 10  2 [205492]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task 12  4 [205494]: mask 0x10 set
+cpu-bind=MASK - atlantica14, task 14  6 [205496]: mask 0x40 set
+P=16 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=2.670627 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,16,20000,16,20,1,2.670627,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,16,20000,16,1,atlantica13,1312,82,2.664116,2.666260
+ESCRAVO,16,20000,16,2,atlantica13,1328,83,2.642425,2.645042
+ESCRAVO,16,20000,16,3,atlantica13,1312,82,2.668614,2.671709
+ESCRAVO,16,20000,16,4,atlantica13,1328,83,2.658692,2.659995
+ESCRAVO,16,20000,16,5,atlantica13,1296,81,2.645054,2.647056
+ESCRAVO,16,20000,16,6,atlantica13,1328,83,2.644985,2.647751
+ESCRAVO,16,20000,16,7,atlantica13,1296,81,2.645000,2.646454
+ESCRAVO,16,20000,16,8,atlantica14,1376,86,2.655718,2.669053
+ESCRAVO,16,20000,16,9,atlantica14,1344,84,2.628806,2.640267
+ESCRAVO,16,20000,16,10,atlantica14,1344,84,2.637094,2.649524
+ESCRAVO,16,20000,16,11,atlantica14,1344,84,2.630316,2.643629
+ESCRAVO,16,20000,16,12,atlantica14,1344,84,2.626083,2.637096
+ESCRAVO,16,20000,16,13,atlantica14,1344,84,2.632301,2.642920
+ESCRAVO,16,20000,16,14,atlantica14,1360,85,2.655458,2.669168
+ESCRAVO,16,20000,16,15,atlantica14,1344,84,2.627059,2.639365
+RUN,forte,32,16,1
+cpu-bind=MASK - atlantica14, task 28 12 [205540]: mask 0x40 set
+cpu-bind=MASK - atlantica14, task 20  4 [205532]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task 23  7 [205535]: mask 0x800 set
+cpu-bind=MASK - atlantica14, task 17  1 [205529]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task 19  3 [205531]: mask 0x200 set
+cpu-bind=MASK - atlantica14, task 18  2 [205530]: mask 0x100 set
+cpu-bind=MASK - atlantica14, task 30 14 [205542]: mask 0x4000 set
+cpu-bind=MASK - atlantica14, task 16  0 [205528]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task 26 10 [205538]: mask 0x1000 set
+cpu-bind=MASK - atlantica14, task 21  5 [205533]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task 25  9 [205537]: mask 0x20 set
+cpu-bind=MASK - atlantica14, task 29 13 [205541]: mask 0x80 set
+cpu-bind=MASK - atlantica14, task 22  6 [205534]: mask 0x400 set
+cpu-bind=MASK - atlantica14, task 24  8 [205536]: mask 0x10 set
+cpu-bind=MASK - atlantica14, task 31 15 [205543]: mask 0x8000 set
+cpu-bind=MASK - atlantica14, task 27 11 [205539]: mask 0x2000 set
+cpu-bind=MASK - atlantica13, task  2  2 [305478]: mask 0x100 set
+cpu-bind=MASK - atlantica13, task  3  3 [305479]: mask 0x200 set
+cpu-bind=MASK - atlantica13, task  4  4 [305480]: mask 0x4 set
+cpu-bind=MASK - atlantica13, task  6  6 [305482]: mask 0x400 set
+cpu-bind=MASK - atlantica13, task  9  9 [305485]: mask 0x20 set
+cpu-bind=MASK - atlantica13, task 12 12 [305488]: mask 0x40 set
+cpu-bind=MASK - atlantica13, task  1  1 [305477]: mask 0x2 set
+cpu-bind=MASK - atlantica13, task  0  0 [305476]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  5  5 [305481]: mask 0x8 set
+cpu-bind=MASK - atlantica13, task 11 11 [305487]: mask 0x2000 set
+cpu-bind=MASK - atlantica13, task 13 13 [305489]: mask 0x80 set
+cpu-bind=MASK - atlantica13, task  7  7 [305483]: mask 0x800 set
+cpu-bind=MASK - atlantica13, task 14 14 [305490]: mask 0x4000 set
+cpu-bind=MASK - atlantica13, task 10 10 [305486]: mask 0x1000 set
+cpu-bind=MASK - atlantica13, task  8  8 [305484]: mask 0x10 set
+cpu-bind=MASK - atlantica13, task 15 15 [305491]: mask 0x8000 set
+P=32 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=2.502921 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,32,20000,16,20,1,2.502921,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,32,20000,16,1,atlantica13,656,41,2.495272,2.501286
+ESCRAVO,32,20000,16,2,atlantica13,752,47,2.483694,2.485435
+ESCRAVO,32,20000,16,3,atlantica13,656,41,2.493791,2.500236
+ESCRAVO,32,20000,16,4,atlantica13,672,42,2.453151,2.454910
+ESCRAVO,32,20000,16,5,atlantica13,656,41,2.496506,2.502525
+ESCRAVO,32,20000,16,6,atlantica13,688,43,2.496083,2.497919
+ESCRAVO,32,20000,16,7,atlantica13,656,41,2.495337,2.501385
+ESCRAVO,32,20000,16,8,atlantica13,672,42,2.459002,2.460719
+ESCRAVO,32,20000,16,9,atlantica13,640,40,2.447258,2.453296
+ESCRAVO,32,20000,16,10,atlantica13,672,42,2.457321,2.459211
+ESCRAVO,32,20000,16,11,atlantica13,656,41,2.484911,2.491284
+ESCRAVO,32,20000,16,12,atlantica13,656,41,2.451709,2.453285
+ESCRAVO,32,20000,16,13,atlantica13,656,41,2.489078,2.495223
+ESCRAVO,32,20000,16,14,atlantica13,672,42,2.494564,2.496510
+ESCRAVO,32,20000,16,15,atlantica13,656,41,2.487873,2.494046
+ESCRAVO,32,20000,16,16,atlantica14,624,39,2.453343,2.467273
+ESCRAVO,32,20000,16,17,atlantica14,624,39,2.473514,2.489159
+ESCRAVO,32,20000,16,18,atlantica14,624,39,2.485612,2.500723
+ESCRAVO,32,20000,16,19,atlantica14,624,39,2.474739,2.490151
+ESCRAVO,32,20000,16,20,atlantica14,624,39,2.462609,2.482344
+ESCRAVO,32,20000,16,21,atlantica14,624,39,2.474617,2.488801
+ESCRAVO,32,20000,16,22,atlantica14,624,39,2.465814,2.483283
+ESCRAVO,32,20000,16,23,atlantica14,624,39,2.472130,2.487631
+ESCRAVO,32,20000,16,24,atlantica14,624,39,2.460398,2.476362
+ESCRAVO,32,20000,16,25,atlantica14,624,39,2.450898,2.467495
+ESCRAVO,32,20000,16,26,atlantica14,624,39,2.462728,2.477719
+ESCRAVO,32,20000,16,27,atlantica14,624,39,2.453045,2.468719
+ESCRAVO,32,20000,16,28,atlantica14,624,39,2.461521,2.478101
+ESCRAVO,32,20000,16,29,atlantica14,624,39,2.470877,2.486090
+ESCRAVO,32,20000,16,30,atlantica14,624,39,2.463276,2.479612
+ESCRAVO,32,20000,16,31,atlantica14,624,39,2.474473,2.489918
+RUN,forte,64,32,1
+cpu-bind-threads=MASK - atlantica13, task  0  0 [305549]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  1  1 [305550]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  2  2 [305551]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  3  3 [305552]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  5  5 [305554]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  6  6 [305555]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 14 14 [305563]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 16 16 [305565]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 15 15 [305564]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  7  7 [305556]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 12 12 [305561]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  8  8 [305557]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  4  4 [305553]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 10 10 [305559]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 11 11 [305560]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 13 13 [305562]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  9  9 [305558]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 17 17 [305566]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 18 18 [305567]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 19 19 [305568]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 20 20 [305569]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 21 21 [305570]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 22 22 [305571]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 23 23 [305572]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 24 24 [305573]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 26 26 [305575]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 28 28 [305577]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 29 29 [305578]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 31 31 [305580]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 25 25 [305574]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 30 30 [305579]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 27 27 [305576]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 36  4 [205594]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 32  0 [205590]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 33  1 [205591]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 34  2 [205592]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 35  3 [205593]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 37  5 [205595]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 38  6 [205596]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 50 18 [205608]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 53 21 [205611]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 49 17 [205607]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 52 20 [205610]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 47 15 [205605]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 39  7 [205597]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 41  9 [205599]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 42 10 [205600]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 43 11 [205601]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 45 13 [205603]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 54 22 [205612]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 40  8 [205598]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 44 12 [205602]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 55 23 [205613]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 46 14 [205604]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 51 19 [205609]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 48 16 [205606]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 56 24 [205614]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 58 26 [205616]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 57 25 [205615]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 59 27 [205617]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 60 28 [205618]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 62 30 [205620]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 63 31 [205621]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 61 29 [205619]: mask 0xffff set
+P=64 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=2.786182 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,64,20000,16,20,1,2.786182,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,64,20000,16,1,atlantica13,336,21,2.499773,2.738553
+ESCRAVO,64,20000,16,2,atlantica13,288,18,2.483183,2.769140
+ESCRAVO,64,20000,16,3,atlantica13,336,21,2.550164,2.704134
+ESCRAVO,64,20000,16,4,atlantica13,336,21,2.483360,2.697810
+ESCRAVO,64,20000,16,5,atlantica13,304,19,2.439876,2.690067
+ESCRAVO,64,20000,16,6,atlantica13,288,18,2.376425,2.681980
+ESCRAVO,64,20000,16,7,atlantica13,336,21,2.521662,2.738778
+ESCRAVO,64,20000,16,8,atlantica13,352,22,2.322117,2.706332
+ESCRAVO,64,20000,16,9,atlantica13,432,27,2.382030,2.745313
+ESCRAVO,64,20000,16,10,atlantica13,320,20,2.376422,2.700563
+ESCRAVO,64,20000,16,11,atlantica13,320,20,2.622660,2.719870
+ESCRAVO,64,20000,16,12,atlantica13,320,20,2.494983,2.697174
+ESCRAVO,64,20000,16,13,atlantica13,352,22,2.360179,2.627680
+ESCRAVO,64,20000,16,14,atlantica13,304,19,2.485773,2.757346
+ESCRAVO,64,20000,16,15,atlantica13,336,21,2.526232,2.699786
+ESCRAVO,64,20000,16,16,atlantica13,336,21,2.561894,2.771395
+ESCRAVO,64,20000,16,17,atlantica13,304,19,2.347667,2.725467
+ESCRAVO,64,20000,16,18,atlantica13,336,21,2.606712,2.718726
+ESCRAVO,64,20000,16,19,atlantica13,336,21,2.517030,2.762015
+ESCRAVO,64,20000,16,20,atlantica13,320,20,2.514788,2.733305
+ESCRAVO,64,20000,16,21,atlantica13,304,19,2.318279,2.659052
+ESCRAVO,64,20000,16,22,atlantica13,304,19,2.482161,2.731437
+ESCRAVO,64,20000,16,23,atlantica13,336,21,2.519260,2.745493
+ESCRAVO,64,20000,16,24,atlantica13,272,17,2.428824,2.674538
+ESCRAVO,64,20000,16,25,atlantica13,304,19,2.465209,2.663347
+ESCRAVO,64,20000,16,26,atlantica13,304,19,2.471103,2.749198
+ESCRAVO,64,20000,16,27,atlantica13,336,21,2.584988,2.740603
+ESCRAVO,64,20000,16,28,atlantica13,336,21,2.550348,2.692643
+ESCRAVO,64,20000,16,29,atlantica13,464,29,2.329902,2.642973
+ESCRAVO,64,20000,16,30,atlantica13,336,21,2.589386,2.762687
+ESCRAVO,64,20000,16,31,atlantica13,368,23,2.564440,2.772167
+ESCRAVO,64,20000,16,32,atlantica14,304,19,2.538694,2.729068
+ESCRAVO,64,20000,16,33,atlantica14,288,18,2.409464,2.741258
+ESCRAVO,64,20000,16,34,atlantica14,272,17,2.506720,2.684485
+ESCRAVO,64,20000,16,35,atlantica14,288,18,2.572221,2.762376
+ESCRAVO,64,20000,16,36,atlantica14,304,19,2.434338,2.713893
+ESCRAVO,64,20000,16,37,atlantica14,256,16,2.446089,2.736427
+ESCRAVO,64,20000,16,38,atlantica14,256,16,2.377143,2.729555
+ESCRAVO,64,20000,16,39,atlantica14,288,18,2.482587,2.748067
+ESCRAVO,64,20000,16,40,atlantica14,464,29,2.591061,2.758353
+ESCRAVO,64,20000,16,41,atlantica14,304,19,2.547772,2.691690
+ESCRAVO,64,20000,16,42,atlantica14,368,23,2.437015,2.683451
+ESCRAVO,64,20000,16,43,atlantica14,304,19,2.422338,2.714056
+ESCRAVO,64,20000,16,44,atlantica14,304,19,2.490493,2.676966
+ESCRAVO,64,20000,16,45,atlantica14,304,19,2.429199,2.677153
+ESCRAVO,64,20000,16,46,atlantica14,272,17,2.559234,2.797437
+ESCRAVO,64,20000,16,47,atlantica14,304,19,2.513684,2.737077
+ESCRAVO,64,20000,16,48,atlantica14,416,26,2.510000,2.733534
+ESCRAVO,64,20000,16,49,atlantica14,288,18,2.589521,2.755025
+ESCRAVO,64,20000,16,50,atlantica14,272,17,2.638751,2.766631
+ESCRAVO,64,20000,16,51,atlantica14,304,19,2.514059,2.743249
+ESCRAVO,64,20000,16,52,atlantica14,304,19,2.510833,2.770031
+ESCRAVO,64,20000,16,53,atlantica14,288,18,2.540129,2.735295
+ESCRAVO,64,20000,16,54,atlantica14,304,19,2.541692,2.723023
+ESCRAVO,64,20000,16,55,atlantica14,288,18,2.475335,2.736074
+ESCRAVO,64,20000,16,56,atlantica14,304,19,2.508202,2.773578
+ESCRAVO,64,20000,16,57,atlantica14,304,19,2.493135,2.782197
+ESCRAVO,64,20000,16,58,atlantica14,288,18,2.487655,2.719313
+ESCRAVO,64,20000,16,59,atlantica14,352,22,2.464902,2.755733
+ESCRAVO,64,20000,16,60,atlantica14,304,19,2.517729,2.732556
+ESCRAVO,64,20000,16,61,atlantica14,272,17,2.375336,2.644372
+ESCRAVO,64,20000,16,62,atlantica14,288,18,2.582274,2.786825
+ESCRAVO,64,20000,16,63,atlantica14,288,18,2.551656,2.721510
+RUN,forte_1no,8,8,1
+cpu-bind=MASK - atlantica14, task  7  7 [205707]: mask 0x80 set
+cpu-bind=MASK - atlantica14, task  5  5 [205705]: mask 0x20 set
+cpu-bind=MASK - atlantica14, task  1  1 [205701]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task  3  3 [205703]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task  4  4 [205704]: mask 0x10 set
+cpu-bind=MASK - atlantica14, task  0  0 [205700]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  2  2 [205702]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task  6  6 [205706]: mask 0x40 set
+P=8 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=5.422664 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,8,20000,16,20,1,5.422664,56993,569540234
+MESTRE,atlantica14
+ESCRAVO,8,20000,16,1,atlantica14,2832,177,5.421063,5.422644
+ESCRAVO,8,20000,16,2,atlantica14,2896,181,5.401465,5.402895
+ESCRAVO,8,20000,16,3,atlantica14,2800,175,5.393494,5.395562
+ESCRAVO,8,20000,16,4,atlantica14,2912,182,5.420088,5.421645
+ESCRAVO,8,20000,16,5,atlantica14,2832,177,5.419359,5.421053
+ESCRAVO,8,20000,16,6,atlantica14,2896,181,5.404446,5.405786
+ESCRAVO,8,20000,16,7,atlantica14,2832,177,5.417348,5.419583
+RUN,forte,64,32,2
+cpu-bind-threads=MASK - atlantica14, task 32  0 [205737]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 34  2 [205739]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 38  6 [205743]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 39  7 [205744]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 33  1 [205738]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 37  5 [205742]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 35  3 [205740]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 36  4 [205741]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 40  8 [205745]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 41  9 [205746]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 42 10 [205747]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  8  8 [305684]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 43 11 [205748]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  9  9 [305685]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 44 12 [205749]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 45 13 [205750]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 46 14 [205751]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 47 15 [205752]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 48 16 [205753]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 49 17 [205754]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  1  1 [305677]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  2  2 [305678]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  3  3 [305679]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  4  4 [305680]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  5  5 [305681]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 50 18 [205755]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 51 19 [205756]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 10 10 [305686]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 14 14 [305690]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  6  6 [305682]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 52 20 [205757]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 17 17 [305693]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 53 21 [205758]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  7  7 [305683]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 16 16 [305692]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 19 19 [305695]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 11 11 [305687]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 15 15 [305691]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 20 20 [305696]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 21 21 [305697]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 57 25 [205762]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 56 24 [205761]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 62 30 [205767]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  0  0 [305676]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 63 31 [205768]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 23 23 [305699]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 60 28 [205765]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 12 12 [305688]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 61 29 [205766]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 13 13 [305689]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 58 26 [205763]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 54 22 [205759]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 55 23 [205760]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 59 27 [205764]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 18 18 [305694]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 24 24 [305700]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 22 22 [305698]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 25 25 [305701]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 26 26 [305702]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 27 27 [305703]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 28 28 [305704]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 31 31 [305707]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 29 29 [305705]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 30 30 [305706]: mask 0xffff set
+P=64 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=2.867025 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,64,20000,16,20,1,2.867025,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,64,20000,16,1,atlantica13,320,20,2.532335,2.812585
+ESCRAVO,64,20000,16,2,atlantica13,352,22,2.430559,2.807401
+ESCRAVO,64,20000,16,3,atlantica13,320,20,2.443064,2.888525
+ESCRAVO,64,20000,16,4,atlantica13,304,19,2.517622,2.841258
+ESCRAVO,64,20000,16,5,atlantica13,384,24,2.349866,2.808445
+ESCRAVO,64,20000,16,6,atlantica13,256,16,2.355042,2.813499
+ESCRAVO,64,20000,16,7,atlantica13,336,21,2.549279,2.824792
+ESCRAVO,64,20000,16,8,atlantica13,304,19,2.490675,2.841536
+ESCRAVO,64,20000,16,9,atlantica13,304,19,2.394116,2.839945
+ESCRAVO,64,20000,16,10,atlantica13,336,21,2.450642,2.837608
+ESCRAVO,64,20000,16,11,atlantica13,400,25,2.433729,2.827585
+ESCRAVO,64,20000,16,12,atlantica13,320,20,2.391428,2.863925
+ESCRAVO,64,20000,16,13,atlantica13,384,24,2.534067,2.852452
+ESCRAVO,64,20000,16,14,atlantica13,304,19,2.410531,2.832204
+ESCRAVO,64,20000,16,15,atlantica13,288,18,2.449810,2.871732
+ESCRAVO,64,20000,16,16,atlantica13,288,18,2.375657,2.803062
+ESCRAVO,64,20000,16,17,atlantica13,320,20,2.549293,2.832678
+ESCRAVO,64,20000,16,18,atlantica13,384,24,2.455284,2.858249
+ESCRAVO,64,20000,16,19,atlantica13,384,24,2.471060,2.869481
+ESCRAVO,64,20000,16,20,atlantica13,384,24,2.379270,2.856576
+ESCRAVO,64,20000,16,21,atlantica13,304,19,2.379838,2.808416
+ESCRAVO,64,20000,16,22,atlantica13,336,21,2.451232,2.801680
+ESCRAVO,64,20000,16,23,atlantica13,288,18,2.371215,2.847330
+ESCRAVO,64,20000,16,24,atlantica13,304,19,2.514692,2.835954
+ESCRAVO,64,20000,16,25,atlantica13,368,23,2.455550,2.843828
+ESCRAVO,64,20000,16,26,atlantica13,288,18,2.547180,2.822039
+ESCRAVO,64,20000,16,27,atlantica13,320,20,2.418501,2.849994
+ESCRAVO,64,20000,16,28,atlantica13,272,17,2.326457,2.799287
+ESCRAVO,64,20000,16,29,atlantica13,448,28,2.517218,2.843398
+ESCRAVO,64,20000,16,30,atlantica13,336,21,2.533920,2.846700
+ESCRAVO,64,20000,16,31,atlantica13,320,20,2.498992,2.857482
+ESCRAVO,64,20000,16,32,atlantica14,304,19,2.559382,2.809489
+ESCRAVO,64,20000,16,33,atlantica14,304,19,2.425961,2.808002
+ESCRAVO,64,20000,16,34,atlantica14,304,19,2.500180,2.835925
+ESCRAVO,64,20000,16,35,atlantica14,256,16,2.475966,2.869609
+ESCRAVO,64,20000,16,36,atlantica14,304,19,2.501191,2.838568
+ESCRAVO,64,20000,16,37,atlantica14,304,19,2.487927,2.837930
+ESCRAVO,64,20000,16,38,atlantica14,432,27,2.416012,2.849383
+ESCRAVO,64,20000,16,39,atlantica14,304,19,2.515679,2.840868
+ESCRAVO,64,20000,16,40,atlantica14,304,19,2.561443,2.854175
+ESCRAVO,64,20000,16,41,atlantica14,288,18,2.457317,2.831691
+ESCRAVO,64,20000,16,42,atlantica14,288,18,2.535680,2.786376
+ESCRAVO,64,20000,16,43,atlantica14,272,17,2.501057,2.841423
+ESCRAVO,64,20000,16,44,atlantica14,288,18,2.558858,2.874496
+ESCRAVO,64,20000,16,45,atlantica14,304,19,2.433285,2.884101
+ESCRAVO,64,20000,16,46,atlantica14,304,19,2.549538,2.865703
+ESCRAVO,64,20000,16,47,atlantica14,304,19,2.469400,2.860635
+ESCRAVO,64,20000,16,48,atlantica14,304,19,2.591613,2.862943
+ESCRAVO,64,20000,16,49,atlantica14,288,18,2.441529,2.791838
+ESCRAVO,64,20000,16,50,atlantica14,304,19,2.506774,2.839031
+ESCRAVO,64,20000,16,51,atlantica14,304,19,2.533052,2.870724
+ESCRAVO,64,20000,16,52,atlantica14,288,18,2.434682,2.855925
+ESCRAVO,64,20000,16,53,atlantica14,272,17,2.430675,2.843737
+ESCRAVO,64,20000,16,54,atlantica14,368,23,2.404387,2.822515
+ESCRAVO,64,20000,16,55,atlantica14,272,17,2.437498,2.847212
+ESCRAVO,64,20000,16,56,atlantica14,320,20,2.546713,2.856448
+ESCRAVO,64,20000,16,57,atlantica14,320,20,2.536432,2.864966
+ESCRAVO,64,20000,16,58,atlantica14,288,18,2.449720,2.836985
+ESCRAVO,64,20000,16,59,atlantica14,288,18,2.467566,2.892350
+ESCRAVO,64,20000,16,60,atlantica14,304,19,2.444575,2.800443
+ESCRAVO,64,20000,16,61,atlantica14,288,18,2.444692,2.827426
+ESCRAVO,64,20000,16,62,atlantica14,272,17,2.469271,2.810496
+ESCRAVO,64,20000,16,63,atlantica14,400,25,2.427304,2.827629
+RUN,forte,32,16,2
+cpu-bind=MASK - atlantica13, task  1  1 [305798]: mask 0x2 set
+cpu-bind=MASK - atlantica13, task  5  5 [305802]: mask 0x8 set
+cpu-bind=MASK - atlantica13, task 13 13 [305810]: mask 0x80 set
+cpu-bind=MASK - atlantica13, task  2  2 [305799]: mask 0x100 set
+cpu-bind=MASK - atlantica13, task  4  4 [305801]: mask 0x4 set
+cpu-bind=MASK - atlantica13, task  3  3 [305800]: mask 0x200 set
+cpu-bind=MASK - atlantica13, task  8  8 [305805]: mask 0x10 set
+cpu-bind=MASK - atlantica13, task  6  6 [305803]: mask 0x400 set
+cpu-bind=MASK - atlantica13, task  0  0 [305797]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task 10 10 [305807]: mask 0x1000 set
+cpu-bind=MASK - atlantica13, task 11 11 [305808]: mask 0x2000 set
+cpu-bind=MASK - atlantica13, task 14 14 [305811]: mask 0x4000 set
+cpu-bind=MASK - atlantica13, task 12 12 [305809]: mask 0x40 set
+cpu-bind=MASK - atlantica13, task  9  9 [305806]: mask 0x20 set
+cpu-bind=MASK - atlantica13, task 15 15 [305812]: mask 0x8000 set
+cpu-bind=MASK - atlantica13, task  7  7 [305804]: mask 0x800 set
+cpu-bind=MASK - atlantica14, task 17  1 [205848]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task 21  5 [205852]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task 16  0 [205847]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task 20  4 [205851]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task 22  6 [205853]: mask 0x400 set
+cpu-bind=MASK - atlantica14, task 30 14 [205861]: mask 0x4000 set
+cpu-bind=MASK - atlantica14, task 18  2 [205849]: mask 0x100 set
+cpu-bind=MASK - atlantica14, task 24  8 [205855]: mask 0x10 set
+cpu-bind=MASK - atlantica14, task 19  3 [205850]: mask 0x200 set
+cpu-bind=MASK - atlantica14, task 27 11 [205858]: mask 0x2000 set
+cpu-bind=MASK - atlantica14, task 28 12 [205859]: mask 0x40 set
+cpu-bind=MASK - atlantica14, task 29 13 [205860]: mask 0x80 set
+cpu-bind=MASK - atlantica14, task 31 15 [205862]: mask 0x8000 set
+cpu-bind=MASK - atlantica14, task 23  7 [205854]: mask 0x800 set
+cpu-bind=MASK - atlantica14, task 25  9 [205856]: mask 0x20 set
+cpu-bind=MASK - atlantica14, task 26 10 [205857]: mask 0x1000 set
+P=32 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=2.546101 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,32,20000,16,20,1,2.546101,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,32,20000,16,1,atlantica13,656,41,2.508220,2.510293
+ESCRAVO,32,20000,16,2,atlantica13,752,47,2.490364,2.493484
+ESCRAVO,32,20000,16,3,atlantica13,656,41,2.506439,2.508634
+ESCRAVO,32,20000,16,4,atlantica13,688,43,2.519077,2.524752
+ESCRAVO,32,20000,16,5,atlantica13,640,40,2.537636,2.539642
+ESCRAVO,32,20000,16,6,atlantica13,688,43,2.518255,2.520266
+ESCRAVO,32,20000,16,7,atlantica13,640,40,2.536433,2.538517
+ESCRAVO,32,20000,16,8,atlantica13,672,42,2.527107,2.532740
+ESCRAVO,32,20000,16,9,atlantica13,656,41,2.505146,2.507131
+ESCRAVO,32,20000,16,10,atlantica13,672,42,2.525859,2.531254
+ESCRAVO,32,20000,16,11,atlantica13,656,41,2.502803,2.505067
+ESCRAVO,32,20000,16,12,atlantica13,672,42,2.519879,2.525002
+ESCRAVO,32,20000,16,13,atlantica13,656,41,2.495894,2.497840
+ESCRAVO,32,20000,16,14,atlantica13,672,42,2.516273,2.518398
+ESCRAVO,32,20000,16,15,atlantica13,656,41,2.504788,2.507051
+ESCRAVO,32,20000,16,16,atlantica14,640,40,2.511063,2.527470
+ESCRAVO,32,20000,16,17,atlantica14,624,39,2.527115,2.545142
+ESCRAVO,32,20000,16,18,atlantica14,624,39,2.516026,2.529427
+ESCRAVO,32,20000,16,19,atlantica14,624,39,2.528530,2.546207
+ESCRAVO,32,20000,16,20,atlantica14,640,40,2.519568,2.536733
+ESCRAVO,32,20000,16,21,atlantica14,624,39,2.505303,2.521473
+ESCRAVO,32,20000,16,22,atlantica14,640,40,2.522777,2.538169
+ESCRAVO,32,20000,16,23,atlantica14,624,39,2.518653,2.533993
+ESCRAVO,32,20000,16,24,atlantica14,624,39,2.504738,2.522488
+ESCRAVO,32,20000,16,25,atlantica14,592,37,2.521968,2.536135
+ESCRAVO,32,20000,16,26,atlantica14,624,39,2.511276,2.529073
+ESCRAVO,32,20000,16,27,atlantica14,592,37,2.520222,2.535431
+ESCRAVO,32,20000,16,28,atlantica14,624,39,2.473924,2.488302
+ESCRAVO,32,20000,16,29,atlantica14,624,39,2.522725,2.537884
+ESCRAVO,32,20000,16,30,atlantica14,624,39,2.476231,2.489540
+ESCRAVO,32,20000,16,31,atlantica14,624,39,2.516785,2.535341
+RUN,forte,16,8,2
+cpu-bind=MASK - atlantica13, task  2  2 [305870]: mask 0x4 set
+cpu-bind=MASK - atlantica13, task  4  4 [305872]: mask 0x10 set
+cpu-bind=MASK - atlantica13, task  0  0 [305868]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  5  5 [305873]: mask 0x20 set
+cpu-bind=MASK - atlantica13, task  6  6 [305874]: mask 0x40 set
+cpu-bind=MASK - atlantica13, task  3  3 [305871]: mask 0x8 set
+cpu-bind=MASK - atlantica13, task  1  1 [305869]: mask 0x2 set
+cpu-bind=MASK - atlantica13, task  7  7 [305875]: mask 0x80 set
+cpu-bind=MASK - atlantica14, task 10  2 [205912]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task 15  7 [205917]: mask 0x80 set
+cpu-bind=MASK - atlantica14, task 14  6 [205916]: mask 0x40 set
+cpu-bind=MASK - atlantica14, task 12  4 [205914]: mask 0x10 set
+cpu-bind=MASK - atlantica14, task 13  5 [205915]: mask 0x20 set
+cpu-bind=MASK - atlantica14, task  9  1 [205911]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task 11  3 [205913]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task  8  0 [205910]: mask 0x1 set
+P=16 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=2.697503 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,16,20000,16,20,1,2.697503,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,16,20000,16,1,atlantica13,1312,82,2.664867,2.668510
+ESCRAVO,16,20000,16,2,atlantica13,1328,83,2.686418,2.687840
+ESCRAVO,16,20000,16,3,atlantica13,1312,82,2.660791,2.664681
+ESCRAVO,16,20000,16,4,atlantica13,1328,83,2.686103,2.689188
+ESCRAVO,16,20000,16,5,atlantica13,1312,82,2.670068,2.673699
+ESCRAVO,16,20000,16,6,atlantica13,1328,83,2.676367,2.680124
+ESCRAVO,16,20000,16,7,atlantica13,1312,82,2.673853,2.677395
+ESCRAVO,16,20000,16,8,atlantica14,1392,87,2.683946,2.697550
+ESCRAVO,16,20000,16,9,atlantica14,1328,83,2.676400,2.690426
+ESCRAVO,16,20000,16,10,atlantica14,1360,85,2.658552,2.669446
+ESCRAVO,16,20000,16,11,atlantica14,1312,82,2.652542,2.665465
+ESCRAVO,16,20000,16,12,atlantica14,1360,85,2.659822,2.673136
+ESCRAVO,16,20000,16,13,atlantica14,1344,84,2.671996,2.686645
+ESCRAVO,16,20000,16,14,atlantica14,1360,85,2.653407,2.669130
+ESCRAVO,16,20000,16,15,atlantica14,1312,82,2.652498,2.665550
+RUN,forte,8,4,2
+cpu-bind=MASK - atlantica13, task  0  0 [305916]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  3  3 [305919]: mask 0x8 set
+cpu-bind=MASK - atlantica13, task  1  1 [305917]: mask 0x2 set
+cpu-bind=MASK - atlantica13, task  2  2 [305918]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task  5  1 [205948]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task  6  2 [205949]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task  7  3 [205950]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task  4  0 [205947]: mask 0x1 set
+P=8 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=5.219894 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,8,20000,16,20,1,5.219894,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,8,20000,16,1,atlantica13,2816,176,5.189981,5.193265
+ESCRAVO,8,20000,16,2,atlantica13,2816,176,5.217907,5.223409
+ESCRAVO,8,20000,16,3,atlantica13,2816,176,5.203697,5.205970
+ESCRAVO,8,20000,16,4,atlantica14,2880,180,5.154216,5.195152
+ESCRAVO,8,20000,16,5,atlantica14,2928,183,5.175615,5.205211
+ESCRAVO,8,20000,16,6,atlantica14,2848,178,5.168651,5.204843
+ESCRAVO,8,20000,16,7,atlantica14,2896,181,5.160958,5.204253
+RUN,forte,4,2,2
+cpu-bind=MASK - atlantica13, task  1  1 [305954]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task  3  1 [205975]: mask 0x2 set
+cpu-bind=MASK - atlantica13, task  0  0 [305953]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  2  0 [205974]: mask 0x1 set
+P=4 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=11.944907 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,4,20000,16,20,1,11.944907,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,4,20000,16,1,atlantica13,6560,410,11.916448,11.920014
+ESCRAVO,4,20000,16,2,atlantica14,6688,418,11.817744,11.918590
+ESCRAVO,4,20000,16,3,atlantica14,6752,422,11.845319,11.945093
+RUN,forte,2,1,2
+cpu-bind=MASK - atlantica13, task  0  0 [305984]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  1  0 [205997]: mask 0x1 set
+P=2 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=35.352518 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,2,20000,16,20,1,35.352518,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,2,20000,16,1,atlantica14,20000,1250,35.065082,35.343759
+RUN,forte_1no,8,8,2
+cpu-bind=MASK - atlantica14, task  6  6 [206021]: mask 0x40 set
+cpu-bind=MASK - atlantica14, task  0  0 [206015]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  1  1 [206016]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task  3  3 [206018]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task  5  5 [206020]: mask 0x20 set
+cpu-bind=MASK - atlantica14, task  4  4 [206019]: mask 0x10 set
+cpu-bind=MASK - atlantica14, task  7  7 [206022]: mask 0x80 set
+cpu-bind=MASK - atlantica14, task  2  2 [206017]: mask 0x4 set
+P=8 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=5.436707 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,8,20000,16,20,1,5.436707,56993,569540234
+MESTRE,atlantica14
+ESCRAVO,8,20000,16,1,atlantica14,2832,177,5.425711,5.427608
+ESCRAVO,8,20000,16,2,atlantica14,2896,181,5.419365,5.420958
+ESCRAVO,8,20000,16,3,atlantica14,2832,177,5.412859,5.415140
+ESCRAVO,8,20000,16,4,atlantica14,2896,181,5.422265,5.423644
+ESCRAVO,8,20000,16,5,atlantica14,2832,177,5.434775,5.436612
+ESCRAVO,8,20000,16,6,atlantica14,2896,181,5.414136,5.415908
+ESCRAVO,8,20000,16,7,atlantica14,2816,176,5.405884,5.407488
+RUN,forte,2,1,3
+cpu-bind=MASK - atlantica14, task  1  0 [206052]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  0  0 [306020]: mask 0x1 set
+P=2 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=35.384272 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,2,20000,16,20,1,35.384272,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,2,20000,16,1,atlantica14,20000,1250,35.100631,35.375551
+RUN,forte,4,2,3
+cpu-bind=MASK - atlantica13, task  0  0 [306049]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  2  0 [206073]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  1  1 [306050]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task  3  1 [206074]: mask 0x2 set
+P=4 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=11.950010 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,4,20000,16,20,1,11.950010,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,4,20000,16,1,atlantica13,6544,409,11.921074,11.924427
+ESCRAVO,4,20000,16,2,atlantica14,6704,419,11.880554,11.950263
+ESCRAVO,4,20000,16,3,atlantica14,6752,422,11.835057,11.926552
+RUN,forte,8,4,3
+cpu-bind=MASK - atlantica13, task  0  0 [306079]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  5  1 [206094]: mask 0x2 set
+cpu-bind=MASK - atlantica13, task  2  2 [306081]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task  7  3 [206096]: mask 0x8 set
+cpu-bind=MASK - atlantica13, task  1  1 [306080]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task  4  0 [206093]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  3  3 [306082]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task  6  2 [206095]: mask 0x4 set
+P=8 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=5.239078 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,8,20000,16,20,1,5.239078,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,8,20000,16,1,atlantica13,2816,176,5.198497,5.200757
+ESCRAVO,8,20000,16,2,atlantica13,2832,177,5.222009,5.223998
+ESCRAVO,8,20000,16,3,atlantica13,2832,177,5.236441,5.238423
+ESCRAVO,8,20000,16,4,atlantica14,2896,181,5.188632,5.225500
+ESCRAVO,8,20000,16,5,atlantica14,2848,178,5.169548,5.207330
+ESCRAVO,8,20000,16,6,atlantica14,2896,181,5.202470,5.239096
+ESCRAVO,8,20000,16,7,atlantica14,2880,180,5.189704,5.215875
+RUN,forte,16,8,3
+cpu-bind=MASK - atlantica13, task  3  3 [306117]: mask 0x8 set
+cpu-bind=MASK - atlantica13, task  5  5 [306119]: mask 0x20 set
+cpu-bind=MASK - atlantica13, task  1  1 [306115]: mask 0x2 set
+cpu-bind=MASK - atlantica13, task  7  7 [306121]: mask 0x80 set
+cpu-bind=MASK - atlantica13, task  0  0 [306114]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  2  2 [306116]: mask 0x4 set
+cpu-bind=MASK - atlantica13, task  4  4 [306118]: mask 0x10 set
+cpu-bind=MASK - atlantica13, task  6  6 [306120]: mask 0x40 set
+cpu-bind=MASK - atlantica14, task  8  0 [206120]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task 14  6 [206126]: mask 0x40 set
+cpu-bind=MASK - atlantica14, task  9  1 [206121]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task 10  2 [206122]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task 11  3 [206123]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task 12  4 [206124]: mask 0x10 set
+cpu-bind=MASK - atlantica14, task 13  5 [206125]: mask 0x20 set
+cpu-bind=MASK - atlantica14, task 15  7 [206127]: mask 0x80 set
+P=16 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=2.671377 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,16,20000,16,20,1,2.671377,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,16,20000,16,1,atlantica13,1296,81,2.628330,2.629830
+ESCRAVO,16,20000,16,2,atlantica13,1328,83,2.641454,2.642714
+ESCRAVO,16,20000,16,3,atlantica13,1296,81,2.631537,2.633519
+ESCRAVO,16,20000,16,4,atlantica13,1328,83,2.642621,2.643890
+ESCRAVO,16,20000,16,5,atlantica13,1296,81,2.639514,2.640888
+ESCRAVO,16,20000,16,6,atlantica13,1344,84,2.664856,2.666168
+ESCRAVO,16,20000,16,7,atlantica13,1296,81,2.640426,2.642081
+ESCRAVO,16,20000,16,8,atlantica14,1360,85,2.656385,2.670620
+ESCRAVO,16,20000,16,9,atlantica14,1344,84,2.617380,2.629012
+ESCRAVO,16,20000,16,10,atlantica14,1344,84,2.615520,2.627984
+ESCRAVO,16,20000,16,11,atlantica14,1360,85,2.646015,2.658128
+ESCRAVO,16,20000,16,12,atlantica14,1360,85,2.646687,2.659552
+ESCRAVO,16,20000,16,13,atlantica14,1344,84,2.621154,2.631393
+ESCRAVO,16,20000,16,14,atlantica14,1360,85,2.647440,2.660000
+ESCRAVO,16,20000,16,15,atlantica14,1344,84,2.617709,2.629806
+RUN,forte,32,16,3
+cpu-bind=MASK - atlantica14, task 21  5 [206164]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task 17  1 [206160]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task 19  3 [206162]: mask 0x200 set
+cpu-bind=MASK - atlantica14, task 20  4 [206163]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task 23  7 [206166]: mask 0x800 set
+cpu-bind=MASK - atlantica14, task 18  2 [206161]: mask 0x100 set
+cpu-bind=MASK - atlantica14, task 22  6 [206165]: mask 0x400 set
+cpu-bind=MASK - atlantica14, task 24  8 [206167]: mask 0x10 set
+cpu-bind=MASK - atlantica14, task 27 11 [206170]: mask 0x2000 set
+cpu-bind=MASK - atlantica14, task 16  0 [206159]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task 25  9 [206168]: mask 0x20 set
+cpu-bind=MASK - atlantica14, task 29 13 [206172]: mask 0x80 set
+cpu-bind=MASK - atlantica14, task 30 14 [206173]: mask 0x4000 set
+cpu-bind=MASK - atlantica14, task 28 12 [206171]: mask 0x40 set
+cpu-bind=MASK - atlantica14, task 31 15 [206174]: mask 0x8000 set
+cpu-bind=MASK - atlantica13, task  1  1 [306163]: mask 0x2 set
+cpu-bind=MASK - atlantica13, task  3  3 [306165]: mask 0x200 set
+cpu-bind=MASK - atlantica13, task  5  5 [306167]: mask 0x8 set
+cpu-bind=MASK - atlantica13, task  7  7 [306169]: mask 0x800 set
+cpu-bind=MASK - atlantica13, task  2  2 [306164]: mask 0x100 set
+cpu-bind=MASK - atlantica14, task 26 10 [206169]: mask 0x1000 set
+cpu-bind=MASK - atlantica13, task 15 15 [306177]: mask 0x8000 set
+cpu-bind=MASK - atlantica13, task  0  0 [306162]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  9  9 [306171]: mask 0x20 set
+cpu-bind=MASK - atlantica13, task 12 12 [306174]: mask 0x40 set
+cpu-bind=MASK - atlantica13, task  8  8 [306170]: mask 0x10 set
+cpu-bind=MASK - atlantica13, task  4  4 [306166]: mask 0x4 set
+cpu-bind=MASK - atlantica13, task  6  6 [306168]: mask 0x400 set
+cpu-bind=MASK - atlantica13, task 11 11 [306173]: mask 0x2000 set
+cpu-bind=MASK - atlantica13, task 10 10 [306172]: mask 0x1000 set
+cpu-bind=MASK - atlantica13, task 13 13 [306175]: mask 0x80 set
+cpu-bind=MASK - atlantica13, task 14 14 [306176]: mask 0x4000 set
+P=32 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=2.540599 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,32,20000,16,20,1,2.540599,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,32,20000,16,1,atlantica13,656,41,2.510354,2.514177
+ESCRAVO,32,20000,16,2,atlantica13,752,47,2.486103,2.491751
+ESCRAVO,32,20000,16,3,atlantica13,656,41,2.511376,2.515154
+ESCRAVO,32,20000,16,4,atlantica13,672,42,2.469311,2.474366
+ESCRAVO,32,20000,16,5,atlantica13,656,41,2.503499,2.508807
+ESCRAVO,32,20000,16,6,atlantica13,672,42,2.470941,2.475802
+ESCRAVO,32,20000,16,7,atlantica13,656,41,2.502065,2.507439
+ESCRAVO,32,20000,16,8,atlantica13,656,41,2.482989,2.487824
+ESCRAVO,32,20000,16,9,atlantica13,656,41,2.502746,2.507251
+ESCRAVO,32,20000,16,10,atlantica13,656,41,2.481509,2.486555
+ESCRAVO,32,20000,16,11,atlantica13,656,41,2.501404,2.506001
+ESCRAVO,32,20000,16,12,atlantica13,672,42,2.518749,2.523961
+ESCRAVO,32,20000,16,13,atlantica13,640,40,2.509044,2.513266
+ESCRAVO,32,20000,16,14,atlantica13,672,42,2.520397,2.525241
+ESCRAVO,32,20000,16,15,atlantica13,656,41,2.496674,2.500071
+ESCRAVO,32,20000,16,16,atlantica14,640,40,2.528790,2.543254
+ESCRAVO,32,20000,16,17,atlantica14,624,39,2.462463,2.474204
+ESCRAVO,32,20000,16,18,atlantica14,624,39,2.481728,2.495433
+ESCRAVO,32,20000,16,19,atlantica14,624,39,2.462486,2.475526
+ESCRAVO,32,20000,16,20,atlantica14,640,40,2.501908,2.516316
+ESCRAVO,32,20000,16,21,atlantica14,624,39,2.471232,2.487991
+ESCRAVO,32,20000,16,22,atlantica14,640,40,2.502814,2.517518
+ESCRAVO,32,20000,16,23,atlantica14,624,39,2.469865,2.484714
+ESCRAVO,32,20000,16,24,atlantica14,624,39,2.467069,2.481799
+ESCRAVO,32,20000,16,25,atlantica14,624,39,2.489444,2.503869
+ESCRAVO,32,20000,16,26,atlantica14,624,39,2.471011,2.487399
+ESCRAVO,32,20000,16,27,atlantica14,608,38,2.463138,2.477629
+ESCRAVO,32,20000,16,28,atlantica14,624,39,2.476628,2.490198
+ESCRAVO,32,20000,16,29,atlantica14,624,39,2.458477,2.473640
+ESCRAVO,32,20000,16,30,atlantica14,624,39,2.484619,2.500262
+ESCRAVO,32,20000,16,31,atlantica14,624,39,2.462313,2.474242
+RUN,forte,64,32,3
+cpu-bind-threads=MASK - atlantica14, task 36  4 [206225]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 32  0 [206221]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 33  1 [206222]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 34  2 [206223]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 35  3 [206224]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 37  5 [206226]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 38  6 [206227]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 55 23 [206244]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 47 15 [206236]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 43 11 [206232]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 46 14 [206235]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 39  7 [206228]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 40  8 [206229]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 41  9 [206230]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 42 10 [206231]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 44 12 [206233]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 45 13 [206234]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 52 20 [206241]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 48 16 [206237]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 57 25 [206246]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 49 17 [206238]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 50 18 [206239]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 58 26 [206247]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 56 24 [206245]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 60 28 [206249]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 51 19 [206240]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 62 30 [206251]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 61 29 [206250]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 59 27 [206248]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 63 31 [206252]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 53 21 [206242]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  2  2 [306236]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  0  0 [306234]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  3  3 [306237]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  6  6 [306240]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  8  8 [306242]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 10 10 [306244]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  4  4 [306238]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  9  9 [306243]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  5  5 [306239]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  1  1 [306235]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 54 22 [206243]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  7  7 [306241]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 11 11 [306245]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 14 14 [306248]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 15 15 [306249]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 17 17 [306251]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 18 18 [306252]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 13 13 [306247]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 16 16 [306250]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 12 12 [306246]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 19 19 [306253]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 20 20 [306254]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 22 22 [306256]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 23 23 [306257]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 24 24 [306258]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 29 29 [306263]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 25 25 [306259]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 27 27 [306261]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 30 30 [306264]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 21 21 [306255]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 28 28 [306262]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 31 31 [306265]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 26 26 [306260]: mask 0xffff set
+P=64 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=2.749126 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,64,20000,16,20,1,2.749126,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,64,20000,16,1,atlantica13,320,20,2.460265,2.674135
+ESCRAVO,64,20000,16,2,atlantica13,336,21,2.496259,2.745083
+ESCRAVO,64,20000,16,3,atlantica13,464,29,2.503126,2.672939
+ESCRAVO,64,20000,16,4,atlantica13,304,19,2.433541,2.685659
+ESCRAVO,64,20000,16,5,atlantica13,496,31,2.453513,2.712904
+ESCRAVO,64,20000,16,6,atlantica13,368,23,2.398945,2.673824
+ESCRAVO,64,20000,16,7,atlantica13,320,20,2.596705,2.754845
+ESCRAVO,64,20000,16,8,atlantica13,336,21,2.507998,2.699351
+ESCRAVO,64,20000,16,9,atlantica13,336,21,2.540499,2.673509
+ESCRAVO,64,20000,16,10,atlantica13,320,20,2.476837,2.651331
+ESCRAVO,64,20000,16,11,atlantica13,320,20,2.418909,2.758359
+ESCRAVO,64,20000,16,12,atlantica13,288,18,2.283667,2.677823
+ESCRAVO,64,20000,16,13,atlantica13,288,18,2.389129,2.708575
+ESCRAVO,64,20000,16,14,atlantica13,304,19,2.319951,2.671387
+ESCRAVO,64,20000,16,15,atlantica13,288,18,2.449144,2.719482
+ESCRAVO,64,20000,16,16,atlantica13,304,19,2.438201,2.652220
+ESCRAVO,64,20000,16,17,atlantica13,320,20,2.475433,2.689331
+ESCRAVO,64,20000,16,18,atlantica13,368,23,2.547066,2.750298
+ESCRAVO,64,20000,16,19,atlantica13,336,21,2.552084,2.656994
+ESCRAVO,64,20000,16,20,atlantica13,352,22,2.521789,2.750277
+ESCRAVO,64,20000,16,21,atlantica13,304,19,2.439641,2.718483
+ESCRAVO,64,20000,16,22,atlantica13,304,19,2.476883,2.672815
+ESCRAVO,64,20000,16,23,atlantica13,320,20,2.526185,2.721327
+ESCRAVO,64,20000,16,24,atlantica13,288,18,2.415526,2.744389
+ESCRAVO,64,20000,16,25,atlantica13,336,21,2.521471,2.739492
+ESCRAVO,64,20000,16,26,atlantica13,320,20,2.430581,2.642424
+ESCRAVO,64,20000,16,27,atlantica13,304,19,2.394483,2.675110
+ESCRAVO,64,20000,16,28,atlantica13,336,21,2.382657,2.690154
+ESCRAVO,64,20000,16,29,atlantica13,320,20,2.564455,2.733196
+ESCRAVO,64,20000,16,30,atlantica13,352,22,2.529956,2.704913
+ESCRAVO,64,20000,16,31,atlantica13,352,22,2.588372,2.738815
+ESCRAVO,64,20000,16,32,atlantica14,288,18,2.507616,2.718438
+ESCRAVO,64,20000,16,33,atlantica14,304,19,2.572876,2.703088
+ESCRAVO,64,20000,16,34,atlantica14,320,20,2.634980,2.758305
+ESCRAVO,64,20000,16,35,atlantica14,320,20,2.584911,2.723551
+ESCRAVO,64,20000,16,36,atlantica14,352,22,2.511763,2.710480
+ESCRAVO,64,20000,16,37,atlantica14,288,18,2.493133,2.665435
+ESCRAVO,64,20000,16,38,atlantica14,304,19,2.499294,2.698718
+ESCRAVO,64,20000,16,39,atlantica14,272,17,2.474214,2.663793
+ESCRAVO,64,20000,16,40,atlantica14,304,19,2.541615,2.683225
+ESCRAVO,64,20000,16,41,atlantica14,320,20,2.570591,2.711479
+ESCRAVO,64,20000,16,42,atlantica14,304,19,2.404188,2.664078
+ESCRAVO,64,20000,16,43,atlantica14,304,19,2.546490,2.683465
+ESCRAVO,64,20000,16,44,atlantica14,288,18,2.403403,2.664959
+ESCRAVO,64,20000,16,45,atlantica14,368,23,2.492718,2.667272
+ESCRAVO,64,20000,16,46,atlantica14,320,20,2.625123,2.726116
+ESCRAVO,64,20000,16,47,atlantica14,304,19,2.545951,2.748781
+ESCRAVO,64,20000,16,48,atlantica14,272,17,2.506759,2.706013
+ESCRAVO,64,20000,16,49,atlantica14,320,20,2.550475,2.728242
+ESCRAVO,64,20000,16,50,atlantica14,288,18,2.495382,2.683406
+ESCRAVO,64,20000,16,51,atlantica14,320,20,2.574701,2.750128
+ESCRAVO,64,20000,16,52,atlantica14,304,19,2.503718,2.664879
+ESCRAVO,64,20000,16,53,atlantica14,288,18,2.475795,2.726599
+ESCRAVO,64,20000,16,54,atlantica14,272,17,2.385371,2.735931
+ESCRAVO,64,20000,16,55,atlantica14,256,16,2.344616,2.669886
+ESCRAVO,64,20000,16,56,atlantica14,304,19,2.438070,2.694723
+ESCRAVO,64,20000,16,57,atlantica14,336,21,2.383050,2.733846
+ESCRAVO,64,20000,16,58,atlantica14,272,17,2.410957,2.670933
+ESCRAVO,64,20000,16,59,atlantica14,320,20,2.469893,2.737957
+ESCRAVO,64,20000,16,60,atlantica14,288,18,2.311261,2.707181
+ESCRAVO,64,20000,16,61,atlantica14,304,19,2.467066,2.743736
+ESCRAVO,64,20000,16,62,atlantica14,304,19,2.518009,2.740194
+ESCRAVO,64,20000,16,63,atlantica14,288,18,2.454713,2.678797
+RUN,forte_1no,8,8,3
+cpu-bind=MASK - atlantica14, task  2  2 [206332]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task  0  0 [206330]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  3  3 [206333]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task  4  4 [206334]: mask 0x10 set
+cpu-bind=MASK - atlantica14, task  5  5 [206335]: mask 0x20 set
+cpu-bind=MASK - atlantica14, task  6  6 [206336]: mask 0x40 set
+cpu-bind=MASK - atlantica14, task  7  7 [206337]: mask 0x80 set
+cpu-bind=MASK - atlantica14, task  1  1 [206331]: mask 0x2 set
+P=8 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=5.439729 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,8,20000,16,20,1,5.439729,56993,569540234
+MESTRE,atlantica14
+ESCRAVO,8,20000,16,1,atlantica14,2816,176,5.432319,5.434398
+ESCRAVO,8,20000,16,2,atlantica14,2912,182,5.438268,5.439727
+ESCRAVO,8,20000,16,3,atlantica14,2816,176,5.417547,5.420011
+ESCRAVO,8,20000,16,4,atlantica14,2912,182,5.426924,5.428685
+ESCRAVO,8,20000,16,5,atlantica14,2816,176,5.436056,5.437710
+ESCRAVO,8,20000,16,6,atlantica14,2912,182,5.435096,5.436684
+ESCRAVO,8,20000,16,7,atlantica14,2816,176,5.428516,5.430432
+RUN,forte,64,32,4
+cpu-bind-threads=MASK - atlantica13, task  0  0 [306364]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  1  1 [306365]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  2  2 [306366]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  3  3 [306367]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  4  4 [306368]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  5  5 [306369]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  6  6 [306370]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  7  7 [306371]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  8  8 [306372]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  9  9 [306373]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 12 12 [306376]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 10 10 [306374]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 11 11 [306375]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 13 13 [306377]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 16 16 [306380]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 17 17 [306381]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 18 18 [306382]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 14 14 [306378]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 15 15 [306379]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 19 19 [306383]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 20 20 [306384]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 21 21 [306385]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 23 23 [306387]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 22 22 [306386]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 24 24 [306388]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 31 31 [306395]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 25 25 [306389]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 32  0 [206368]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 33  1 [206369]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 34  2 [206370]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 27 27 [306391]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 37  5 [206373]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 38  6 [206374]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 28 28 [306392]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 36  4 [206372]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 29 29 [306393]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 39  7 [206375]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 40  8 [206376]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 30 30 [306394]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 26 26 [306390]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 35  3 [206371]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 43 11 [206379]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 42 10 [206378]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 41  9 [206377]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 47 15 [206383]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 46 14 [206382]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 53 21 [206389]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 45 13 [206381]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 54 22 [206390]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 44 12 [206380]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 50 18 [206386]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 48 16 [206384]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 49 17 [206385]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 55 23 [206391]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 52 20 [206388]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 56 24 [206392]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 57 25 [206393]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 51 19 [206387]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 58 26 [206394]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 59 27 [206395]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 60 28 [206396]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 62 30 [206398]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 61 29 [206397]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 63 31 [206399]: mask 0xffff set
+P=64 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=2.787294 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,64,20000,16,20,1,2.787294,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,64,20000,16,1,atlantica13,352,22,2.680088,2.773328
+ESCRAVO,64,20000,16,2,atlantica13,304,19,2.281499,2.713392
+ESCRAVO,64,20000,16,3,atlantica13,336,21,2.541097,2.751223
+ESCRAVO,64,20000,16,4,atlantica13,320,20,2.446142,2.717117
+ESCRAVO,64,20000,16,5,atlantica13,320,20,2.419514,2.721617
+ESCRAVO,64,20000,16,6,atlantica13,336,21,2.572702,2.725371
+ESCRAVO,64,20000,16,7,atlantica13,336,21,2.576400,2.733981
+ESCRAVO,64,20000,16,8,atlantica13,448,28,2.426203,2.737205
+ESCRAVO,64,20000,16,9,atlantica13,352,22,2.626822,2.763759
+ESCRAVO,64,20000,16,10,atlantica13,320,20,2.461116,2.678061
+ESCRAVO,64,20000,16,11,atlantica13,304,19,2.437557,2.751022
+ESCRAVO,64,20000,16,12,atlantica13,336,21,2.539859,2.696080
+ESCRAVO,64,20000,16,13,atlantica13,304,19,2.252541,2.733698
+ESCRAVO,64,20000,16,14,atlantica13,336,21,2.564185,2.752924
+ESCRAVO,64,20000,16,15,atlantica13,304,19,2.514085,2.771260
+ESCRAVO,64,20000,16,16,atlantica13,336,21,2.542471,2.691648
+ESCRAVO,64,20000,16,17,atlantica13,336,21,2.582303,2.751113
+ESCRAVO,64,20000,16,18,atlantica13,304,19,2.438893,2.774262
+ESCRAVO,64,20000,16,19,atlantica13,352,22,2.622267,2.759664
+ESCRAVO,64,20000,16,20,atlantica13,320,20,2.516420,2.780679
+ESCRAVO,64,20000,16,21,atlantica13,320,20,2.330228,2.728277
+ESCRAVO,64,20000,16,22,atlantica13,304,19,2.418644,2.744131
+ESCRAVO,64,20000,16,23,atlantica13,416,26,2.271866,2.711612
+ESCRAVO,64,20000,16,24,atlantica13,320,20,2.611151,2.761754
+ESCRAVO,64,20000,16,25,atlantica13,336,21,2.538049,2.695732
+ESCRAVO,64,20000,16,26,atlantica13,304,19,2.535818,2.789249
+ESCRAVO,64,20000,16,27,atlantica13,304,19,2.501658,2.771926
+ESCRAVO,64,20000,16,28,atlantica13,336,21,2.604160,2.718142
+ESCRAVO,64,20000,16,29,atlantica13,320,20,2.306861,2.718188
+ESCRAVO,64,20000,16,30,atlantica13,416,26,2.561726,2.721655
+ESCRAVO,64,20000,16,31,atlantica13,320,20,2.579568,2.786563
+ESCRAVO,64,20000,16,32,atlantica14,272,17,2.503237,2.773212
+ESCRAVO,64,20000,16,33,atlantica14,256,16,2.394355,2.747729
+ESCRAVO,64,20000,16,34,atlantica14,272,17,2.441663,2.733823
+ESCRAVO,64,20000,16,35,atlantica14,352,22,2.428228,2.726318
+ESCRAVO,64,20000,16,36,atlantica14,368,23,2.453245,2.720434
+ESCRAVO,64,20000,16,37,atlantica14,304,19,2.311384,2.658477
+ESCRAVO,64,20000,16,38,atlantica14,352,22,2.378310,2.710287
+ESCRAVO,64,20000,16,39,atlantica14,256,16,2.499522,2.741173
+ESCRAVO,64,20000,16,40,atlantica14,304,19,2.616275,2.783391
+ESCRAVO,64,20000,16,41,atlantica14,384,24,2.439010,2.726749
+ESCRAVO,64,20000,16,42,atlantica14,272,17,2.414965,2.726623
+ESCRAVO,64,20000,16,43,atlantica14,352,22,2.470028,2.732476
+ESCRAVO,64,20000,16,44,atlantica14,432,27,2.472570,2.750237
+ESCRAVO,64,20000,16,45,atlantica14,240,15,2.301143,2.705287
+ESCRAVO,64,20000,16,46,atlantica14,256,16,2.488153,2.713988
+ESCRAVO,64,20000,16,47,atlantica14,304,19,2.476607,2.788441
+ESCRAVO,64,20000,16,48,atlantica14,336,21,2.493295,2.722365
+ESCRAVO,64,20000,16,49,atlantica14,240,15,2.397289,2.739410
+ESCRAVO,64,20000,16,50,atlantica14,256,16,2.406625,2.723761
+ESCRAVO,64,20000,16,51,atlantica14,256,16,2.350690,2.717255
+ESCRAVO,64,20000,16,52,atlantica14,272,17,2.456377,2.696844
+ESCRAVO,64,20000,16,53,atlantica14,256,16,2.389497,2.764673
+ESCRAVO,64,20000,16,54,atlantica14,368,23,2.426329,2.717352
+ESCRAVO,64,20000,16,55,atlantica14,288,18,2.453131,2.762844
+ESCRAVO,64,20000,16,56,atlantica14,272,17,2.369994,2.704330
+ESCRAVO,64,20000,16,57,atlantica14,256,16,2.386363,2.698803
+ESCRAVO,64,20000,16,58,atlantica14,320,20,2.352646,2.710121
+ESCRAVO,64,20000,16,59,atlantica14,336,21,2.417000,2.726187
+ESCRAVO,64,20000,16,60,atlantica14,272,17,2.465783,2.781349
+ESCRAVO,64,20000,16,61,atlantica14,336,21,2.440367,2.714906
+ESCRAVO,64,20000,16,62,atlantica14,320,20,2.480171,2.753881
+ESCRAVO,64,20000,16,63,atlantica14,288,18,2.435463,2.704218
+RUN,forte,32,16,4
+cpu-bind=MASK - atlantica14, task 30 14 [206492]: mask 0x4000 set
+cpu-bind=MASK - atlantica14, task 19  3 [206481]: mask 0x200 set
+cpu-bind=MASK - atlantica14, task 24  8 [206486]: mask 0x10 set
+cpu-bind=MASK - atlantica14, task 16  0 [206478]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task 20  4 [206482]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task 21  5 [206483]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task 23  7 [206485]: mask 0x800 set
+cpu-bind=MASK - atlantica14, task 27 11 [206489]: mask 0x2000 set
+cpu-bind=MASK - atlantica14, task 26 10 [206488]: mask 0x1000 set
+cpu-bind=MASK - atlantica14, task 17  1 [206479]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task 31 15 [206493]: mask 0x8000 set
+cpu-bind=MASK - atlantica14, task 25  9 [206487]: mask 0x20 set
+cpu-bind=MASK - atlantica14, task 28 12 [206490]: mask 0x40 set
+cpu-bind=MASK - atlantica14, task 18  2 [206480]: mask 0x100 set
+cpu-bind=MASK - atlantica14, task 29 13 [206491]: mask 0x80 set
+cpu-bind=MASK - atlantica13, task  4  4 [306488]: mask 0x4 set
+cpu-bind=MASK - atlantica13, task 14 14 [306498]: mask 0x4000 set
+cpu-bind=MASK - atlantica13, task  1  1 [306485]: mask 0x2 set
+cpu-bind=MASK - atlantica13, task  7  7 [306491]: mask 0x800 set
+cpu-bind=MASK - atlantica13, task  5  5 [306489]: mask 0x8 set
+cpu-bind=MASK - atlantica13, task  2  2 [306486]: mask 0x100 set
+cpu-bind=MASK - atlantica13, task  3  3 [306487]: mask 0x200 set
+cpu-bind=MASK - atlantica13, task  6  6 [306490]: mask 0x400 set
+cpu-bind=MASK - atlantica13, task  9  9 [306493]: mask 0x20 set
+cpu-bind=MASK - atlantica13, task 13 13 [306497]: mask 0x80 set
+cpu-bind=MASK - atlantica13, task  0  0 [306484]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task 10 10 [306494]: mask 0x1000 set
+cpu-bind=MASK - atlantica13, task 12 12 [306496]: mask 0x40 set
+cpu-bind=MASK - atlantica14, task 22  6 [206484]: mask 0x400 set
+cpu-bind=MASK - atlantica13, task 15 15 [306499]: mask 0x8000 set
+cpu-bind=MASK - atlantica13, task 11 11 [306495]: mask 0x2000 set
+cpu-bind=MASK - atlantica13, task  8  8 [306492]: mask 0x10 set
+P=32 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=2.548228 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,32,20000,16,20,1,2.548228,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,32,20000,16,1,atlantica13,656,41,2.503257,2.508909
+ESCRAVO,32,20000,16,2,atlantica13,752,47,2.495641,2.497346
+ESCRAVO,32,20000,16,3,atlantica13,656,41,2.502008,2.507958
+ESCRAVO,32,20000,16,4,atlantica13,688,43,2.528626,2.530429
+ESCRAVO,32,20000,16,5,atlantica13,656,41,2.498710,2.500636
+ESCRAVO,32,20000,16,6,atlantica13,688,43,2.527234,2.529145
+ESCRAVO,32,20000,16,7,atlantica13,656,41,2.495730,2.501676
+ESCRAVO,32,20000,16,8,atlantica13,672,42,2.533248,2.534968
+ESCRAVO,32,20000,16,9,atlantica13,656,41,2.508898,2.515021
+ESCRAVO,32,20000,16,10,atlantica13,672,42,2.537440,2.539037
+ESCRAVO,32,20000,16,11,atlantica13,656,41,2.510966,2.516711
+ESCRAVO,32,20000,16,12,atlantica13,656,41,2.507615,2.509267
+ESCRAVO,32,20000,16,13,atlantica13,640,40,2.491027,2.496876
+ESCRAVO,32,20000,16,14,atlantica13,656,41,2.506080,2.507812
+ESCRAVO,32,20000,16,15,atlantica13,656,41,2.524787,2.530781
+ESCRAVO,32,20000,16,16,atlantica14,624,39,2.504624,2.517342
+ESCRAVO,32,20000,16,17,atlantica14,640,40,2.532721,2.546786
+ESCRAVO,32,20000,16,18,atlantica14,624,39,2.512483,2.527802
+ESCRAVO,32,20000,16,19,atlantica14,640,40,2.533042,2.547886
+ESCRAVO,32,20000,16,20,atlantica14,624,39,2.499590,2.515700
+ESCRAVO,32,20000,16,21,atlantica14,640,40,2.529024,2.542674
+ESCRAVO,32,20000,16,22,atlantica14,624,39,2.503948,2.520570
+ESCRAVO,32,20000,16,23,atlantica14,640,40,2.531565,2.544699
+ESCRAVO,32,20000,16,24,atlantica14,576,36,2.492644,2.506782
+ESCRAVO,32,20000,16,25,atlantica14,640,40,2.529583,2.543690
+ESCRAVO,32,20000,16,26,atlantica14,576,36,2.489625,2.505287
+ESCRAVO,32,20000,16,27,atlantica14,640,40,2.530068,2.544950
+ESCRAVO,32,20000,16,28,atlantica14,608,38,2.507164,2.521902
+ESCRAVO,32,20000,16,29,atlantica14,640,40,2.524892,2.541268
+ESCRAVO,32,20000,16,30,atlantica14,608,38,2.504426,2.520538
+ESCRAVO,32,20000,16,31,atlantica14,640,40,2.527661,2.542640
+RUN,forte,16,8,4
+cpu-bind=MASK - atlantica13, task  5  5 [306561]: mask 0x20 set
+cpu-bind=MASK - atlantica13, task  7  7 [306563]: mask 0x80 set
+cpu-bind=MASK - atlantica13, task  1  1 [306557]: mask 0x2 set
+cpu-bind=MASK - atlantica13, task  3  3 [306559]: mask 0x8 set
+cpu-bind=MASK - atlantica13, task  0  0 [306556]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  2  2 [306558]: mask 0x4 set
+cpu-bind=MASK - atlantica13, task  4  4 [306560]: mask 0x10 set
+cpu-bind=MASK - atlantica13, task  6  6 [306562]: mask 0x40 set
+cpu-bind=MASK - atlantica14, task  9  1 [206543]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task 12  4 [206546]: mask 0x10 set
+cpu-bind=MASK - atlantica14, task 13  5 [206547]: mask 0x20 set
+cpu-bind=MASK - atlantica14, task 14  6 [206548]: mask 0x40 set
+cpu-bind=MASK - atlantica14, task 10  2 [206544]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task 15  7 [206549]: mask 0x80 set
+cpu-bind=MASK - atlantica14, task 11  3 [206545]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task  8  0 [206542]: mask 0x1 set
+P=16 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=2.681185 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,16,20000,16,20,1,2.681185,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,16,20000,16,1,atlantica13,1312,82,2.656352,2.658365
+ESCRAVO,16,20000,16,2,atlantica13,1344,84,2.678121,2.680591
+ESCRAVO,16,20000,16,3,atlantica13,1312,82,2.665340,2.667051
+ESCRAVO,16,20000,16,4,atlantica13,1344,84,2.676259,2.677689
+ESCRAVO,16,20000,16,5,atlantica13,1312,82,2.674806,2.676544
+ESCRAVO,16,20000,16,6,atlantica13,1344,84,2.672744,2.674171
+ESCRAVO,16,20000,16,7,atlantica13,1312,82,2.662267,2.663952
+ESCRAVO,16,20000,16,8,atlantica14,1360,85,2.653206,2.666996
+ESCRAVO,16,20000,16,9,atlantica14,1344,84,2.660217,2.674377
+ESCRAVO,16,20000,16,10,atlantica14,1344,84,2.639097,2.651987
+ESCRAVO,16,20000,16,11,atlantica14,1344,84,2.663148,2.674815
+ESCRAVO,16,20000,16,12,atlantica14,1344,84,2.654112,2.668630
+ESCRAVO,16,20000,16,13,atlantica14,1328,83,2.641897,2.655792
+ESCRAVO,16,20000,16,14,atlantica14,1344,84,2.641533,2.654988
+ESCRAVO,16,20000,16,15,atlantica14,1312,82,2.637289,2.650802
+RUN,forte,8,4,4
+cpu-bind=MASK - atlantica13, task  1  1 [306604]: mask 0x2 set
+cpu-bind=MASK - atlantica13, task  2  2 [306605]: mask 0x4 set
+cpu-bind=MASK - atlantica13, task  3  3 [306606]: mask 0x8 set
+cpu-bind=MASK - atlantica13, task  0  0 [306603]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  7  3 [206584]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task  5  1 [206582]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task  6  2 [206583]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task  4  0 [206581]: mask 0x1 set
+P=8 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=5.231187 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,8,20000,16,20,1,5.231187,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,8,20000,16,1,atlantica13,2800,175,5.213307,5.215387
+ESCRAVO,8,20000,16,2,atlantica13,2816,176,5.202215,5.209283
+ESCRAVO,8,20000,16,3,atlantica13,2816,176,5.219027,5.221066
+ESCRAVO,8,20000,16,4,atlantica14,2928,183,5.194375,5.229124
+ESCRAVO,8,20000,16,5,atlantica14,2896,181,5.189169,5.226139
+ESCRAVO,8,20000,16,6,atlantica14,2880,180,5.179005,5.224024
+ESCRAVO,8,20000,16,7,atlantica14,2864,179,5.187176,5.220654
+RUN,forte,4,2,4
+cpu-bind=MASK - atlantica13, task  1  1 [306639]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task  2  0 [206607]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  0  0 [306638]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  3  1 [206608]: mask 0x2 set
+P=4 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=11.913847 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,4,20000,16,20,1,11.913847,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,4,20000,16,1,atlantica13,6544,409,11.904084,11.907360
+ESCRAVO,4,20000,16,2,atlantica14,6720,420,11.840203,11.892492
+ESCRAVO,4,20000,16,3,atlantica14,6736,421,11.820930,11.914110
+RUN,forte,2,1,4
+cpu-bind=MASK - atlantica13, task  0  0 [306667]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  1  0 [206628]: mask 0x1 set
+P=2 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=35.437792 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,2,20000,16,20,1,35.437792,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,2,20000,16,1,atlantica14,20000,1250,35.113282,35.429015
+RUN,forte_1no,8,8,4
+cpu-bind=MASK - atlantica14, task  1  1 [206646]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task  3  3 [206648]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task  5  5 [206650]: mask 0x20 set
+cpu-bind=MASK - atlantica14, task  7  7 [206652]: mask 0x80 set
+cpu-bind=MASK - atlantica14, task  0  0 [206645]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  2  2 [206647]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task  4  4 [206649]: mask 0x10 set
+cpu-bind=MASK - atlantica14, task  6  6 [206651]: mask 0x40 set
+P=8 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=5.473782 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,8,20000,16,20,1,5.473782,56993,569540234
+MESTRE,atlantica14
+ESCRAVO,8,20000,16,1,atlantica14,2800,175,5.447625,5.449242
+ESCRAVO,8,20000,16,2,atlantica14,2912,182,5.447792,5.449570
+ESCRAVO,8,20000,16,3,atlantica14,2800,175,5.446662,5.448762
+ESCRAVO,8,20000,16,4,atlantica14,2928,183,5.472433,5.473786
+ESCRAVO,8,20000,16,5,atlantica14,2816,176,5.462940,5.465192
+ESCRAVO,8,20000,16,6,atlantica14,2928,183,5.469606,5.471670
+ESCRAVO,8,20000,16,7,atlantica14,2816,176,5.466093,5.468575
+RUN,forte,2,1,5
+cpu-bind=MASK - atlantica13, task  0  0 [306704]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  1  0 [206685]: mask 0x1 set
+P=2 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=35.411615 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,2,20000,16,20,1,35.411615,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,2,20000,16,1,atlantica14,20000,1250,35.141879,35.402863
+RUN,forte,4,2,5
+cpu-bind=MASK - atlantica13, task  0  0 [306731]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  2  0 [206702]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  1  1 [306732]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task  3  1 [206703]: mask 0x2 set
+P=4 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=11.927969 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,4,20000,16,20,1,11.927969,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,4,20000,16,1,atlantica13,6560,410,11.919148,11.922594
+ESCRAVO,4,20000,16,2,atlantica14,6720,420,11.870674,11.928240
+ESCRAVO,4,20000,16,3,atlantica14,6720,420,11.797245,11.905751
+RUN,forte,8,4,5
+cpu-bind=MASK - atlantica13, task  3  3 [306766]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task  4  0 [206722]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  1  1 [306764]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task  7  3 [206725]: mask 0x8 set
+cpu-bind=MASK - atlantica13, task  2  2 [306765]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task  6  2 [206724]: mask 0x4 set
+cpu-bind=MASK - atlantica13, task  0  0 [306763]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  5  1 [206723]: mask 0x2 set
+P=8 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=5.235815 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,8,20000,16,20,1,5.235815,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,8,20000,16,1,atlantica13,2816,176,5.219555,5.221647
+ESCRAVO,8,20000,16,2,atlantica13,2832,177,5.232291,5.234167
+ESCRAVO,8,20000,16,3,atlantica13,2816,176,5.218599,5.220738
+ESCRAVO,8,20000,16,4,atlantica14,2912,182,5.192915,5.233108
+ESCRAVO,8,20000,16,5,atlantica14,2864,179,5.181143,5.224243
+ESCRAVO,8,20000,16,6,atlantica14,2880,180,5.168341,5.216381
+ESCRAVO,8,20000,16,7,atlantica14,2880,180,5.169100,5.214475
+RUN,forte,16,8,5
+cpu-bind=MASK - atlantica14, task 10  2 [206752]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task 15  7 [206757]: mask 0x80 set
+cpu-bind=MASK - atlantica14, task 11  3 [206753]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task 13  5 [206755]: mask 0x20 set
+cpu-bind=MASK - atlantica14, task  8  0 [206750]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task 14  6 [206756]: mask 0x40 set
+cpu-bind=MASK - atlantica14, task 12  4 [206754]: mask 0x10 set
+cpu-bind=MASK - atlantica14, task  9  1 [206751]: mask 0x2 set
+cpu-bind=MASK - atlantica13, task  0  0 [306799]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  2  2 [306801]: mask 0x4 set
+cpu-bind=MASK - atlantica13, task  6  6 [306805]: mask 0x40 set
+cpu-bind=MASK - atlantica13, task  1  1 [306800]: mask 0x2 set
+cpu-bind=MASK - atlantica13, task  3  3 [306802]: mask 0x8 set
+cpu-bind=MASK - atlantica13, task  5  5 [306804]: mask 0x20 set
+cpu-bind=MASK - atlantica13, task  4  4 [306803]: mask 0x10 set
+cpu-bind=MASK - atlantica13, task  7  7 [306806]: mask 0x80 set
+P=16 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=2.663474 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,16,20000,16,20,1,2.663474,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,16,20000,16,1,atlantica13,1296,81,2.646366,2.647705
+ESCRAVO,16,20000,16,2,atlantica13,1328,83,2.650948,2.652255
+ESCRAVO,16,20000,16,3,atlantica13,1296,81,2.634375,2.636237
+ESCRAVO,16,20000,16,4,atlantica13,1328,83,2.647631,2.649000
+ESCRAVO,16,20000,16,5,atlantica13,1296,81,2.645723,2.647397
+ESCRAVO,16,20000,16,6,atlantica13,1328,83,2.635386,2.637345
+ESCRAVO,16,20000,16,7,atlantica13,1296,81,2.631053,2.635224
+ESCRAVO,16,20000,16,8,atlantica14,1360,85,2.636261,2.651731
+ESCRAVO,16,20000,16,9,atlantica14,1360,85,2.647845,2.663241
+ESCRAVO,16,20000,16,10,atlantica14,1360,85,2.643114,2.656800
+ESCRAVO,16,20000,16,11,atlantica14,1344,84,2.629120,2.641813
+ESCRAVO,16,20000,16,12,atlantica14,1360,85,2.638970,2.653498
+ESCRAVO,16,20000,16,13,atlantica14,1344,84,2.627980,2.641534
+ESCRAVO,16,20000,16,14,atlantica14,1360,85,2.644927,2.657238
+ESCRAVO,16,20000,16,15,atlantica14,1344,84,2.622634,2.635444
+RUN,forte,32,16,5
+cpu-bind=MASK - atlantica13, task  0  0 [306847]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  1  1 [306848]: mask 0x2 set
+cpu-bind=MASK - atlantica13, task  2  2 [306849]: mask 0x100 set
+cpu-bind=MASK - atlantica13, task  3  3 [306850]: mask 0x200 set
+cpu-bind=MASK - atlantica13, task  7  7 [306854]: mask 0x800 set
+cpu-bind=MASK - atlantica13, task  4  4 [306851]: mask 0x4 set
+cpu-bind=MASK - atlantica13, task  5  5 [306852]: mask 0x8 set
+cpu-bind=MASK - atlantica13, task  6  6 [306853]: mask 0x400 set
+cpu-bind=MASK - atlantica13, task 12 12 [306859]: mask 0x40 set
+cpu-bind=MASK - atlantica13, task 14 14 [306861]: mask 0x4000 set
+cpu-bind=MASK - atlantica13, task 10 10 [306857]: mask 0x1000 set
+cpu-bind=MASK - atlantica13, task 13 13 [306860]: mask 0x80 set
+cpu-bind=MASK - atlantica13, task  9  9 [306856]: mask 0x20 set
+cpu-bind=MASK - atlantica13, task  8  8 [306855]: mask 0x10 set
+cpu-bind=MASK - atlantica13, task 11 11 [306858]: mask 0x2000 set
+cpu-bind=MASK - atlantica13, task 15 15 [306862]: mask 0x8000 set
+cpu-bind=MASK - atlantica14, task 17  1 [206788]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task 23  7 [206794]: mask 0x800 set
+cpu-bind=MASK - atlantica14, task 21  5 [206792]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task 16  0 [206787]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task 19  3 [206790]: mask 0x200 set
+cpu-bind=MASK - atlantica14, task 20  4 [206791]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task 18  2 [206789]: mask 0x100 set
+cpu-bind=MASK - atlantica14, task 22  6 [206793]: mask 0x400 set
+cpu-bind=MASK - atlantica14, task 25  9 [206796]: mask 0x20 set
+cpu-bind=MASK - atlantica14, task 27 11 [206798]: mask 0x2000 set
+cpu-bind=MASK - atlantica14, task 24  8 [206795]: mask 0x10 set
+cpu-bind=MASK - atlantica14, task 26 10 [206797]: mask 0x1000 set
+cpu-bind=MASK - atlantica14, task 30 14 [206801]: mask 0x4000 set
+cpu-bind=MASK - atlantica14, task 31 15 [206802]: mask 0x8000 set
+cpu-bind=MASK - atlantica14, task 29 13 [206800]: mask 0x80 set
+cpu-bind=MASK - atlantica14, task 28 12 [206799]: mask 0x40 set
+P=32 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=2.522421 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,32,20000,16,20,1,2.522421,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,32,20000,16,1,atlantica13,640,40,2.513754,2.515712
+ESCRAVO,32,20000,16,2,atlantica13,752,47,2.496261,2.497915
+ESCRAVO,32,20000,16,3,atlantica13,640,40,2.515320,2.517128
+ESCRAVO,32,20000,16,4,atlantica13,672,42,2.520616,2.522342
+ESCRAVO,32,20000,16,5,atlantica13,656,41,2.507310,2.509212
+ESCRAVO,32,20000,16,6,atlantica13,672,42,2.519591,2.521434
+ESCRAVO,32,20000,16,7,atlantica13,640,40,2.471444,2.475680
+ESCRAVO,32,20000,16,8,atlantica13,688,43,2.518842,2.520726
+ESCRAVO,32,20000,16,9,atlantica13,656,41,2.501015,2.502854
+ESCRAVO,32,20000,16,10,atlantica13,688,43,2.520319,2.521994
+ESCRAVO,32,20000,16,11,atlantica13,656,41,2.499623,2.501377
+ESCRAVO,32,20000,16,12,atlantica13,656,41,2.509952,2.511622
+ESCRAVO,32,20000,16,13,atlantica13,656,41,2.487461,2.489541
+ESCRAVO,32,20000,16,14,atlantica13,656,41,2.508696,2.510383
+ESCRAVO,32,20000,16,15,atlantica13,656,41,2.487649,2.490273
+ESCRAVO,32,20000,16,16,atlantica14,624,39,2.482321,2.494133
+ESCRAVO,32,20000,16,17,atlantica14,624,39,2.474714,2.488193
+ESCRAVO,32,20000,16,18,atlantica14,608,38,2.460433,2.475403
+ESCRAVO,32,20000,16,19,atlantica14,624,39,2.476706,2.489674
+ESCRAVO,32,20000,16,20,atlantica14,624,39,2.488443,2.503269
+ESCRAVO,32,20000,16,21,atlantica14,640,40,2.499097,2.513434
+ESCRAVO,32,20000,16,22,atlantica14,624,39,2.490078,2.504611
+ESCRAVO,32,20000,16,23,atlantica14,640,40,2.500010,2.514099
+ESCRAVO,32,20000,16,24,atlantica14,624,39,2.482300,2.495506
+ESCRAVO,32,20000,16,25,atlantica14,640,40,2.491485,2.506773
+ESCRAVO,32,20000,16,26,atlantica14,624,39,2.479538,2.493137
+ESCRAVO,32,20000,16,27,atlantica14,624,39,2.456935,2.466602
+ESCRAVO,32,20000,16,28,atlantica14,624,39,2.481449,2.492669
+ESCRAVO,32,20000,16,29,atlantica14,624,39,2.470744,2.484902
+ESCRAVO,32,20000,16,30,atlantica14,624,39,2.480356,2.491574
+ESCRAVO,32,20000,16,31,atlantica14,624,39,2.474906,2.485025
+RUN,forte,64,32,5
+cpu-bind-threads=MASK - atlantica13, task  4  4 [306922]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  0  0 [306918]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  1  1 [306919]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  2  2 [306920]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  3  3 [306921]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  5  5 [306923]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  6  6 [306924]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  7  7 [306925]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  8  8 [306926]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 17 17 [306935]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 18 18 [306936]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 32  0 [206851]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 33  1 [206852]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 34  2 [206853]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 35  3 [206854]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 36  4 [206855]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 37  5 [206856]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 38  6 [206857]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 39  7 [206858]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 16 16 [306934]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 19 19 [306937]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  9  9 [306927]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 10 10 [306928]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 11 11 [306929]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 14 14 [306932]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 15 15 [306933]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 13 13 [306931]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 51 19 [206870]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 50 18 [206869]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 12 12 [306930]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 24 24 [306942]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 48 16 [206867]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 49 17 [206868]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 20 20 [306938]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 25 25 [306943]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 21 21 [306939]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 22 22 [306940]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 29 29 [306947]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 40  8 [206859]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 27 27 [306945]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 41  9 [206860]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 23 23 [306941]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 43 11 [206862]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 44 12 [206863]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 26 26 [306944]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 28 28 [306946]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 45 13 [206864]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 46 14 [206865]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 30 30 [306948]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 53 21 [206872]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 31 31 [306949]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 55 23 [206874]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 52 20 [206871]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 54 22 [206873]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 42 10 [206861]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 47 15 [206866]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 56 24 [206875]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 61 29 [206880]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 62 30 [206881]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 58 26 [206877]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 59 27 [206878]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 57 25 [206876]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 60 28 [206879]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 63 31 [206882]: mask 0xffff set
+P=64 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=2.757142 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,64,20000,16,20,1,2.757142,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,64,20000,16,1,atlantica13,304,19,2.493233,2.765181
+ESCRAVO,64,20000,16,2,atlantica13,320,20,2.512864,2.720907
+ESCRAVO,64,20000,16,3,atlantica13,352,22,2.407585,2.729999
+ESCRAVO,64,20000,16,4,atlantica13,272,17,2.385635,2.686586
+ESCRAVO,64,20000,16,5,atlantica13,320,20,2.516081,2.748822
+ESCRAVO,64,20000,16,6,atlantica13,304,19,2.426821,2.735423
+ESCRAVO,64,20000,16,7,atlantica13,320,20,2.495962,2.660407
+ESCRAVO,64,20000,16,8,atlantica13,272,17,2.435088,2.711331
+ESCRAVO,64,20000,16,9,atlantica13,320,20,2.398427,2.695808
+ESCRAVO,64,20000,16,10,atlantica13,416,26,2.359653,2.773845
+ESCRAVO,64,20000,16,11,atlantica13,288,18,2.458156,2.714198
+ESCRAVO,64,20000,16,12,atlantica13,288,18,2.399109,2.693680
+ESCRAVO,64,20000,16,13,atlantica13,320,20,2.500467,2.744691
+ESCRAVO,64,20000,16,14,atlantica13,400,25,2.434445,2.699472
+ESCRAVO,64,20000,16,15,atlantica13,336,21,2.507117,2.724568
+ESCRAVO,64,20000,16,16,atlantica13,400,25,2.432637,2.726388
+ESCRAVO,64,20000,16,17,atlantica13,320,20,2.517815,2.728948
+ESCRAVO,64,20000,16,18,atlantica13,320,20,2.458000,2.732422
+ESCRAVO,64,20000,16,19,atlantica13,320,20,2.465275,2.703392
+ESCRAVO,64,20000,16,20,atlantica13,352,22,2.420063,2.705714
+ESCRAVO,64,20000,16,21,atlantica13,400,25,2.490127,2.748088
+ESCRAVO,64,20000,16,22,atlantica13,336,21,2.403147,2.690787
+ESCRAVO,64,20000,16,23,atlantica13,320,20,2.462193,2.687122
+ESCRAVO,64,20000,16,24,atlantica13,320,20,2.481692,2.768978
+ESCRAVO,64,20000,16,25,atlantica13,320,20,2.531740,2.749711
+ESCRAVO,64,20000,16,26,atlantica13,304,19,2.512461,2.703861
+ESCRAVO,64,20000,16,27,atlantica13,304,19,2.439425,2.756340
+ESCRAVO,64,20000,16,28,atlantica13,336,21,2.373344,2.650743
+ESCRAVO,64,20000,16,29,atlantica13,288,18,2.454171,2.673982
+ESCRAVO,64,20000,16,30,atlantica13,320,20,2.508384,2.747317
+ESCRAVO,64,20000,16,31,atlantica13,368,23,2.399816,2.661947
+ESCRAVO,64,20000,16,32,atlantica14,304,19,2.557462,2.674823
+ESCRAVO,64,20000,16,33,atlantica14,272,17,2.561861,2.746685
+ESCRAVO,64,20000,16,34,atlantica14,320,20,2.522675,2.697596
+ESCRAVO,64,20000,16,35,atlantica14,320,20,2.513356,2.743093
+ESCRAVO,64,20000,16,36,atlantica14,320,20,2.564669,2.728862
+ESCRAVO,64,20000,16,37,atlantica14,304,19,2.511089,2.726936
+ESCRAVO,64,20000,16,38,atlantica14,272,17,2.527337,2.744857
+ESCRAVO,64,20000,16,39,atlantica14,288,18,2.484438,2.638484
+ESCRAVO,64,20000,16,40,atlantica14,304,19,2.463555,2.709751
+ESCRAVO,64,20000,16,41,atlantica14,320,20,2.535586,2.692609
+ESCRAVO,64,20000,16,42,atlantica14,272,17,2.466877,2.704590
+ESCRAVO,64,20000,16,43,atlantica14,336,21,2.504411,2.726115
+ESCRAVO,64,20000,16,44,atlantica14,320,20,2.591976,2.755112
+ESCRAVO,64,20000,16,45,atlantica14,368,23,2.436462,2.715162
+ESCRAVO,64,20000,16,46,atlantica14,272,17,2.537033,2.702531
+ESCRAVO,64,20000,16,47,atlantica14,272,17,2.439679,2.686235
+ESCRAVO,64,20000,16,48,atlantica14,304,19,2.515117,2.702203
+ESCRAVO,64,20000,16,49,atlantica14,272,17,2.513658,2.721740
+ESCRAVO,64,20000,16,50,atlantica14,240,15,2.469093,2.693399
+ESCRAVO,64,20000,16,51,atlantica14,320,20,2.452422,2.724277
+ESCRAVO,64,20000,16,52,atlantica14,320,20,2.577903,2.743440
+ESCRAVO,64,20000,16,53,atlantica14,320,20,2.456312,2.727067
+ESCRAVO,64,20000,16,54,atlantica14,400,25,2.497689,2.733452
+ESCRAVO,64,20000,16,55,atlantica14,384,24,2.514562,2.675972
+ESCRAVO,64,20000,16,56,atlantica14,304,19,2.565530,2.689959
+ESCRAVO,64,20000,16,57,atlantica14,320,20,2.559669,2.762574
+ESCRAVO,64,20000,16,58,atlantica14,304,19,2.569878,2.758260
+ESCRAVO,64,20000,16,59,atlantica14,320,20,2.498659,2.705850
+ESCRAVO,64,20000,16,60,atlantica14,288,18,2.399517,2.741333
+ESCRAVO,64,20000,16,61,atlantica14,304,19,2.553969,2.721002
+ESCRAVO,64,20000,16,62,atlantica14,272,17,2.516126,2.719269
+ESCRAVO,64,20000,16,63,atlantica14,304,19,2.473276,2.725250
+RUN,forte_1no,8,8,5
+cpu-bind=MASK - atlantica14, task  1  1 [206963]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task  3  3 [206965]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task  5  5 [206967]: mask 0x20 set
+cpu-bind=MASK - atlantica14, task  7  7 [206969]: mask 0x80 set
+cpu-bind=MASK - atlantica14, task  0  0 [206962]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  2  2 [206964]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task  4  4 [206966]: mask 0x10 set
+cpu-bind=MASK - atlantica14, task  6  6 [206968]: mask 0x40 set
+P=8 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=5.518226 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,8,20000,16,20,1,5.518226,56993,569540234
+MESTRE,atlantica14
+ESCRAVO,8,20000,16,1,atlantica14,2816,176,5.515727,5.518178
+ESCRAVO,8,20000,16,2,atlantica14,2944,184,5.494119,5.495390
+ESCRAVO,8,20000,16,3,atlantica14,2784,174,5.488957,5.491398
+ESCRAVO,8,20000,16,4,atlantica14,2944,184,5.493729,5.494902
+ESCRAVO,8,20000,16,5,atlantica14,2784,174,5.493975,5.495632
+ESCRAVO,8,20000,16,6,atlantica14,2944,184,5.492271,5.494088
+ESCRAVO,8,20000,16,7,atlantica14,2784,174,5.495892,5.497647
+RUN,forte,64,32,6
+cpu-bind-threads=MASK - atlantica13, task  1  1 [307046]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  2  2 [307047]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  3  3 [307048]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  4  4 [307049]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  5  5 [307050]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  6  6 [307051]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  7  7 [307052]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  0  0 [307045]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  8  8 [307053]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  9  9 [307054]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 10 10 [307055]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 11 11 [307056]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 14 14 [307059]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 13 13 [307058]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 15 15 [307060]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 22 22 [307067]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 26 26 [307071]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 17 17 [307062]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 21 21 [307066]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 16 16 [307061]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 18 18 [307063]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 12 12 [307057]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 31 31 [307076]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 19 19 [307064]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 23 23 [307068]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 28 28 [307073]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 29 29 [307074]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 20 20 [307065]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 24 24 [307069]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 27 27 [307072]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 35  3 [207002]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 36  4 [207003]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 37  5 [207004]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 49 17 [207016]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 47 15 [207014]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 38  6 [207005]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 48 16 [207015]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 39  7 [207006]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 46 14 [207013]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 43 11 [207010]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 34  2 [207001]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 33  1 [207000]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 40  8 [207007]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 45 13 [207012]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 32  0 [206999]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 41  9 [207008]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 42 10 [207009]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 44 12 [207011]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 50 18 [207017]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 51 19 [207018]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 52 20 [207019]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 53 21 [207020]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 55 23 [207022]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 56 24 [207023]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 57 25 [207024]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 61 29 [207028]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 59 27 [207026]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 60 28 [207027]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 58 26 [207025]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 54 22 [207021]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 63 31 [207030]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 62 30 [207029]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 30 30 [307075]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 25 25 [307070]: mask 0xffff set
+P=64 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=2.796025 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,64,20000,16,20,1,2.796025,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,64,20000,16,1,atlantica13,384,24,2.373650,2.681724
+ESCRAVO,64,20000,16,2,atlantica13,336,21,2.492598,2.744925
+ESCRAVO,64,20000,16,3,atlantica13,304,19,2.400254,2.706417
+ESCRAVO,64,20000,16,4,atlantica13,304,19,2.424634,2.701452
+ESCRAVO,64,20000,16,5,atlantica13,336,21,2.424502,2.733578
+ESCRAVO,64,20000,16,6,atlantica13,320,20,2.532871,2.773200
+ESCRAVO,64,20000,16,7,atlantica13,320,20,2.433045,2.656979
+ESCRAVO,64,20000,16,8,atlantica13,304,19,2.335373,2.679121
+ESCRAVO,64,20000,16,9,atlantica13,288,18,2.443414,2.661073
+ESCRAVO,64,20000,16,10,atlantica13,320,20,2.422754,2.665027
+ESCRAVO,64,20000,16,11,atlantica13,352,22,2.412344,2.613660
+ESCRAVO,64,20000,16,12,atlantica13,336,21,2.491285,2.729647
+ESCRAVO,64,20000,16,13,atlantica13,336,21,2.513824,2.707071
+ESCRAVO,64,20000,16,14,atlantica13,368,23,2.437771,2.673298
+ESCRAVO,64,20000,16,15,atlantica13,336,21,2.525416,2.679713
+ESCRAVO,64,20000,16,16,atlantica13,352,22,2.454765,2.756419
+ESCRAVO,64,20000,16,17,atlantica13,384,24,2.508799,2.711355
+ESCRAVO,64,20000,16,18,atlantica13,320,20,2.579911,2.722176
+ESCRAVO,64,20000,16,19,atlantica13,336,21,2.529978,2.738958
+ESCRAVO,64,20000,16,20,atlantica13,320,20,2.441641,2.699376
+ESCRAVO,64,20000,16,21,atlantica13,320,20,2.446852,2.671814
+ESCRAVO,64,20000,16,22,atlantica13,304,19,2.489195,2.705922
+ESCRAVO,64,20000,16,23,atlantica13,288,18,2.464467,2.699923
+ESCRAVO,64,20000,16,24,atlantica13,288,18,2.461208,2.755956
+ESCRAVO,64,20000,16,25,atlantica13,336,21,2.447999,2.629129
+ESCRAVO,64,20000,16,26,atlantica13,368,23,2.439187,2.716730
+ESCRAVO,64,20000,16,27,atlantica13,320,20,2.478376,2.667803
+ESCRAVO,64,20000,16,28,atlantica13,336,21,2.477028,2.745887
+ESCRAVO,64,20000,16,29,atlantica13,336,21,2.491970,2.719870
+ESCRAVO,64,20000,16,30,atlantica13,336,21,2.457283,2.719757
+ESCRAVO,64,20000,16,31,atlantica13,384,24,2.482006,2.752017
+ESCRAVO,64,20000,16,32,atlantica14,256,16,2.482234,2.730097
+ESCRAVO,64,20000,16,33,atlantica14,288,18,2.431541,2.739370
+ESCRAVO,64,20000,16,34,atlantica14,304,19,2.467823,2.735433
+ESCRAVO,64,20000,16,35,atlantica14,304,19,2.479656,2.743204
+ESCRAVO,64,20000,16,36,atlantica14,240,15,2.436013,2.695607
+ESCRAVO,64,20000,16,37,atlantica14,336,21,2.547379,2.745518
+ESCRAVO,64,20000,16,38,atlantica14,272,17,2.393117,2.711126
+ESCRAVO,64,20000,16,39,atlantica14,272,17,2.465013,2.729018
+ESCRAVO,64,20000,16,40,atlantica14,304,19,2.381605,2.741612
+ESCRAVO,64,20000,16,41,atlantica14,304,19,2.453605,2.696452
+ESCRAVO,64,20000,16,42,atlantica14,288,18,2.524490,2.718842
+ESCRAVO,64,20000,16,43,atlantica14,288,18,2.443924,2.725267
+ESCRAVO,64,20000,16,44,atlantica14,288,18,2.474798,2.751689
+ESCRAVO,64,20000,16,45,atlantica14,288,18,2.443444,2.745105
+ESCRAVO,64,20000,16,46,atlantica14,320,20,2.532521,2.704210
+ESCRAVO,64,20000,16,47,atlantica14,288,18,2.510017,2.762853
+ESCRAVO,64,20000,16,48,atlantica14,272,17,2.509572,2.738696
+ESCRAVO,64,20000,16,49,atlantica14,400,25,2.398496,2.700059
+ESCRAVO,64,20000,16,50,atlantica14,304,19,2.442315,2.756074
+ESCRAVO,64,20000,16,51,atlantica14,272,17,2.431500,2.735168
+ESCRAVO,64,20000,16,52,atlantica14,304,19,2.517662,2.776886
+ESCRAVO,64,20000,16,53,atlantica14,304,19,2.359295,2.702539
+ESCRAVO,64,20000,16,54,atlantica14,256,16,2.473129,2.743731
+ESCRAVO,64,20000,16,55,atlantica14,256,16,2.325016,2.768601
+ESCRAVO,64,20000,16,56,atlantica14,480,30,2.419911,2.748252
+ESCRAVO,64,20000,16,57,atlantica14,384,24,2.377215,2.729477
+ESCRAVO,64,20000,16,58,atlantica14,304,19,2.413554,2.709431
+ESCRAVO,64,20000,16,59,atlantica14,304,19,2.435190,2.717435
+ESCRAVO,64,20000,16,60,atlantica14,320,20,2.516956,2.718807
+ESCRAVO,64,20000,16,61,atlantica14,304,19,2.434988,2.682488
+ESCRAVO,64,20000,16,62,atlantica14,256,16,2.478457,2.768076
+ESCRAVO,64,20000,16,63,atlantica14,368,23,2.476748,2.714799
+RUN,forte,32,16,6
+cpu-bind=MASK - atlantica13, task  1  1 [307166]: mask 0x2 set
+cpu-bind=MASK - atlantica13, task  3  3 [307168]: mask 0x200 set
+cpu-bind=MASK - atlantica13, task  5  5 [307170]: mask 0x8 set
+cpu-bind=MASK - atlantica13, task  7  7 [307172]: mask 0x800 set
+cpu-bind=MASK - atlantica13, task 11 11 [307176]: mask 0x2000 set
+cpu-bind=MASK - atlantica13, task  6  6 [307171]: mask 0x400 set
+cpu-bind=MASK - atlantica13, task 10 10 [307175]: mask 0x1000 set
+cpu-bind=MASK - atlantica13, task 15 15 [307180]: mask 0x8000 set
+cpu-bind=MASK - atlantica13, task 14 14 [307179]: mask 0x4000 set
+cpu-bind=MASK - atlantica13, task  0  0 [307165]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  2  2 [307167]: mask 0x100 set
+cpu-bind=MASK - atlantica13, task  4  4 [307169]: mask 0x4 set
+cpu-bind=MASK - atlantica13, task  8  8 [307173]: mask 0x10 set
+cpu-bind=MASK - atlantica13, task 12 12 [307177]: mask 0x40 set
+cpu-bind=MASK - atlantica13, task 13 13 [307178]: mask 0x80 set
+cpu-bind=MASK - atlantica13, task  9  9 [307174]: mask 0x20 set
+cpu-bind=MASK - atlantica14, task 16  0 [207109]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task 18  2 [207111]: mask 0x100 set
+cpu-bind=MASK - atlantica14, task 20  4 [207113]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task 21  5 [207114]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task 25  9 [207118]: mask 0x20 set
+cpu-bind=MASK - atlantica14, task 29 13 [207122]: mask 0x80 set
+cpu-bind=MASK - atlantica14, task 31 15 [207124]: mask 0x8000 set
+cpu-bind=MASK - atlantica14, task 28 12 [207121]: mask 0x40 set
+cpu-bind=MASK - atlantica14, task 22  6 [207115]: mask 0x400 set
+cpu-bind=MASK - atlantica14, task 27 11 [207120]: mask 0x2000 set
+cpu-bind=MASK - atlantica14, task 24  8 [207117]: mask 0x10 set
+cpu-bind=MASK - atlantica14, task 17  1 [207110]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task 23  7 [207116]: mask 0x800 set
+cpu-bind=MASK - atlantica14, task 19  3 [207112]: mask 0x200 set
+cpu-bind=MASK - atlantica14, task 26 10 [207119]: mask 0x1000 set
+cpu-bind=MASK - atlantica14, task 30 14 [207123]: mask 0x4000 set
+P=32 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=2.518955 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,32,20000,16,20,1,2.518955,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,32,20000,16,1,atlantica13,656,41,2.516867,2.518870
+ESCRAVO,32,20000,16,2,atlantica13,736,46,2.466211,2.467919
+ESCRAVO,32,20000,16,3,atlantica13,656,41,2.515497,2.517817
+ESCRAVO,32,20000,16,4,atlantica13,672,42,2.479317,2.481053
+ESCRAVO,32,20000,16,5,atlantica13,656,41,2.491890,2.493889
+ESCRAVO,32,20000,16,6,atlantica13,672,42,2.477828,2.479660
+ESCRAVO,32,20000,16,7,atlantica13,656,41,2.490359,2.492447
+ESCRAVO,32,20000,16,8,atlantica13,672,42,2.468638,2.470448
+ESCRAVO,32,20000,16,9,atlantica13,656,41,2.499959,2.506165
+ESCRAVO,32,20000,16,10,atlantica13,672,42,2.467282,2.469208
+ESCRAVO,32,20000,16,11,atlantica13,656,41,2.501262,2.507256
+ESCRAVO,32,20000,16,12,atlantica13,672,42,2.501606,2.503364
+ESCRAVO,32,20000,16,13,atlantica13,656,41,2.502870,2.504698
+ESCRAVO,32,20000,16,14,atlantica13,672,42,2.500156,2.502099
+ESCRAVO,32,20000,16,15,atlantica13,656,41,2.501223,2.503350
+ESCRAVO,32,20000,16,16,atlantica14,608,38,2.448121,2.466130
+ESCRAVO,32,20000,16,17,atlantica14,624,39,2.458246,2.472954
+ESCRAVO,32,20000,16,18,atlantica14,608,38,2.464913,2.483556
+ESCRAVO,32,20000,16,19,atlantica14,624,39,2.463170,2.478363
+ESCRAVO,32,20000,16,20,atlantica14,624,39,2.483394,2.499730
+ESCRAVO,32,20000,16,21,atlantica14,624,39,2.462502,2.478772
+ESCRAVO,32,20000,16,22,atlantica14,624,39,2.492744,2.509413
+ESCRAVO,32,20000,16,23,atlantica14,624,39,2.460108,2.476178
+ESCRAVO,32,20000,16,24,atlantica14,624,39,2.470093,2.487757
+ESCRAVO,32,20000,16,25,atlantica14,640,40,2.492134,2.511071
+ESCRAVO,32,20000,16,26,atlantica14,624,39,2.472212,2.489138
+ESCRAVO,32,20000,16,27,atlantica14,640,40,2.495150,2.512046
+ESCRAVO,32,20000,16,28,atlantica14,624,39,2.488247,2.507793
+ESCRAVO,32,20000,16,29,atlantica14,624,39,2.447056,2.466966
+ESCRAVO,32,20000,16,30,atlantica14,624,39,2.493481,2.511783
+ESCRAVO,32,20000,16,31,atlantica14,624,39,2.449772,2.468589
+RUN,forte,16,8,6
+cpu-bind=MASK - atlantica13, task  3  3 [307240]: mask 0x8 set
+cpu-bind=MASK - atlantica13, task  5  5 [307242]: mask 0x20 set
+cpu-bind=MASK - atlantica13, task  1  1 [307238]: mask 0x2 set
+cpu-bind=MASK - atlantica13, task  7  7 [307244]: mask 0x80 set
+cpu-bind=MASK - atlantica13, task  4  4 [307241]: mask 0x10 set
+cpu-bind=MASK - atlantica13, task  0  0 [307237]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  6  6 [307243]: mask 0x40 set
+cpu-bind=MASK - atlantica13, task  2  2 [307239]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task 11  3 [207174]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task 13  5 [207176]: mask 0x20 set
+cpu-bind=MASK - atlantica14, task 10  2 [207173]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task 15  7 [207178]: mask 0x80 set
+cpu-bind=MASK - atlantica14, task  9  1 [207172]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task  8  0 [207171]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task 14  6 [207177]: mask 0x40 set
+cpu-bind=MASK - atlantica14, task 12  4 [207175]: mask 0x10 set
+P=16 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=2.690751 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,16,20000,16,20,1,2.690751,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,16,20000,16,1,atlantica13,1296,81,2.668749,2.673056
+ESCRAVO,16,20000,16,2,atlantica13,1328,83,2.658200,2.659535
+ESCRAVO,16,20000,16,3,atlantica13,1296,81,2.667997,2.670488
+ESCRAVO,16,20000,16,4,atlantica13,1328,83,2.654544,2.656071
+ESCRAVO,16,20000,16,5,atlantica13,1296,81,2.656059,2.660898
+ESCRAVO,16,20000,16,6,atlantica13,1328,83,2.656122,2.657500
+ESCRAVO,16,20000,16,7,atlantica13,1296,81,2.663023,2.665829
+ESCRAVO,16,20000,16,8,atlantica14,1360,85,2.677642,2.690572
+ESCRAVO,16,20000,16,9,atlantica14,1360,85,2.662827,2.676260
+ESCRAVO,16,20000,16,10,atlantica14,1344,84,2.647360,2.659877
+ESCRAVO,16,20000,16,11,atlantica14,1360,85,2.660904,2.674218
+ESCRAVO,16,20000,16,12,atlantica14,1344,84,2.650308,2.662037
+ESCRAVO,16,20000,16,13,atlantica14,1360,85,2.640390,2.656409
+ESCRAVO,16,20000,16,14,atlantica14,1344,84,2.652184,2.663346
+ESCRAVO,16,20000,16,15,atlantica14,1360,85,2.663973,2.675783
+RUN,forte,8,4,6
+cpu-bind=MASK - atlantica13, task  0  0 [307284]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  4  0 [207209]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  2  2 [307286]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task  5  1 [207210]: mask 0x2 set
+cpu-bind=MASK - atlantica13, task  3  3 [307287]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task  6  2 [207211]: mask 0x4 set
+cpu-bind=MASK - atlantica13, task  1  1 [307285]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task  7  3 [207212]: mask 0x8 set
+P=8 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=5.237931 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,8,20000,16,20,1,5.237931,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,8,20000,16,1,atlantica13,2832,177,5.231036,5.234224
+ESCRAVO,8,20000,16,2,atlantica13,2816,176,5.236107,5.245121
+ESCRAVO,8,20000,16,3,atlantica13,2832,177,5.231840,5.234906
+ESCRAVO,8,20000,16,4,atlantica14,2928,183,5.187013,5.225571
+ESCRAVO,8,20000,16,5,atlantica14,2848,178,5.171289,5.209695
+ESCRAVO,8,20000,16,6,atlantica14,2864,179,5.165445,5.206125
+ESCRAVO,8,20000,16,7,atlantica14,2880,180,5.185343,5.221724
+RUN,forte,4,2,6
+cpu-bind=MASK - atlantica13, task  1  1 [307320]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task  2  0 [207235]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  0  0 [307319]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  3  1 [207236]: mask 0x2 set
+P=4 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=11.930341 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,4,20000,16,20,1,11.930341,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,4,20000,16,1,atlantica13,6560,410,11.926988,11.930359
+ESCRAVO,4,20000,16,2,atlantica14,6720,420,11.828864,11.914933
+ESCRAVO,4,20000,16,3,atlantica14,6720,420,11.817193,11.913027
+RUN,forte,2,1,6
+cpu-bind=MASK - atlantica14, task  1  0 [207255]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  0  0 [307348]: mask 0x1 set
+P=2 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=35.385047 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,2,20000,16,20,1,35.385047,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,2,20000,16,1,atlantica14,20000,1250,35.070420,35.376264
+RUN,forte_1no,8,8,6
+cpu-bind=MASK - atlantica14, task  3  3 [207278]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task  5  5 [207280]: mask 0x20 set
+cpu-bind=MASK - atlantica14, task  0  0 [207275]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  1  1 [207276]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task  2  2 [207277]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task  4  4 [207279]: mask 0x10 set
+cpu-bind=MASK - atlantica14, task  7  7 [207282]: mask 0x80 set
+cpu-bind=MASK - atlantica14, task  6  6 [207281]: mask 0x40 set
+P=8 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=5.447511 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,8,20000,16,20,1,5.447511,56993,569540234
+MESTRE,atlantica14
+ESCRAVO,8,20000,16,1,atlantica14,2816,176,5.442111,5.443951
+ESCRAVO,8,20000,16,2,atlantica14,2912,182,5.442496,5.444029
+ESCRAVO,8,20000,16,3,atlantica14,2816,176,5.445728,5.447482
+ESCRAVO,8,20000,16,4,atlantica14,2912,182,5.433891,5.435581
+ESCRAVO,8,20000,16,5,atlantica14,2816,176,5.431544,5.434018
+ESCRAVO,8,20000,16,6,atlantica14,2912,182,5.437568,5.438929
+ESCRAVO,8,20000,16,7,atlantica14,2816,176,5.436272,5.438042
+RUN,forte,2,1,7
+cpu-bind=MASK - atlantica13, task  0  0 [307386]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  1  0 [207312]: mask 0x1 set
+P=2 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=35.390420 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,2,20000,16,20,1,35.390420,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,2,20000,16,1,atlantica14,20000,1250,35.137949,35.381708
+RUN,forte,4,2,7
+cpu-bind=MASK - atlantica13, task  1  1 [307419]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task  2  0 [207332]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  0  0 [307418]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  3  1 [207333]: mask 0x2 set
+P=4 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=11.895173 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,4,20000,16,20,1,11.895173,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,4,20000,16,1,atlantica13,6544,409,11.891903,11.895193
+ESCRAVO,4,20000,16,2,atlantica14,6720,420,11.820496,11.886143
+ESCRAVO,4,20000,16,3,atlantica14,6736,421,11.797602,11.877922
+RUN,forte,8,4,7
+cpu-bind=MASK - atlantica13, task  3  3 [307451]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task  4  0 [207352]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  1  1 [307449]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task  5  1 [207353]: mask 0x2 set
+cpu-bind=MASK - atlantica13, task  0  0 [307448]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  6  2 [207354]: mask 0x4 set
+cpu-bind=MASK - atlantica13, task  2  2 [307450]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task  7  3 [207355]: mask 0x8 set
+P=8 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=5.246220 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,8,20000,16,20,1,5.246220,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,8,20000,16,1,atlantica13,2816,176,5.243908,5.247644
+ESCRAVO,8,20000,16,2,atlantica13,2816,176,5.218724,5.226073
+ESCRAVO,8,20000,16,3,atlantica13,2816,176,5.221646,5.227001
+ESCRAVO,8,20000,16,4,atlantica14,2912,182,5.198318,5.228004
+ESCRAVO,8,20000,16,5,atlantica14,2880,180,5.196438,5.238539
+ESCRAVO,8,20000,16,6,atlantica14,2896,181,5.186853,5.238271
+ESCRAVO,8,20000,16,7,atlantica14,2864,179,5.196420,5.235087
+RUN,forte,16,8,7
+cpu-bind=MASK - atlantica14, task  9  1 [207379]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task 14  6 [207384]: mask 0x40 set
+cpu-bind=MASK - atlantica14, task 11  3 [207381]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task 13  5 [207383]: mask 0x20 set
+cpu-bind=MASK - atlantica14, task 15  7 [207385]: mask 0x80 set
+cpu-bind=MASK - atlantica14, task 10  2 [207380]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task 12  4 [207382]: mask 0x10 set
+cpu-bind=MASK - atlantica14, task  8  0 [207378]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  3  3 [307486]: mask 0x8 set
+cpu-bind=MASK - atlantica13, task  5  5 [307488]: mask 0x20 set
+cpu-bind=MASK - atlantica13, task  7  7 [307490]: mask 0x80 set
+cpu-bind=MASK - atlantica13, task  0  0 [307483]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  1  1 [307484]: mask 0x2 set
+cpu-bind=MASK - atlantica13, task  2  2 [307485]: mask 0x4 set
+cpu-bind=MASK - atlantica13, task  4  4 [307487]: mask 0x10 set
+cpu-bind=MASK - atlantica13, task  6  6 [307489]: mask 0x40 set
+P=16 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=2.659222 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,16,20000,16,20,1,2.659222,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,16,20000,16,1,atlantica13,1296,81,2.627356,2.630469
+ESCRAVO,16,20000,16,2,atlantica13,1328,83,2.651448,2.653899
+ESCRAVO,16,20000,16,3,atlantica13,1296,81,2.631935,2.635195
+ESCRAVO,16,20000,16,4,atlantica13,1328,83,2.638289,2.639912
+ESCRAVO,16,20000,16,5,atlantica13,1296,81,2.638633,2.641325
+ESCRAVO,16,20000,16,6,atlantica13,1328,83,2.639199,2.640730
+ESCRAVO,16,20000,16,7,atlantica13,1296,81,2.627521,2.630541
+ESCRAVO,16,20000,16,8,atlantica14,1360,85,2.625351,2.638407
+ESCRAVO,16,20000,16,9,atlantica14,1360,85,2.643014,2.657583
+ESCRAVO,16,20000,16,10,atlantica14,1344,84,2.629824,2.643114
+ESCRAVO,16,20000,16,11,atlantica14,1360,85,2.646163,2.657665
+ESCRAVO,16,20000,16,12,atlantica14,1344,84,2.635775,2.645784
+ESCRAVO,16,20000,16,13,atlantica14,1360,85,2.645650,2.657170
+ESCRAVO,16,20000,16,14,atlantica14,1344,84,2.636108,2.648395
+ESCRAVO,16,20000,16,15,atlantica14,1360,85,2.647206,2.658947
+RUN,forte,32,16,7
+cpu-bind=MASK - atlantica14, task 17  1 [207417]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task 23  7 [207423]: mask 0x800 set
+cpu-bind=MASK - atlantica14, task 16  0 [207416]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task 19  3 [207419]: mask 0x200 set
+cpu-bind=MASK - atlantica14, task 20  4 [207420]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task 22  6 [207422]: mask 0x400 set
+cpu-bind=MASK - atlantica14, task 21  5 [207421]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task 18  2 [207418]: mask 0x100 set
+cpu-bind=MASK - atlantica14, task 24  8 [207424]: mask 0x10 set
+cpu-bind=MASK - atlantica14, task 25  9 [207425]: mask 0x20 set
+cpu-bind=MASK - atlantica14, task 27 11 [207427]: mask 0x2000 set
+cpu-bind=MASK - atlantica14, task 26 10 [207426]: mask 0x1000 set
+cpu-bind=MASK - atlantica14, task 31 15 [207431]: mask 0x8000 set
+cpu-bind=MASK - atlantica14, task 28 12 [207428]: mask 0x40 set
+cpu-bind=MASK - atlantica14, task 29 13 [207429]: mask 0x80 set
+cpu-bind=MASK - atlantica14, task 30 14 [207430]: mask 0x4000 set
+cpu-bind=MASK - atlantica13, task  5  5 [307535]: mask 0x8 set
+cpu-bind=MASK - atlantica13, task  7  7 [307537]: mask 0x800 set
+cpu-bind=MASK - atlantica13, task  4  4 [307534]: mask 0x4 set
+cpu-bind=MASK - atlantica13, task  6  6 [307536]: mask 0x400 set
+cpu-bind=MASK - atlantica13, task  1  1 [307531]: mask 0x2 set
+cpu-bind=MASK - atlantica13, task 11 11 [307541]: mask 0x2000 set
+cpu-bind=MASK - atlantica13, task 10 10 [307540]: mask 0x1000 set
+cpu-bind=MASK - atlantica13, task  2  2 [307532]: mask 0x100 set
+cpu-bind=MASK - atlantica13, task  8  8 [307538]: mask 0x10 set
+cpu-bind=MASK - atlantica13, task  3  3 [307533]: mask 0x200 set
+cpu-bind=MASK - atlantica13, task  0  0 [307530]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task 15 15 [307545]: mask 0x8000 set
+cpu-bind=MASK - atlantica13, task  9  9 [307539]: mask 0x20 set
+cpu-bind=MASK - atlantica13, task 13 13 [307543]: mask 0x80 set
+cpu-bind=MASK - atlantica13, task 14 14 [307544]: mask 0x4000 set
+cpu-bind=MASK - atlantica13, task 12 12 [307542]: mask 0x40 set
+P=32 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=2.526508 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,32,20000,16,20,1,2.526508,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,32,20000,16,1,atlantica13,656,41,2.503343,2.506229
+ESCRAVO,32,20000,16,2,atlantica13,752,47,2.492673,2.494330
+ESCRAVO,32,20000,16,3,atlantica13,656,41,2.502029,2.504996
+ESCRAVO,32,20000,16,4,atlantica13,688,43,2.514403,2.516051
+ESCRAVO,32,20000,16,5,atlantica13,656,41,2.499019,2.503661
+ESCRAVO,32,20000,16,6,atlantica13,688,43,2.512802,2.514672
+ESCRAVO,32,20000,16,7,atlantica13,656,41,2.498797,2.500577
+ESCRAVO,32,20000,16,8,atlantica13,656,41,2.475602,2.477073
+ESCRAVO,32,20000,16,9,atlantica13,656,41,2.506164,2.508097
+ESCRAVO,32,20000,16,10,atlantica13,672,42,2.519729,2.521496
+ESCRAVO,32,20000,16,11,atlantica13,656,41,2.507463,2.509067
+ESCRAVO,32,20000,16,12,atlantica13,672,42,2.486366,2.488275
+ESCRAVO,32,20000,16,13,atlantica13,656,41,2.503105,2.504800
+ESCRAVO,32,20000,16,14,atlantica13,672,42,2.488156,2.489711
+ESCRAVO,32,20000,16,15,atlantica13,656,41,2.501406,2.503414
+ESCRAVO,32,20000,16,16,atlantica14,624,39,2.502852,2.517218
+ESCRAVO,32,20000,16,17,atlantica14,624,39,2.475929,2.488053
+ESCRAVO,32,20000,16,18,atlantica14,608,38,2.466898,2.482164
+ESCRAVO,32,20000,16,19,atlantica14,624,39,2.482048,2.493314
+ESCRAVO,32,20000,16,20,atlantica14,592,37,2.462535,2.478089
+ESCRAVO,32,20000,16,21,atlantica14,640,40,2.513162,2.525773
+ESCRAVO,32,20000,16,22,atlantica14,608,38,2.501391,2.518040
+ESCRAVO,32,20000,16,23,atlantica14,640,40,2.510656,2.525505
+ESCRAVO,32,20000,16,24,atlantica14,608,38,2.476386,2.491114
+ESCRAVO,32,20000,16,25,atlantica14,640,40,2.495250,2.508625
+ESCRAVO,32,20000,16,26,atlantica14,608,38,2.473056,2.489469
+ESCRAVO,32,20000,16,27,atlantica14,624,39,2.464688,2.479460
+ESCRAVO,32,20000,16,28,atlantica14,624,39,2.510559,2.524909
+ESCRAVO,32,20000,16,29,atlantica14,640,40,2.492240,2.509201
+ESCRAVO,32,20000,16,30,atlantica14,624,39,2.511405,2.526218
+ESCRAVO,32,20000,16,31,atlantica14,624,39,2.459960,2.476843
+RUN,forte,64,32,7
+cpu-bind-threads=MASK - atlantica14, task 43 11 [207488]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 32  0 [207477]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 33  1 [207478]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 34  2 [207479]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 35  3 [207480]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 36  4 [207481]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 37  5 [207482]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 38  6 [207483]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 39  7 [207484]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 40  8 [207485]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 41  9 [207486]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 45 13 [207490]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 46 14 [207491]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 42 10 [207487]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 44 12 [207489]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 47 15 [207492]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 54 22 [207499]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 49 17 [207494]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 58 26 [207503]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 48 16 [207493]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 57 25 [207502]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 51 19 [207496]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 52 20 [207497]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 53 21 [207498]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 55 23 [207500]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 56 24 [207501]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 59 27 [207504]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 60 28 [207505]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 50 18 [207495]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 63 31 [207508]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 61 29 [207506]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 62 30 [207507]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  8  8 [307610]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  0  0 [307602]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  1  1 [307603]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  2  2 [307604]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  3  3 [307605]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  4  4 [307606]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  5  5 [307607]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  6  6 [307608]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  7  7 [307609]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  9  9 [307611]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 10 10 [307612]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 20 20 [307622]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 21 21 [307623]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 11 11 [307613]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 12 12 [307614]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 14 14 [307616]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 15 15 [307617]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 13 13 [307615]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 16 16 [307618]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 17 17 [307619]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 19 19 [307621]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 22 22 [307624]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 23 23 [307625]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 24 24 [307626]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 26 26 [307628]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 18 18 [307620]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 27 27 [307629]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 25 25 [307627]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 28 28 [307630]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 30 30 [307632]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 29 29 [307631]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 31 31 [307633]: mask 0xffff set
+P=64 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=2.699511 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,64,20000,16,20,1,2.699511,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,64,20000,16,1,atlantica13,320,20,2.381926,2.749819
+ESCRAVO,64,20000,16,2,atlantica13,288,18,2.365555,2.683611
+ESCRAVO,64,20000,16,3,atlantica13,288,18,2.403998,2.699166
+ESCRAVO,64,20000,16,4,atlantica13,384,24,2.484911,2.699125
+ESCRAVO,64,20000,16,5,atlantica13,496,31,2.449533,2.724774
+ESCRAVO,64,20000,16,6,atlantica13,336,21,2.383845,2.658993
+ESCRAVO,64,20000,16,7,atlantica13,336,21,2.407407,2.653000
+ESCRAVO,64,20000,16,8,atlantica13,384,24,2.351980,2.620677
+ESCRAVO,64,20000,16,9,atlantica13,336,21,2.500959,2.729409
+ESCRAVO,64,20000,16,10,atlantica13,336,21,2.472775,2.708491
+ESCRAVO,64,20000,16,11,atlantica13,304,19,2.409958,2.726438
+ESCRAVO,64,20000,16,12,atlantica13,320,20,2.505343,2.726455
+ESCRAVO,64,20000,16,13,atlantica13,352,22,2.392166,2.652689
+ESCRAVO,64,20000,16,14,atlantica13,320,20,2.518981,2.743207
+ESCRAVO,64,20000,16,15,atlantica13,304,19,2.483421,2.718208
+ESCRAVO,64,20000,16,16,atlantica13,304,19,2.458570,2.722343
+ESCRAVO,64,20000,16,17,atlantica13,368,23,2.399007,2.731953
+ESCRAVO,64,20000,16,18,atlantica13,288,18,2.421687,2.732502
+ESCRAVO,64,20000,16,19,atlantica13,256,16,2.447480,2.713964
+ESCRAVO,64,20000,16,20,atlantica13,336,21,2.523333,2.690653
+ESCRAVO,64,20000,16,21,atlantica13,320,20,2.418926,2.753663
+ESCRAVO,64,20000,16,22,atlantica13,368,23,2.498100,2.717183
+ESCRAVO,64,20000,16,23,atlantica13,288,18,2.435705,2.685925
+ESCRAVO,64,20000,16,24,atlantica13,320,20,2.402010,2.700597
+ESCRAVO,64,20000,16,25,atlantica13,336,21,2.524358,2.720160
+ESCRAVO,64,20000,16,26,atlantica13,336,21,2.438134,2.715292
+ESCRAVO,64,20000,16,27,atlantica13,336,21,2.497570,2.731100
+ESCRAVO,64,20000,16,28,atlantica13,288,18,2.346308,2.735506
+ESCRAVO,64,20000,16,29,atlantica13,400,25,2.454113,2.752321
+ESCRAVO,64,20000,16,30,atlantica13,304,19,2.452951,2.751423
+ESCRAVO,64,20000,16,31,atlantica13,320,20,2.414979,2.718965
+ESCRAVO,64,20000,16,32,atlantica14,288,18,2.444579,2.702460
+ESCRAVO,64,20000,16,33,atlantica14,304,19,2.484940,2.735455
+ESCRAVO,64,20000,16,34,atlantica14,272,17,2.440360,2.709439
+ESCRAVO,64,20000,16,35,atlantica14,304,19,2.429305,2.773561
+ESCRAVO,64,20000,16,36,atlantica14,416,26,2.323093,2.698552
+ESCRAVO,64,20000,16,37,atlantica14,272,17,2.446170,2.739487
+ESCRAVO,64,20000,16,38,atlantica14,288,18,2.467578,2.716641
+ESCRAVO,64,20000,16,39,atlantica14,272,17,2.520799,2.699167
+ESCRAVO,64,20000,16,40,atlantica14,304,19,2.501213,2.726065
+ESCRAVO,64,20000,16,41,atlantica14,288,18,2.458833,2.742694
+ESCRAVO,64,20000,16,42,atlantica14,288,18,2.470511,2.741806
+ESCRAVO,64,20000,16,43,atlantica14,256,16,2.533780,2.725439
+ESCRAVO,64,20000,16,44,atlantica14,288,18,2.474542,2.748403
+ESCRAVO,64,20000,16,45,atlantica14,320,20,2.542171,2.752364
+ESCRAVO,64,20000,16,46,atlantica14,272,17,2.499356,2.676673
+ESCRAVO,64,20000,16,47,atlantica14,288,18,2.549004,2.754511
+ESCRAVO,64,20000,16,48,atlantica14,304,19,2.459407,2.723041
+ESCRAVO,64,20000,16,49,atlantica14,288,18,2.466756,2.664243
+ESCRAVO,64,20000,16,50,atlantica14,288,18,2.450199,2.690461
+ESCRAVO,64,20000,16,51,atlantica14,352,22,2.511293,2.732341
+ESCRAVO,64,20000,16,52,atlantica14,320,20,2.496597,2.704463
+ESCRAVO,64,20000,16,53,atlantica14,304,19,2.474635,2.743809
+ESCRAVO,64,20000,16,54,atlantica14,304,19,2.416517,2.669292
+ESCRAVO,64,20000,16,55,atlantica14,320,20,2.503086,2.709928
+ESCRAVO,64,20000,16,56,atlantica14,304,19,2.414567,2.639342
+ESCRAVO,64,20000,16,57,atlantica14,336,21,2.437903,2.710764
+ESCRAVO,64,20000,16,58,atlantica14,256,16,2.457871,2.731707
+ESCRAVO,64,20000,16,59,atlantica14,448,28,2.320224,2.667709
+ESCRAVO,64,20000,16,60,atlantica14,288,18,2.443838,2.703669
+ESCRAVO,64,20000,16,61,atlantica14,320,20,2.482516,2.722635
+ESCRAVO,64,20000,16,62,atlantica14,288,18,2.476960,2.732789
+ESCRAVO,64,20000,16,63,atlantica14,288,18,2.494289,2.718236
+RUN,forte_1no,8,8,7
+cpu-bind=MASK - atlantica14, task  1  1 [207588]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task  3  3 [207590]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task  5  5 [207592]: mask 0x20 set
+cpu-bind=MASK - atlantica14, task  0  0 [207587]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  2  2 [207589]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task  6  6 [207593]: mask 0x40 set
+cpu-bind=MASK - atlantica14, task  7  7 [207594]: mask 0x80 set
+cpu-bind=MASK - atlantica14, task  4  4 [207591]: mask 0x10 set
+P=8 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=5.478375 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,8,20000,16,20,1,5.478375,56993,569540234
+MESTRE,atlantica14
+ESCRAVO,8,20000,16,1,atlantica14,2816,176,5.450070,5.452392
+ESCRAVO,8,20000,16,2,atlantica14,2896,181,5.454496,5.456499
+ESCRAVO,8,20000,16,3,atlantica14,2816,176,5.451117,5.452809
+ESCRAVO,8,20000,16,4,atlantica14,2912,182,5.474365,5.476283
+ESCRAVO,8,20000,16,5,atlantica14,2832,177,5.462194,5.464935
+ESCRAVO,8,20000,16,6,atlantica14,2912,182,5.477067,5.478365
+ESCRAVO,8,20000,16,7,atlantica14,2816,176,5.451689,5.453390
+RUN,forte,64,32,8
+cpu-bind-threads=MASK - atlantica13, task  0  0 [307730]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  1  1 [307731]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  2  2 [307732]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  3  3 [307733]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  4  4 [307734]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  5  5 [307735]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  6  6 [307736]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  7  7 [307737]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  8  8 [307738]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 10 10 [307740]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 11 11 [307741]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 12 12 [307742]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 13 13 [307743]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 14 14 [307744]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 15 15 [307745]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  9  9 [307739]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 16 16 [307746]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 17 17 [307747]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 22 22 [307752]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 20 20 [307750]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 18 18 [307748]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 21 21 [307751]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 23 23 [307753]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 28 28 [307758]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 19 19 [307749]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 35  3 [207635]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 39  7 [207639]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 32  0 [207632]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 34  2 [207634]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 36  4 [207636]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 38  6 [207638]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 37  5 [207637]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 33  1 [207633]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 40  8 [207640]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 41  9 [207641]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 44 12 [207644]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 45 13 [207645]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 42 10 [207642]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 43 11 [207643]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 46 14 [207646]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 50 18 [207650]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 51 19 [207651]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 47 15 [207647]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 48 16 [207648]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 55 23 [207655]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 49 17 [207649]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 58 26 [207658]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 56 24 [207656]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 52 20 [207652]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 53 21 [207653]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 54 22 [207654]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 57 25 [207657]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 63 31 [207663]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 60 28 [207660]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 59 27 [207659]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 61 29 [207661]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 62 30 [207662]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 27 27 [307757]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 31 31 [307761]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 29 29 [307759]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 24 24 [307754]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 30 30 [307760]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 26 26 [307756]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 25 25 [307755]: mask 0xffff set
+P=64 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=2.727953 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,64,20000,16,20,1,2.727953,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,64,20000,16,1,atlantica13,336,21,2.561006,2.709234
+ESCRAVO,64,20000,16,2,atlantica13,320,20,2.457066,2.676882
+ESCRAVO,64,20000,16,3,atlantica13,336,21,2.477712,2.693249
+ESCRAVO,64,20000,16,4,atlantica13,336,21,2.558957,2.712885
+ESCRAVO,64,20000,16,5,atlantica13,384,24,2.433453,2.724902
+ESCRAVO,64,20000,16,6,atlantica13,320,20,2.433944,2.646883
+ESCRAVO,64,20000,16,7,atlantica13,336,21,2.601351,2.705010
+ESCRAVO,64,20000,16,8,atlantica13,336,21,2.442653,2.719667
+ESCRAVO,64,20000,16,9,atlantica13,336,21,2.553204,2.645802
+ESCRAVO,64,20000,16,10,atlantica13,336,21,2.332480,2.649261
+ESCRAVO,64,20000,16,11,atlantica13,384,24,2.505280,2.673511
+ESCRAVO,64,20000,16,12,atlantica13,304,19,2.316800,2.594148
+ESCRAVO,64,20000,16,13,atlantica13,304,19,2.415264,2.686996
+ESCRAVO,64,20000,16,14,atlantica13,320,20,2.353520,2.693838
+ESCRAVO,64,20000,16,15,atlantica13,304,19,2.406281,2.657595
+ESCRAVO,64,20000,16,16,atlantica13,352,22,2.498512,2.704306
+ESCRAVO,64,20000,16,17,atlantica13,336,21,2.593865,2.696105
+ESCRAVO,64,20000,16,18,atlantica13,320,20,2.515436,2.612789
+ESCRAVO,64,20000,16,19,atlantica13,352,22,2.548330,2.675572
+ESCRAVO,64,20000,16,20,atlantica13,304,19,2.464492,2.660974
+ESCRAVO,64,20000,16,21,atlantica13,352,22,2.519953,2.672832
+ESCRAVO,64,20000,16,22,atlantica13,320,20,2.454374,2.675830
+ESCRAVO,64,20000,16,23,atlantica13,320,20,2.529409,2.698892
+ESCRAVO,64,20000,16,24,atlantica13,320,20,2.518800,2.673408
+ESCRAVO,64,20000,16,25,atlantica13,336,21,2.546439,2.697832
+ESCRAVO,64,20000,16,26,atlantica13,320,20,2.461392,2.660490
+ESCRAVO,64,20000,16,27,atlantica13,352,22,2.479175,2.698225
+ESCRAVO,64,20000,16,28,atlantica13,304,19,2.461316,2.671991
+ESCRAVO,64,20000,16,29,atlantica13,336,21,2.570332,2.634290
+ESCRAVO,64,20000,16,30,atlantica13,336,21,2.488082,2.678807
+ESCRAVO,64,20000,16,31,atlantica13,320,20,2.456225,2.654923
+ESCRAVO,64,20000,16,32,atlantica14,288,18,2.401508,2.648676
+ESCRAVO,64,20000,16,33,atlantica14,272,17,2.495409,2.681008
+ESCRAVO,64,20000,16,34,atlantica14,256,16,2.436215,2.632174
+ESCRAVO,64,20000,16,35,atlantica14,304,19,2.550607,2.649267
+ESCRAVO,64,20000,16,36,atlantica14,272,17,2.497262,2.637598
+ESCRAVO,64,20000,16,37,atlantica14,272,17,2.580774,2.673904
+ESCRAVO,64,20000,16,38,atlantica14,416,26,2.429723,2.609645
+ESCRAVO,64,20000,16,39,atlantica14,272,17,2.550824,2.681263
+ESCRAVO,64,20000,16,40,atlantica14,320,20,2.504395,2.656454
+ESCRAVO,64,20000,16,41,atlantica14,336,21,2.507390,2.628309
+ESCRAVO,64,20000,16,42,atlantica14,288,18,2.464080,2.638508
+ESCRAVO,64,20000,16,43,atlantica14,304,19,2.577754,2.682512
+ESCRAVO,64,20000,16,44,atlantica14,304,19,2.541762,2.643210
+ESCRAVO,64,20000,16,45,atlantica14,336,21,2.504618,2.684079
+ESCRAVO,64,20000,16,46,atlantica14,272,17,2.489551,2.693628
+ESCRAVO,64,20000,16,47,atlantica14,256,16,2.410455,2.647442
+ESCRAVO,64,20000,16,48,atlantica14,256,16,2.486892,2.692493
+ESCRAVO,64,20000,16,49,atlantica14,304,19,2.479788,2.689058
+ESCRAVO,64,20000,16,50,atlantica14,272,17,2.451533,2.618855
+ESCRAVO,64,20000,16,51,atlantica14,272,17,2.511897,2.691268
+ESCRAVO,64,20000,16,52,atlantica14,304,19,2.477570,2.638942
+ESCRAVO,64,20000,16,53,atlantica14,304,19,2.598677,2.697049
+ESCRAVO,64,20000,16,54,atlantica14,496,31,2.417044,2.626433
+ESCRAVO,64,20000,16,55,atlantica14,336,21,2.550076,2.655735
+ESCRAVO,64,20000,16,56,atlantica14,288,18,2.538291,2.701383
+ESCRAVO,64,20000,16,57,atlantica14,304,19,2.518636,2.687299
+ESCRAVO,64,20000,16,58,atlantica14,416,26,2.418567,2.641890
+ESCRAVO,64,20000,16,59,atlantica14,272,17,2.436382,2.626060
+ESCRAVO,64,20000,16,60,atlantica14,272,17,2.455534,2.642844
+ESCRAVO,64,20000,16,61,atlantica14,272,17,2.455809,2.686766
+ESCRAVO,64,20000,16,62,atlantica14,256,16,2.551662,2.635983
+ESCRAVO,64,20000,16,63,atlantica14,336,21,2.493458,2.676145
+RUN,forte,32,16,8
+cpu-bind=MASK - atlantica14, task 17  1 [207742]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task 21  5 [207746]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task 23  7 [207748]: mask 0x800 set
+cpu-bind=MASK - atlantica14, task 19  3 [207744]: mask 0x200 set
+cpu-bind=MASK - atlantica14, task 18  2 [207743]: mask 0x100 set
+cpu-bind=MASK - atlantica14, task 16  0 [207741]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task 27 11 [207752]: mask 0x2000 set
+cpu-bind=MASK - atlantica14, task 31 15 [207756]: mask 0x8000 set
+cpu-bind=MASK - atlantica14, task 20  4 [207745]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task 22  6 [207747]: mask 0x400 set
+cpu-bind=MASK - atlantica14, task 24  8 [207749]: mask 0x10 set
+cpu-bind=MASK - atlantica14, task 26 10 [207751]: mask 0x1000 set
+cpu-bind=MASK - atlantica14, task 29 13 [207754]: mask 0x80 set
+cpu-bind=MASK - atlantica14, task 30 14 [207755]: mask 0x4000 set
+cpu-bind=MASK - atlantica14, task 25  9 [207750]: mask 0x20 set
+cpu-bind=MASK - atlantica14, task 28 12 [207753]: mask 0x40 set
+cpu-bind=MASK - atlantica13, task  3  3 [307862]: mask 0x200 set
+cpu-bind=MASK - atlantica13, task  5  5 [307864]: mask 0x8 set
+cpu-bind=MASK - atlantica13, task  1  1 [307860]: mask 0x2 set
+cpu-bind=MASK - atlantica13, task  2  2 [307861]: mask 0x100 set
+cpu-bind=MASK - atlantica13, task  7  7 [307866]: mask 0x800 set
+cpu-bind=MASK - atlantica13, task  4  4 [307863]: mask 0x4 set
+cpu-bind=MASK - atlantica13, task  6  6 [307865]: mask 0x400 set
+cpu-bind=MASK - atlantica13, task  0  0 [307859]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task 10 10 [307869]: mask 0x1000 set
+cpu-bind=MASK - atlantica13, task 13 13 [307872]: mask 0x80 set
+cpu-bind=MASK - atlantica13, task 14 14 [307873]: mask 0x4000 set
+cpu-bind=MASK - atlantica13, task  8  8 [307867]: mask 0x10 set
+cpu-bind=MASK - atlantica13, task  9  9 [307868]: mask 0x20 set
+cpu-bind=MASK - atlantica13, task 12 12 [307871]: mask 0x40 set
+cpu-bind=MASK - atlantica13, task 11 11 [307870]: mask 0x2000 set
+cpu-bind=MASK - atlantica13, task 15 15 [307874]: mask 0x8000 set
+P=32 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=2.542473 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,32,20000,16,20,1,2.542473,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,32,20000,16,1,atlantica13,640,40,2.488102,2.494741
+ESCRAVO,32,20000,16,2,atlantica13,752,47,2.503212,2.504869
+ESCRAVO,32,20000,16,3,atlantica13,640,40,2.489696,2.495999
+ESCRAVO,32,20000,16,4,atlantica13,656,41,2.491515,2.493239
+ESCRAVO,32,20000,16,5,atlantica13,656,41,2.500741,2.506844
+ESCRAVO,32,20000,16,6,atlantica13,656,41,2.493039,2.494674
+ESCRAVO,32,20000,16,7,atlantica13,656,41,2.500167,2.505660
+ESCRAVO,32,20000,16,8,atlantica13,672,42,2.518006,2.519788
+ESCRAVO,32,20000,16,9,atlantica13,656,41,2.507810,2.514462
+ESCRAVO,32,20000,16,10,atlantica13,672,42,2.519299,2.520968
+ESCRAVO,32,20000,16,11,atlantica13,656,41,2.509033,2.515115
+ESCRAVO,32,20000,16,12,atlantica13,672,42,2.519930,2.521666
+ESCRAVO,32,20000,16,13,atlantica13,656,41,2.499885,2.506012
+ESCRAVO,32,20000,16,14,atlantica13,672,42,2.521387,2.522986
+ESCRAVO,32,20000,16,15,atlantica13,656,41,2.498971,2.504787
+ESCRAVO,32,20000,16,16,atlantica14,640,40,2.524146,2.538990
+ESCRAVO,32,20000,16,17,atlantica14,624,39,2.494617,2.508181
+ESCRAVO,32,20000,16,18,atlantica14,624,39,2.486101,2.502461
+ESCRAVO,32,20000,16,19,atlantica14,624,39,2.493415,2.508200
+ESCRAVO,32,20000,16,20,atlantica14,608,38,2.485071,2.500569
+ESCRAVO,32,20000,16,21,atlantica14,624,39,2.512182,2.527870
+ESCRAVO,32,20000,16,22,atlantica14,640,40,2.491131,2.507885
+ESCRAVO,32,20000,16,23,atlantica14,624,39,2.506641,2.522292
+ESCRAVO,32,20000,16,24,atlantica14,624,39,2.475524,2.491244
+ESCRAVO,32,20000,16,25,atlantica14,640,40,2.524251,2.540994
+ESCRAVO,32,20000,16,26,atlantica14,624,39,2.480656,2.495872
+ESCRAVO,32,20000,16,27,atlantica14,640,40,2.526247,2.542114
+ESCRAVO,32,20000,16,28,atlantica14,624,39,2.479978,2.496233
+ESCRAVO,32,20000,16,29,atlantica14,624,39,2.484642,2.502229
+ESCRAVO,32,20000,16,30,atlantica14,624,39,2.477700,2.495220
+ESCRAVO,32,20000,16,31,atlantica14,624,39,2.501476,2.525809
+RUN,forte,16,8,8
+cpu-bind=MASK - atlantica13, task  2  2 [307936]: mask 0x4 set
+cpu-bind=MASK - atlantica13, task  3  3 [307937]: mask 0x8 set
+cpu-bind=MASK - atlantica13, task  1  1 [307935]: mask 0x2 set
+cpu-bind=MASK - atlantica13, task  5  5 [307939]: mask 0x20 set
+cpu-bind=MASK - atlantica13, task  7  7 [307941]: mask 0x80 set
+cpu-bind=MASK - atlantica13, task  4  4 [307938]: mask 0x10 set
+cpu-bind=MASK - atlantica13, task  6  6 [307940]: mask 0x40 set
+cpu-bind=MASK - atlantica13, task  0  0 [307934]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  9  1 [207803]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task 11  3 [207805]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task 14  6 [207808]: mask 0x40 set
+cpu-bind=MASK - atlantica14, task  8  0 [207802]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task 15  7 [207809]: mask 0x80 set
+cpu-bind=MASK - atlantica14, task 10  2 [207804]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task 12  4 [207806]: mask 0x10 set
+cpu-bind=MASK - atlantica14, task 13  5 [207807]: mask 0x20 set
+P=16 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=2.676301 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,16,20000,16,20,1,2.676301,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,16,20000,16,1,atlantica13,1312,82,2.670815,2.672246
+ESCRAVO,16,20000,16,2,atlantica13,1344,84,2.673204,2.675778
+ESCRAVO,16,20000,16,3,atlantica13,1312,82,2.664976,2.666825
+ESCRAVO,16,20000,16,4,atlantica13,1328,83,2.646892,2.648213
+ESCRAVO,16,20000,16,5,atlantica13,1312,82,2.672965,2.674579
+ESCRAVO,16,20000,16,6,atlantica13,1328,83,2.644001,2.645382
+ESCRAVO,16,20000,16,7,atlantica13,1312,82,2.670479,2.672189
+ESCRAVO,16,20000,16,8,atlantica14,1344,84,2.646135,2.658366
+ESCRAVO,16,20000,16,9,atlantica14,1344,84,2.639768,2.655268
+ESCRAVO,16,20000,16,10,atlantica14,1344,84,2.649242,2.661261
+ESCRAVO,16,20000,16,11,atlantica14,1344,84,2.643169,2.655628
+ESCRAVO,16,20000,16,12,atlantica14,1344,84,2.650707,2.663590
+ESCRAVO,16,20000,16,13,atlantica14,1344,84,2.644534,2.657605
+ESCRAVO,16,20000,16,14,atlantica14,1344,84,2.645567,2.659153
+ESCRAVO,16,20000,16,15,atlantica14,1344,84,2.642212,2.655824
+RUN,forte,8,4,8
+cpu-bind=MASK - atlantica13, task  1  1 [307983]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task  5  1 [207841]: mask 0x2 set
+cpu-bind=MASK - atlantica13, task  3  3 [307985]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task  6  2 [207842]: mask 0x4 set
+cpu-bind=MASK - atlantica13, task  0  0 [307982]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  4  0 [207840]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  2  2 [307984]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task  7  3 [207843]: mask 0x8 set
+P=8 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=5.241819 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,8,20000,16,20,1,5.241819,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,8,20000,16,1,atlantica13,2800,175,5.218957,5.220988
+ESCRAVO,8,20000,16,2,atlantica13,2816,176,5.231835,5.233762
+ESCRAVO,8,20000,16,3,atlantica13,2832,177,5.236235,5.238548
+ESCRAVO,8,20000,16,4,atlantica14,2912,182,5.195122,5.240954
+ESCRAVO,8,20000,16,5,atlantica14,2880,180,5.195074,5.223810
+ESCRAVO,8,20000,16,6,atlantica14,2864,179,5.181020,5.221084
+ESCRAVO,8,20000,16,7,atlantica14,2896,181,5.191779,5.223366
+RUN,forte,4,2,8
+cpu-bind=MASK - atlantica13, task  0  0 [308018]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  2  0 [207866]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  1  1 [308019]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task  3  1 [207867]: mask 0x2 set
+P=4 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=11.935984 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,4,20000,16,20,1,11.935984,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,4,20000,16,1,atlantica13,6544,409,11.904835,11.908186
+ESCRAVO,4,20000,16,2,atlantica14,6704,419,11.819121,11.933510
+ESCRAVO,4,20000,16,3,atlantica14,6752,422,11.864778,11.936213
+RUN,forte,2,1,8
+cpu-bind=MASK - atlantica13, task  0  0 [308050]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  1  0 [207889]: mask 0x1 set
+P=2 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=35.576763 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,2,20000,16,20,1,35.576763,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,2,20000,16,1,atlantica14,20000,1250,35.271238,35.562196
+RUN,forte_1no,8,8,8
+cpu-bind=MASK - atlantica14, task  3  3 [207910]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task  7  7 [207914]: mask 0x80 set
+cpu-bind=MASK - atlantica14, task  1  1 [207908]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task  4  4 [207911]: mask 0x10 set
+cpu-bind=MASK - atlantica14, task  5  5 [207912]: mask 0x20 set
+cpu-bind=MASK - atlantica14, task  0  0 [207907]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  2  2 [207909]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task  6  6 [207913]: mask 0x40 set
+P=8 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=5.445930 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,8,20000,16,20,1,5.445930,56993,569540234
+MESTRE,atlantica14
+ESCRAVO,8,20000,16,1,atlantica14,2816,176,5.433378,5.435354
+ESCRAVO,8,20000,16,2,atlantica14,2912,182,5.444726,5.445923
+ESCRAVO,8,20000,16,3,atlantica14,2816,176,5.431740,5.433803
+ESCRAVO,8,20000,16,4,atlantica14,2912,182,5.443754,5.445720
+ESCRAVO,8,20000,16,5,atlantica14,2816,176,5.427724,5.430164
+ESCRAVO,8,20000,16,6,atlantica14,2896,181,5.417486,5.419099
+ESCRAVO,8,20000,16,7,atlantica14,2832,177,5.441112,5.444188
+RUN,forte,2,1,9
+cpu-bind=MASK - atlantica14, task  1  0 [207945]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  0  0 [308085]: mask 0x1 set
+P=2 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=35.516529 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,2,20000,16,20,1,35.516529,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,2,20000,16,1,atlantica14,20000,1250,35.208927,35.489969
+RUN,forte,4,2,9
+cpu-bind=MASK - atlantica13, task  1  1 [308115]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task  3  1 [207965]: mask 0x2 set
+cpu-bind=MASK - atlantica13, task  0  0 [308114]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  2  0 [207964]: mask 0x1 set
+P=4 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=11.909317 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,4,20000,16,20,1,11.909317,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,4,20000,16,1,atlantica13,6576,411,11.905889,11.909329
+ESCRAVO,4,20000,16,2,atlantica14,6704,419,11.803512,11.885367
+ESCRAVO,4,20000,16,3,atlantica14,6720,420,11.801343,11.892987
+RUN,forte,8,4,9
+cpu-bind=MASK - atlantica13, task  1  1 [308147]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task  5  1 [207985]: mask 0x2 set
+cpu-bind=MASK - atlantica13, task  0  0 [308146]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  6  2 [207986]: mask 0x4 set
+cpu-bind=MASK - atlantica13, task  3  3 [308149]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task  7  3 [207987]: mask 0x8 set
+cpu-bind=MASK - atlantica13, task  2  2 [308148]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task  4  0 [207984]: mask 0x1 set
+P=8 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=5.238452 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,8,20000,16,20,1,5.238452,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,8,20000,16,1,atlantica13,2816,176,5.226872,5.229279
+ESCRAVO,8,20000,16,2,atlantica13,2816,176,5.220546,5.223846
+ESCRAVO,8,20000,16,3,atlantica13,2816,176,5.215660,5.217999
+ESCRAVO,8,20000,16,4,atlantica14,2912,182,5.192325,5.225391
+ESCRAVO,8,20000,16,5,atlantica14,2864,179,5.167251,5.214512
+ESCRAVO,8,20000,16,6,atlantica14,2880,180,5.200520,5.227289
+ESCRAVO,8,20000,16,7,atlantica14,2896,181,5.195855,5.232300
+RUN,forte,16,8,9
+cpu-bind=MASK - atlantica14, task 11  3 [208014]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task 13  5 [208016]: mask 0x20 set
+cpu-bind=MASK - atlantica14, task 15  7 [208018]: mask 0x80 set
+cpu-bind=MASK - atlantica14, task  9  1 [208012]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task 10  2 [208013]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task 12  4 [208015]: mask 0x10 set
+cpu-bind=MASK - atlantica14, task 14  6 [208017]: mask 0x40 set
+cpu-bind=MASK - atlantica14, task  8  0 [208011]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  0  0 [308181]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  4  4 [308185]: mask 0x10 set
+cpu-bind=MASK - atlantica13, task  7  7 [308188]: mask 0x80 set
+cpu-bind=MASK - atlantica13, task  1  1 [308182]: mask 0x2 set
+cpu-bind=MASK - atlantica13, task  6  6 [308187]: mask 0x40 set
+cpu-bind=MASK - atlantica13, task  2  2 [308183]: mask 0x4 set
+cpu-bind=MASK - atlantica13, task  3  3 [308184]: mask 0x8 set
+cpu-bind=MASK - atlantica13, task  5  5 [308186]: mask 0x20 set
+P=16 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=2.690756 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,16,20000,16,20,1,2.690756,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,16,20000,16,1,atlantica13,1312,82,2.658139,2.665652
+ESCRAVO,16,20000,16,2,atlantica13,1328,83,2.646888,2.656818
+ESCRAVO,16,20000,16,3,atlantica13,1296,81,2.648244,2.659501
+ESCRAVO,16,20000,16,4,atlantica13,1328,83,2.645380,2.655493
+ESCRAVO,16,20000,16,5,atlantica13,1296,81,2.646877,2.654183
+ESCRAVO,16,20000,16,6,atlantica13,1328,83,2.646132,2.658073
+ESCRAVO,16,20000,16,7,atlantica13,1312,82,2.668377,2.675366
+ESCRAVO,16,20000,16,8,atlantica14,1360,85,2.675923,2.689078
+ESCRAVO,16,20000,16,9,atlantica14,1344,84,2.631907,2.648425
+ESCRAVO,16,20000,16,10,atlantica14,1344,84,2.635932,2.655211
+ESCRAVO,16,20000,16,11,atlantica14,1360,85,2.652245,2.675274
+ESCRAVO,16,20000,16,12,atlantica14,1344,84,2.637202,2.656877
+ESCRAVO,16,20000,16,13,atlantica14,1344,84,2.630277,2.646053
+ESCRAVO,16,20000,16,14,atlantica14,1360,85,2.659879,2.681090
+ESCRAVO,16,20000,16,15,atlantica14,1344,84,2.631561,2.648226
+RUN,forte,32,16,9
+cpu-bind=MASK - atlantica13, task  9  9 [308238]: mask 0x20 set
+cpu-bind=MASK - atlantica13, task 11 11 [308240]: mask 0x2000 set
+cpu-bind=MASK - atlantica13, task 10 10 [308239]: mask 0x1000 set
+cpu-bind=MASK - atlantica13, task  5  5 [308234]: mask 0x8 set
+cpu-bind=MASK - atlantica13, task  7  7 [308236]: mask 0x800 set
+cpu-bind=MASK - atlantica13, task  1  1 [308230]: mask 0x2 set
+cpu-bind=MASK - atlantica13, task  6  6 [308235]: mask 0x400 set
+cpu-bind=MASK - atlantica13, task  2  2 [308231]: mask 0x100 set
+cpu-bind=MASK - atlantica13, task  3  3 [308232]: mask 0x200 set
+cpu-bind=MASK - atlantica13, task  4  4 [308233]: mask 0x4 set
+cpu-bind=MASK - atlantica13, task 12 12 [308241]: mask 0x40 set
+cpu-bind=MASK - atlantica13, task 14 14 [308243]: mask 0x4000 set
+cpu-bind=MASK - atlantica13, task  0  0 [308229]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  8  8 [308237]: mask 0x10 set
+cpu-bind=MASK - atlantica13, task 15 15 [308244]: mask 0x8000 set
+cpu-bind=MASK - atlantica13, task 13 13 [308242]: mask 0x80 set
+cpu-bind=MASK - atlantica14, task 26 10 [208061]: mask 0x1000 set
+cpu-bind=MASK - atlantica14, task 28 12 [208063]: mask 0x40 set
+cpu-bind=MASK - atlantica14, task 17  1 [208052]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task 18  2 [208053]: mask 0x100 set
+cpu-bind=MASK - atlantica14, task 22  6 [208057]: mask 0x400 set
+cpu-bind=MASK - atlantica14, task 29 13 [208064]: mask 0x80 set
+cpu-bind=MASK - atlantica14, task 20  4 [208055]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task 23  7 [208058]: mask 0x800 set
+cpu-bind=MASK - atlantica14, task 31 15 [208066]: mask 0x8000 set
+cpu-bind=MASK - atlantica14, task 19  3 [208054]: mask 0x200 set
+cpu-bind=MASK - atlantica14, task 30 14 [208065]: mask 0x4000 set
+cpu-bind=MASK - atlantica14, task 16  0 [208051]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task 27 11 [208062]: mask 0x2000 set
+cpu-bind=MASK - atlantica14, task 21  5 [208056]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task 25  9 [208060]: mask 0x20 set
+cpu-bind=MASK - atlantica14, task 24  8 [208059]: mask 0x10 set
+P=32 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=2.530333 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,32,20000,16,20,1,2.530333,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,32,20000,16,1,atlantica13,656,41,2.500437,2.502071
+ESCRAVO,32,20000,16,2,atlantica13,752,47,2.494421,2.496112
+ESCRAVO,32,20000,16,3,atlantica13,656,41,2.498958,2.505140
+ESCRAVO,32,20000,16,4,atlantica13,672,42,2.520555,2.522619
+ESCRAVO,32,20000,16,5,atlantica13,656,41,2.498542,2.500212
+ESCRAVO,32,20000,16,6,atlantica13,656,41,2.475144,2.476857
+ESCRAVO,32,20000,16,7,atlantica13,656,41,2.497077,2.498827
+ESCRAVO,32,20000,16,8,atlantica13,688,43,2.522737,2.524519
+ESCRAVO,32,20000,16,9,atlantica13,656,41,2.500454,2.502019
+ESCRAVO,32,20000,16,10,atlantica13,688,43,2.521189,2.523058
+ESCRAVO,32,20000,16,11,atlantica13,656,41,2.499345,2.505407
+ESCRAVO,32,20000,16,12,atlantica13,688,43,2.526455,2.528547
+ESCRAVO,32,20000,16,13,atlantica13,640,40,2.509692,2.511687
+ESCRAVO,32,20000,16,14,atlantica13,688,43,2.528435,2.530016
+ESCRAVO,32,20000,16,15,atlantica13,640,40,2.510914,2.512713
+ESCRAVO,32,20000,16,16,atlantica14,624,39,2.472778,2.487554
+ESCRAVO,32,20000,16,17,atlantica14,624,39,2.501281,2.517946
+ESCRAVO,32,20000,16,18,atlantica14,624,39,2.498267,2.514051
+ESCRAVO,32,20000,16,19,atlantica14,624,39,2.502731,2.517664
+ESCRAVO,32,20000,16,20,atlantica14,624,39,2.458733,2.475068
+ESCRAVO,32,20000,16,21,atlantica14,624,39,2.510348,2.528148
+ESCRAVO,32,20000,16,22,atlantica14,624,39,2.462133,2.476897
+ESCRAVO,32,20000,16,23,atlantica14,624,39,2.513312,2.528843
+ESCRAVO,32,20000,16,24,atlantica14,624,39,2.465665,2.481272
+ESCRAVO,32,20000,16,25,atlantica14,624,39,2.498475,2.516718
+ESCRAVO,32,20000,16,26,atlantica14,624,39,2.467096,2.482463
+ESCRAVO,32,20000,16,27,atlantica14,624,39,2.501262,2.515569
+ESCRAVO,32,20000,16,28,atlantica14,608,38,2.484241,2.502183
+ESCRAVO,32,20000,16,29,atlantica14,624,39,2.482966,2.499728
+ESCRAVO,32,20000,16,30,atlantica14,608,38,2.481830,2.500913
+ESCRAVO,32,20000,16,31,atlantica14,624,39,2.487969,2.504479
+RUN,forte,64,32,9
+cpu-bind-threads=MASK - atlantica14, task 36  4 [208118]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 33  1 [208115]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 38  6 [208120]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 35  3 [208117]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 37  5 [208119]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 32  0 [208114]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 34  2 [208116]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 39  7 [208121]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 40  8 [208122]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 41  9 [208123]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 42 10 [208124]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 43 11 [208125]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 44 12 [208126]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 54 22 [208136]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 52 20 [208134]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 46 14 [208128]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 45 13 [208127]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 47 15 [208129]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 55 23 [208137]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 50 18 [208132]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 53 21 [208135]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 51 19 [208133]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 57 25 [208139]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 49 17 [208131]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 48 16 [208130]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 61 29 [208143]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 60 28 [208142]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 58 26 [208140]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 62 30 [208144]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 56 24 [208138]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 59 27 [208141]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  2  2 [308302]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  5  5 [308305]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  6  6 [308306]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  7  7 [308307]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  0  0 [308300]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  1  1 [308301]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  3  3 [308303]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  4  4 [308304]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 10 10 [308310]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 14 14 [308314]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 16 16 [308316]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  9  9 [308309]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 11 11 [308311]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 13 13 [308313]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 15 15 [308315]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 12 12 [308312]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 20 20 [308320]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 21 21 [308321]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 18 18 [308318]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 19 19 [308319]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  8  8 [308308]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 22 22 [308322]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 23 23 [308323]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 17 17 [308317]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 31 31 [308331]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 29 29 [308329]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 24 24 [308324]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 25 25 [308325]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 28 28 [308328]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 27 27 [308327]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 30 30 [308330]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 26 26 [308326]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 63 31 [208145]: mask 0xffff set
+P=64 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=2.967987 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,64,20000,16,20,1,2.967987,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,64,20000,16,1,atlantica13,384,24,2.459554,2.924597
+ESCRAVO,64,20000,16,2,atlantica13,288,18,2.567383,2.917490
+ESCRAVO,64,20000,16,3,atlantica13,288,18,2.513074,2.873481
+ESCRAVO,64,20000,16,4,atlantica13,288,18,2.518918,2.905340
+ESCRAVO,64,20000,16,5,atlantica13,352,22,2.659822,2.933449
+ESCRAVO,64,20000,16,6,atlantica13,320,20,2.551574,2.918559
+ESCRAVO,64,20000,16,7,atlantica13,352,22,2.520471,2.930890
+ESCRAVO,64,20000,16,8,atlantica13,288,18,2.481259,2.880188
+ESCRAVO,64,20000,16,9,atlantica13,320,20,2.631912,2.926826
+ESCRAVO,64,20000,16,10,atlantica13,288,18,2.476540,2.899113
+ESCRAVO,64,20000,16,11,atlantica13,336,21,2.529409,2.943361
+ESCRAVO,64,20000,16,12,atlantica13,288,18,2.515283,2.937568
+ESCRAVO,64,20000,16,13,atlantica13,304,19,2.564798,2.944512
+ESCRAVO,64,20000,16,14,atlantica13,304,19,2.582064,2.931348
+ESCRAVO,64,20000,16,15,atlantica13,304,19,2.599155,2.969262
+ESCRAVO,64,20000,16,16,atlantica13,384,24,2.531784,2.908263
+ESCRAVO,64,20000,16,17,atlantica13,304,19,2.551732,2.865857
+ESCRAVO,64,20000,16,18,atlantica13,256,16,2.515510,2.946044
+ESCRAVO,64,20000,16,19,atlantica13,304,19,2.524173,2.880349
+ESCRAVO,64,20000,16,20,atlantica13,336,21,2.508614,2.859950
+ESCRAVO,64,20000,16,21,atlantica13,352,22,2.458078,2.892076
+ESCRAVO,64,20000,16,22,atlantica13,560,35,2.478023,2.934840
+ESCRAVO,64,20000,16,23,atlantica13,304,19,2.571203,2.960112
+ESCRAVO,64,20000,16,24,atlantica13,336,21,2.521255,2.933056
+ESCRAVO,64,20000,16,25,atlantica13,416,26,2.484973,2.962345
+ESCRAVO,64,20000,16,26,atlantica13,432,27,2.529572,2.897255
+ESCRAVO,64,20000,16,27,atlantica13,400,25,2.433363,2.911984
+ESCRAVO,64,20000,16,28,atlantica13,288,18,2.610892,2.911340
+ESCRAVO,64,20000,16,29,atlantica13,352,22,2.535476,2.889089
+ESCRAVO,64,20000,16,30,atlantica13,384,24,2.458582,2.948420
+ESCRAVO,64,20000,16,31,atlantica13,288,18,2.505763,2.883179
+ESCRAVO,64,20000,16,32,atlantica14,288,18,2.546283,2.958892
+ESCRAVO,64,20000,16,33,atlantica14,352,22,2.596517,2.953198
+ESCRAVO,64,20000,16,34,atlantica14,288,18,2.482313,2.939615
+ESCRAVO,64,20000,16,35,atlantica14,352,22,2.487928,2.870714
+ESCRAVO,64,20000,16,36,atlantica14,336,21,2.440352,2.909505
+ESCRAVO,64,20000,16,37,atlantica14,304,19,2.560823,2.947477
+ESCRAVO,64,20000,16,38,atlantica14,288,18,2.578848,2.910625
+ESCRAVO,64,20000,16,39,atlantica14,288,18,2.598152,2.943493
+ESCRAVO,64,20000,16,40,atlantica14,304,19,2.535655,2.933381
+ESCRAVO,64,20000,16,41,atlantica14,288,18,2.440605,2.926654
+ESCRAVO,64,20000,16,42,atlantica14,288,18,2.602034,2.923214
+ESCRAVO,64,20000,16,43,atlantica14,256,16,2.484881,2.866026
+ESCRAVO,64,20000,16,44,atlantica14,304,19,2.665738,2.940373
+ESCRAVO,64,20000,16,45,atlantica14,272,17,2.486893,2.896738
+ESCRAVO,64,20000,16,46,atlantica14,288,18,2.660242,2.942633
+ESCRAVO,64,20000,16,47,atlantica14,304,19,2.646419,2.950572
+ESCRAVO,64,20000,16,48,atlantica14,304,19,2.533822,2.935058
+ESCRAVO,64,20000,16,49,atlantica14,288,18,2.479924,2.954851
+ESCRAVO,64,20000,16,50,atlantica14,320,20,2.640421,2.932674
+ESCRAVO,64,20000,16,51,atlantica14,272,17,2.507112,2.848828
+ESCRAVO,64,20000,16,52,atlantica14,352,22,2.409974,2.840572
+ESCRAVO,64,20000,16,53,atlantica14,272,17,2.533233,2.934283
+ESCRAVO,64,20000,16,54,atlantica14,288,18,2.466849,2.941355
+ESCRAVO,64,20000,16,55,atlantica14,304,19,2.537312,2.964033
+ESCRAVO,64,20000,16,56,atlantica14,288,18,2.532670,2.892233
+ESCRAVO,64,20000,16,57,atlantica14,288,18,2.504364,2.877945
+ESCRAVO,64,20000,16,58,atlantica14,288,18,2.500701,2.916590
+ESCRAVO,64,20000,16,59,atlantica14,304,19,2.455498,2.910760
+ESCRAVO,64,20000,16,60,atlantica14,272,17,2.478578,2.875632
+ESCRAVO,64,20000,16,61,atlantica14,272,17,2.484973,2.892881
+ESCRAVO,64,20000,16,62,atlantica14,384,24,2.546838,2.957177
+ESCRAVO,64,20000,16,63,atlantica14,304,19,2.502857,2.926643
+RUN,forte_1no,8,8,9
+cpu-bind=MASK - atlantica14, task  1  1 [208224]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task  3  3 [208226]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task  5  5 [208228]: mask 0x20 set
+cpu-bind=MASK - atlantica14, task  7  7 [208230]: mask 0x80 set
+cpu-bind=MASK - atlantica14, task  0  0 [208223]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  2  2 [208225]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task  4  4 [208227]: mask 0x10 set
+cpu-bind=MASK - atlantica14, task  6  6 [208229]: mask 0x40 set
+P=8 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=5.474427 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,8,20000,16,20,1,5.474427,56993,569540234
+MESTRE,atlantica14
+ESCRAVO,8,20000,16,1,atlantica14,2816,176,5.447384,5.449732
+ESCRAVO,8,20000,16,2,atlantica14,2912,182,5.453313,5.454869
+ESCRAVO,8,20000,16,3,atlantica14,2816,176,5.472180,5.474407
+ESCRAVO,8,20000,16,4,atlantica14,2928,183,5.468514,5.470341
+ESCRAVO,8,20000,16,5,atlantica14,2800,175,5.459369,5.461346
+ESCRAVO,8,20000,16,6,atlantica14,2912,182,5.453193,5.454540
+ESCRAVO,8,20000,16,7,atlantica14,2816,176,5.455847,5.457712
+RUN,forte,64,32,10
+cpu-bind-threads=MASK - atlantica13, task  0  0 [308432]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  1  1 [308433]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  5  5 [308437]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  7  7 [308439]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 14 14 [308446]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  4  4 [308436]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  9  9 [308441]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  8  8 [308440]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 11 11 [308443]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  3  3 [308435]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  2  2 [308434]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 35  3 [208263]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 37  5 [208265]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 38  6 [208266]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 39  7 [208267]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 50 18 [208278]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task  6  6 [308438]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 12 12 [308444]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 44 12 [208272]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 40  8 [208268]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 13 13 [308445]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 15 15 [308447]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 16 16 [308448]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 20 20 [308452]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 21 21 [308453]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 10 10 [308442]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 19 19 [308451]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 18 18 [308450]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 22 22 [308454]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 17 17 [308449]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 24 24 [308456]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 28 28 [308460]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 25 25 [308457]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 26 26 [308458]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 32  0 [208260]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 34  2 [208262]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 36  4 [208264]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 41  9 [208269]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 42 10 [208270]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 45 13 [208273]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 46 14 [208274]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 27 27 [308459]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 47 15 [208275]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 52 20 [208280]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 53 21 [208281]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 51 19 [208279]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 33  1 [208261]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 55 23 [208283]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 56 24 [208284]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 23 23 [308455]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 29 29 [308461]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 48 16 [208276]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 43 11 [208271]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 54 22 [208282]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 31 31 [308463]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 49 17 [208277]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 57 25 [208285]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica13, task 30 30 [308462]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 58 26 [208286]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 60 28 [208288]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 62 30 [208290]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 59 27 [208287]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 61 29 [208289]: mask 0xffff set
+cpu-bind-threads=MASK - atlantica14, task 63 31 [208291]: mask 0xffff set
+P=64 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=2.794220 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,64,20000,16,20,1,2.794220,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,64,20000,16,1,atlantica13,288,18,2.388900,2.693340
+ESCRAVO,64,20000,16,2,atlantica13,336,21,2.566359,2.729633
+ESCRAVO,64,20000,16,3,atlantica13,336,21,2.650663,2.805763
+ESCRAVO,64,20000,16,4,atlantica13,336,21,2.421382,2.742066
+ESCRAVO,64,20000,16,5,atlantica13,336,21,2.548089,2.713466
+ESCRAVO,64,20000,16,6,atlantica13,352,22,2.519814,2.758324
+ESCRAVO,64,20000,16,7,atlantica13,368,23,2.586704,2.807671
+ESCRAVO,64,20000,16,8,atlantica13,304,19,2.606987,2.762652
+ESCRAVO,64,20000,16,9,atlantica13,288,18,2.395425,2.722995
+ESCRAVO,64,20000,16,10,atlantica13,336,21,2.582373,2.719774
+ESCRAVO,64,20000,16,11,atlantica13,304,19,2.556317,2.800221
+ESCRAVO,64,20000,16,12,atlantica13,304,19,2.507376,2.752049
+ESCRAVO,64,20000,16,13,atlantica13,304,19,2.296639,2.712605
+ESCRAVO,64,20000,16,14,atlantica13,288,18,2.513523,2.721501
+ESCRAVO,64,20000,16,15,atlantica13,304,19,2.619778,2.794419
+ESCRAVO,64,20000,16,16,atlantica13,352,22,2.616551,2.753433
+ESCRAVO,64,20000,16,17,atlantica13,432,27,2.427253,2.726184
+ESCRAVO,64,20000,16,18,atlantica13,304,19,2.556502,2.740438
+ESCRAVO,64,20000,16,19,atlantica13,320,20,2.562144,2.749933
+ESCRAVO,64,20000,16,20,atlantica13,320,20,2.307150,2.758515
+ESCRAVO,64,20000,16,21,atlantica13,416,26,2.418326,2.728300
+ESCRAVO,64,20000,16,22,atlantica13,320,20,2.601676,2.793997
+ESCRAVO,64,20000,16,23,atlantica13,288,18,2.445575,2.742754
+ESCRAVO,64,20000,16,24,atlantica13,336,21,2.574219,2.745228
+ESCRAVO,64,20000,16,25,atlantica13,368,23,2.481174,2.762587
+ESCRAVO,64,20000,16,26,atlantica13,304,19,2.550504,2.754735
+ESCRAVO,64,20000,16,27,atlantica13,336,21,2.527743,2.782200
+ESCRAVO,64,20000,16,28,atlantica13,416,26,2.406670,2.677756
+ESCRAVO,64,20000,16,29,atlantica13,352,22,2.664711,2.803356
+ESCRAVO,64,20000,16,30,atlantica13,352,22,2.518864,2.690773
+ESCRAVO,64,20000,16,31,atlantica13,336,21,2.573528,2.715576
+ESCRAVO,64,20000,16,32,atlantica14,304,19,2.448082,2.688802
+ESCRAVO,64,20000,16,33,atlantica14,304,19,2.554954,2.740019
+ESCRAVO,64,20000,16,34,atlantica14,320,20,2.498149,2.724487
+ESCRAVO,64,20000,16,35,atlantica14,304,19,2.538205,2.751169
+ESCRAVO,64,20000,16,36,atlantica14,304,19,2.528235,2.729380
+ESCRAVO,64,20000,16,37,atlantica14,288,18,2.440228,2.691631
+ESCRAVO,64,20000,16,38,atlantica14,320,20,2.601626,2.772477
+ESCRAVO,64,20000,16,39,atlantica14,288,18,2.526393,2.749746
+ESCRAVO,64,20000,16,40,atlantica14,304,19,2.457734,2.736315
+ESCRAVO,64,20000,16,41,atlantica14,288,18,2.453167,2.739269
+ESCRAVO,64,20000,16,42,atlantica14,288,18,2.454898,2.701197
+ESCRAVO,64,20000,16,43,atlantica14,288,18,2.402361,2.770952
+ESCRAVO,64,20000,16,44,atlantica14,304,19,2.376025,2.746179
+ESCRAVO,64,20000,16,45,atlantica14,288,18,2.350904,2.723006
+ESCRAVO,64,20000,16,46,atlantica14,320,20,2.498484,2.747824
+ESCRAVO,64,20000,16,47,atlantica14,304,19,2.539163,2.778698
+ESCRAVO,64,20000,16,48,atlantica14,304,19,2.555990,2.703326
+ESCRAVO,64,20000,16,49,atlantica14,288,18,2.337335,2.742028
+ESCRAVO,64,20000,16,50,atlantica14,288,18,2.484601,2.743413
+ESCRAVO,64,20000,16,51,atlantica14,288,18,2.488806,2.781046
+ESCRAVO,64,20000,16,52,atlantica14,304,19,2.495038,2.690053
+ESCRAVO,64,20000,16,53,atlantica14,304,19,2.532155,2.761198
+ESCRAVO,64,20000,16,54,atlantica14,320,20,2.452322,2.737181
+ESCRAVO,64,20000,16,55,atlantica14,304,19,2.484846,2.718948
+ESCRAVO,64,20000,16,56,atlantica14,320,20,2.648950,2.762139
+ESCRAVO,64,20000,16,57,atlantica14,304,19,2.543624,2.743137
+ESCRAVO,64,20000,16,58,atlantica14,304,19,2.443214,2.716550
+ESCRAVO,64,20000,16,59,atlantica14,304,19,2.531892,2.726280
+ESCRAVO,64,20000,16,60,atlantica14,304,19,2.573454,2.742392
+ESCRAVO,64,20000,16,61,atlantica14,304,19,2.548977,2.776702
+ESCRAVO,64,20000,16,62,atlantica14,304,19,2.523959,2.719489
+ESCRAVO,64,20000,16,63,atlantica14,304,19,2.548028,2.708379
+RUN,forte,32,16,10
+cpu-bind=MASK - atlantica13, task  0  0 [308552]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  5  5 [308557]: mask 0x8 set
+cpu-bind=MASK - atlantica13, task  7  7 [308559]: mask 0x800 set
+cpu-bind=MASK - atlantica13, task  3  3 [308555]: mask 0x200 set
+cpu-bind=MASK - atlantica13, task  1  1 [308553]: mask 0x2 set
+cpu-bind=MASK - atlantica13, task  2  2 [308554]: mask 0x100 set
+cpu-bind=MASK - atlantica13, task 11 11 [308563]: mask 0x2000 set
+cpu-bind=MASK - atlantica13, task 14 14 [308566]: mask 0x4000 set
+cpu-bind=MASK - atlantica13, task  4  4 [308556]: mask 0x4 set
+cpu-bind=MASK - atlantica13, task  6  6 [308558]: mask 0x400 set
+cpu-bind=MASK - atlantica13, task  8  8 [308560]: mask 0x10 set
+cpu-bind=MASK - atlantica13, task 10 10 [308562]: mask 0x1000 set
+cpu-bind=MASK - atlantica13, task 12 12 [308564]: mask 0x40 set
+cpu-bind=MASK - atlantica13, task 13 13 [308565]: mask 0x80 set
+cpu-bind=MASK - atlantica13, task  9  9 [308561]: mask 0x20 set
+cpu-bind=MASK - atlantica13, task 15 15 [308567]: mask 0x8000 set
+cpu-bind=MASK - atlantica14, task 25  9 [208381]: mask 0x20 set
+cpu-bind=MASK - atlantica14, task 30 14 [208386]: mask 0x4000 set
+cpu-bind=MASK - atlantica14, task 17  1 [208373]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task 27 11 [208383]: mask 0x2000 set
+cpu-bind=MASK - atlantica14, task 20  4 [208376]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task 16  0 [208372]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task 18  2 [208374]: mask 0x100 set
+cpu-bind=MASK - atlantica14, task 19  3 [208375]: mask 0x200 set
+cpu-bind=MASK - atlantica14, task 22  6 [208378]: mask 0x400 set
+cpu-bind=MASK - atlantica14, task 26 10 [208382]: mask 0x1000 set
+cpu-bind=MASK - atlantica14, task 31 15 [208387]: mask 0x8000 set
+cpu-bind=MASK - atlantica14, task 23  7 [208379]: mask 0x800 set
+cpu-bind=MASK - atlantica14, task 21  5 [208377]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task 28 12 [208384]: mask 0x40 set
+cpu-bind=MASK - atlantica14, task 24  8 [208380]: mask 0x10 set
+cpu-bind=MASK - atlantica14, task 29 13 [208385]: mask 0x80 set
+P=32 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=2.552696 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,32,20000,16,20,1,2.552696,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,32,20000,16,1,atlantica13,656,41,2.502379,2.504294
+ESCRAVO,32,20000,16,2,atlantica13,752,47,2.493474,2.495165
+ESCRAVO,32,20000,16,3,atlantica13,656,41,2.502167,2.507750
+ESCRAVO,32,20000,16,4,atlantica13,656,41,2.518118,2.519975
+ESCRAVO,32,20000,16,5,atlantica13,656,41,2.506809,2.508513
+ESCRAVO,32,20000,16,6,atlantica13,656,41,2.519981,2.521594
+ESCRAVO,32,20000,16,7,atlantica13,656,41,2.505216,2.511393
+ESCRAVO,32,20000,16,8,atlantica13,688,43,2.523259,2.525184
+ESCRAVO,32,20000,16,9,atlantica13,656,41,2.507439,2.513555
+ESCRAVO,32,20000,16,10,atlantica13,672,42,2.477921,2.479739
+ESCRAVO,32,20000,16,11,atlantica13,656,41,2.508604,2.514958
+ESCRAVO,32,20000,16,12,atlantica13,672,42,2.522067,2.523947
+ESCRAVO,32,20000,16,13,atlantica13,656,41,2.495556,2.497608
+ESCRAVO,32,20000,16,14,atlantica13,672,42,2.523950,2.525779
+ESCRAVO,32,20000,16,15,atlantica13,656,41,2.495893,2.501647
+ESCRAVO,32,20000,16,16,atlantica14,640,40,2.535257,2.551000
+ESCRAVO,32,20000,16,17,atlantica14,624,39,2.476769,2.492024
+ESCRAVO,32,20000,16,18,atlantica14,624,39,2.500597,2.516509
+ESCRAVO,32,20000,16,19,atlantica14,624,39,2.481028,2.495109
+ESCRAVO,32,20000,16,20,atlantica14,624,39,2.474997,2.489998
+ESCRAVO,32,20000,16,21,atlantica14,608,38,2.481287,2.497101
+ESCRAVO,32,20000,16,22,atlantica14,624,39,2.479118,2.494488
+ESCRAVO,32,20000,16,23,atlantica14,608,38,2.479081,2.496001
+ESCRAVO,32,20000,16,24,atlantica14,624,39,2.468691,2.485252
+ESCRAVO,32,20000,16,25,atlantica14,640,40,2.493039,2.508863
+ESCRAVO,32,20000,16,26,atlantica14,624,39,2.470323,2.486888
+ESCRAVO,32,20000,16,27,atlantica14,624,39,2.462378,2.478947
+ESCRAVO,32,20000,16,28,atlantica14,624,39,2.477625,2.492820
+ESCRAVO,32,20000,16,29,atlantica14,624,39,2.467759,2.480502
+ESCRAVO,32,20000,16,30,atlantica14,624,39,2.475755,2.490743
+ESCRAVO,32,20000,16,31,atlantica14,624,39,2.467807,2.481641
+RUN,forte,16,8,10
+cpu-bind=MASK - atlantica13, task  1  1 [308624]: mask 0x2 set
+cpu-bind=MASK - atlantica13, task  3  3 [308626]: mask 0x8 set
+cpu-bind=MASK - atlantica13, task  5  5 [308628]: mask 0x20 set
+cpu-bind=MASK - atlantica13, task  0  0 [308623]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  4  4 [308627]: mask 0x10 set
+cpu-bind=MASK - atlantica13, task  6  6 [308629]: mask 0x40 set
+cpu-bind=MASK - atlantica13, task  7  7 [308630]: mask 0x80 set
+cpu-bind=MASK - atlantica13, task  2  2 [308625]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task 13  5 [208440]: mask 0x20 set
+cpu-bind=MASK - atlantica14, task 15  7 [208442]: mask 0x80 set
+cpu-bind=MASK - atlantica14, task  9  1 [208436]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task 11  3 [208438]: mask 0x8 set
+cpu-bind=MASK - atlantica14, task 12  4 [208439]: mask 0x10 set
+cpu-bind=MASK - atlantica14, task  8  0 [208435]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task 10  2 [208437]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task 14  6 [208441]: mask 0x40 set
+P=16 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=2.738219 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,16,20000,16,20,1,2.738219,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,16,20000,16,1,atlantica13,1328,83,2.717830,2.721682
+ESCRAVO,16,20000,16,2,atlantica13,1328,83,2.722689,2.729707
+ESCRAVO,16,20000,16,3,atlantica13,1328,83,2.711643,2.717611
+ESCRAVO,16,20000,16,4,atlantica13,1328,83,2.707755,2.715979
+ESCRAVO,16,20000,16,5,atlantica13,1328,83,2.724339,2.729837
+ESCRAVO,16,20000,16,6,atlantica13,1328,83,2.710179,2.717451
+ESCRAVO,16,20000,16,7,atlantica13,1328,83,2.719180,2.720795
+ESCRAVO,16,20000,16,8,atlantica14,1312,82,2.711285,2.724398
+ESCRAVO,16,20000,16,9,atlantica14,1360,85,2.691555,2.705785
+ESCRAVO,16,20000,16,10,atlantica14,1312,82,2.721553,2.740747
+ESCRAVO,16,20000,16,11,atlantica14,1360,85,2.693670,2.708981
+ESCRAVO,16,20000,16,12,atlantica14,1312,82,2.719318,2.739484
+ESCRAVO,16,20000,16,13,atlantica14,1360,85,2.694615,2.709493
+ESCRAVO,16,20000,16,14,atlantica14,1312,82,2.726599,2.742171
+ESCRAVO,16,20000,16,15,atlantica14,1376,86,2.718698,2.732423
+RUN,forte,8,4,10
+cpu-bind=MASK - atlantica14, task  6  2 [208475]: mask 0x4 set
+cpu-bind=MASK - atlantica13, task  0  0 [308671]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  7  3 [208476]: mask 0x8 set
+cpu-bind=MASK - atlantica13, task  1  1 [308672]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task  5  1 [208474]: mask 0x2 set
+cpu-bind=MASK - atlantica13, task  2  2 [308673]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task  4  0 [208473]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  3  3 [308674]: mask 0x8 set
+P=8 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=5.248114 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,8,20000,16,20,1,5.248114,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,8,20000,16,1,atlantica13,2816,176,5.215192,5.217281
+ESCRAVO,8,20000,16,2,atlantica13,2832,177,5.246248,5.248098
+ESCRAVO,8,20000,16,3,atlantica13,2816,176,5.228927,5.230919
+ESCRAVO,8,20000,16,4,atlantica14,2928,183,5.188831,5.226550
+ESCRAVO,8,20000,16,5,atlantica14,2864,179,5.190729,5.224106
+ESCRAVO,8,20000,16,6,atlantica14,2864,179,5.187707,5.234795
+ESCRAVO,8,20000,16,7,atlantica14,2880,180,5.189621,5.222673
+RUN,forte,4,2,10
+cpu-bind=MASK - atlantica13, task  1  1 [308708]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task  2  0 [208498]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  0  0 [308707]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  3  1 [208499]: mask 0x2 set
+P=4 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=11.936238 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,4,20000,16,20,1,11.936238,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,4,20000,16,1,atlantica13,6560,410,11.927867,11.931234
+ESCRAVO,4,20000,16,2,atlantica14,6688,418,11.821312,11.911866
+ESCRAVO,4,20000,16,3,atlantica14,6752,422,11.851733,11.930440
+RUN,forte,2,1,10
+cpu-bind=MASK - atlantica14, task  1  0 [208520]: mask 0x1 set
+cpu-bind=MASK - atlantica13, task  0  0 [308736]: mask 0x1 set
+P=2 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=35.528454 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,2,20000,16,20,1,35.528454,56993,569540234
+MESTRE,atlantica13
+ESCRAVO,2,20000,16,1,atlantica14,20000,1250,35.244446,35.502008
+RUN,forte_1no,8,8,10
+cpu-bind=MASK - atlantica14, task  6  6 [208546]: mask 0x40 set
+cpu-bind=MASK - atlantica14, task  1  1 [208541]: mask 0x2 set
+cpu-bind=MASK - atlantica14, task  4  4 [208544]: mask 0x10 set
+cpu-bind=MASK - atlantica14, task  5  5 [208545]: mask 0x20 set
+cpu-bind=MASK - atlantica14, task  7  7 [208547]: mask 0x80 set
+cpu-bind=MASK - atlantica14, task  0  0 [208540]: mask 0x1 set
+cpu-bind=MASK - atlantica14, task  2  2 [208542]: mask 0x4 set
+cpu-bind=MASK - atlantica14, task  3  3 [208543]: mask 0x8 set
+P=8 tarefas=20000 g=16 amostras=20 epocas=1 (amostras treinadas = 400000)
+tempo=5.432822 s
+checksum soma=56993 ordem=569540234
+CSV,mestre_escravo,8,20000,16,20,1,5.432822,56993,569540234
+MESTRE,atlantica14
+ESCRAVO,8,20000,16,1,atlantica14,2816,176,5.420502,5.422980
+ESCRAVO,8,20000,16,2,atlantica14,2912,182,5.431480,5.432828
+ESCRAVO,8,20000,16,3,atlantica14,2816,176,5.423459,5.425147
+ESCRAVO,8,20000,16,4,atlantica14,2912,182,5.427164,5.429201
+ESCRAVO,8,20000,16,5,atlantica14,2816,176,5.421664,5.423296
+ESCRAVO,8,20000,16,6,atlantica14,2912,182,5.429726,5.431247
+ESCRAVO,8,20000,16,7,atlantica14,2816,176,5.423291,5.425034

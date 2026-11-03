@@ -1,0 +1,13 @@
+== job 41941 em 2026-11-02T21:21:45-03:00
+== nos: atlantica13 
+== git: 2488100
+== entrada: TAREFAS=20000 AMOSTRAS=20 EPOCAS=1 G=16 REPS=10
+slurm-wlm 19.05.5
+g++ (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0
+CPU(s):                          16
+Thread(s) per core:              2
+Core(s) per socket:              4
+Socket(s):                       2
+Model name:                      Intel(R) Xeon(R) CPU           E5520  @ 2.27GHz
+TOPOLOGIA,8,16
+RUN,checksum_fraca,1,1,1

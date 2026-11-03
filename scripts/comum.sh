@@ -3,7 +3,7 @@
 # ---- Entrada de referencia (ajuste ate a sequencial ficar entre 30 e 60 s) ----
 # Tarefa curta (ver tarefa.h): estimada em ~1,7 ms na Atlantica (Xeon E5520),
 # entao ~25000 tarefas dao T1 de ~42 s. CALIBRAR na Atlantica.
-TAREFAS=${TAREFAS:-25000} # tarefas no saco
+TAREFAS=${TAREFAS:-20000} # tarefas no saco
 AMOSTRAS=${AMOSTRAS:-20}  # imagens de treino por tarefa
 EPOCAS=${EPOCAS:-1}       # epocas por tarefa
 # Granularidade escolhida (tarefas por mensagem). E um compromisso entre dois
