@@ -1,166 +1,157 @@
 # T2 — Mestre/escravo com MPI: busca de hiperparâmetros de uma MLP
+Heloysa Pelizon | Marina Bon
+Repositório: https://github.com/heloysapelizon/MLP-comp-par-t2
 
-Versão paralela, no modelo mestre/escravo com MPI, de uma busca de hiperparâmetros
-de uma rede MLP treinada no MNIST. É executada e medida no cluster Atlântica (LAD).
+Versão paralela, no modelo **mestre/escravo** com MPI, de uma busca de hiperparâmetros de
+uma rede MLP treinada no MNIST, executada e medida no cluster Atlântica (LAD). Como pede o
+enunciado, o foco é a **análise**: explicar as causas dos números, não repetir em texto o
+que o gráfico mostra.
 
 **Origem do código.** A rede neural (`NeuralNetwork.h/.cpp` e `load_mnist.h`) vem de
 [muchlakshay/MLP-From-Scratch](https://github.com/muchlakshay/MLP-From-Scratch)
 (licença MIT, arquivo `LICENSE`). No T2 ela mudou em três pontos: semente fixa opcional,
 `learn()` silencioso quando `verbose=false` e leitura parcial do MNIST. O resto é deste trabalho.
 
-## O problema
+## O problema e a tarefa
 
-Uma **tarefa** (a unidade de trabalho) treina uma MLP `784-h-h-10` e conta os acertos nas
-20 primeiras imagens de teste do MNIST. A configuração sai do índice da tarefa
-(`config_da_tarefa` em `tarefa.cpp`):
+Uma **tarefa** (a unidade de trabalho) treina uma MLP `784-h-h-10` e conta os acertos num
+conjunto fixo de validação. A configuração sai do índice da tarefa (`config_da_tarefa` em
+`tarefa.cpp`):
 - `h` ∈ {16, 32} e taxa ∈ {0,05; 0,1; 0,2};
-- uma das 500 fatias de `amostras` imagens do treino (20 na entrada de referência);
+- uma das 500 fatias de `amostras` imagens do treino;
 - 1 época, lote 8, semente = índice.
 
-As tarefas são independentes. Cada mensagem leva um bloco de **g** tarefas consecutivas,
-descrito por 2 inteiros `{inicio, qtd}`, porque cada escravo lê o MNIST antes da região
-medida.
+As tarefas são **independentes** e mais numerosas que os escravos, e treinar cada uma custa
+muito mais do que enviá-la: é o que torna o problema adequado ao modelo mestre/escravo. Cada
+mensagem leva um bloco de **g** tarefas consecutivas, descrito por 2 inteiros
+`{início, qtd}` (8 bytes), porque cada escravo lê o MNIST antes da região medida.
 
-**Por que uma tarefa tão curta.** O enunciado pede comparar a granularidade escolhida com
-uma bem menor e uma bem maior. Na primeira rodada (`resultados/v1_tarefa_10ms/`), a tarefa
-levava 10,5 ms. A ida e volta entre nós (~190 µs) pesava só 0,6%, e g = 1 já era o melhor,
-sem granularidade menor para comparar. A tarefa foi então reduzida ao mínimo que ainda
-aprende alguma coisa (~14% de acerto, contra 10% do acaso), para que g = 1 pague de verdade
-pelas mensagens. O `granularidade.sbatch` varre g de 1 a 2048 com P = 32, e o g de menor
-mediana vai para `G` em `scripts/comum.sh` antes da forte e da fraca.
+A tarefa foi dimensionada curta de propósito: assim g = 1 expõe de fato o custo das
+mensagens e dá o que comparar com granularidades maiores (exigido pelo enunciado). A
+primeira rodada, com uma tarefa de ~10 ms, está em `resultados/v1_tarefa_10ms/` (ver o
+LEIAME da pasta).
 
-Checksum impresso em toda execução: `soma` = Σ acertos[i] e `ordem` = Σ (i+1)·acertos[i].
-O segundo só coincide com o da sequencial se cada resultado voltou para a sua posição no saco.
+**Equivalência.** Toda execução imprime um checksum: `soma` = Σ acertos[i] e
+`ordem` = Σ (i+1)·acertos[i]. O segundo só coincide com o da sequencial se cada resultado
+voltou para a sua posição no saco.
+
+## Os seis requisitos do modelo, no código
+
+Todos em `mestre_escravo.cpp`:
+1. **Iniciativa do escravo** — pede trabalho ao iniciar; cada resultado vale como o próximo pedido (L75, 90).
+2. **Ordem de chegada** — `MPI_Recv` com `MPI_ANY_SOURCE`/`MPI_ANY_TAG`, resposta à fonte (L45, 62).
+3. **Ordem do saco mantida** — o resultado traz o índice inicial e volta para `acertos[início..]` (L48–50).
+4. **Saco vazio encerra** — `TAG_FIM` quando não há mais tarefas (L64–66).
+5. **Qualquer P ≥ 2 e qualquer N** — o último bloco leva `min(g, restantes)` (L61).
+6. **Granularidade é parâmetro** — `g` lido da linha de comando (L103).
+
+Tags: `TAG_PEDIDO`, `TAG_TAREFA {início, qtd}`, `TAG_RESULTADO {início, qtd, acertos…}`, `TAG_FIM`.
+
+## Arquivos
 
 | Arquivo | Conteúdo |
 | --- | --- |
 | `tarefa.h/.cpp` | Unidade de trabalho e checksum, usados pelas duas versões |
 | `sequencial.cpp` | Versão sequencial de referência (sem MPI) |
-| `mestre_escravo.cpp` | Versão MPI (tags `TAG_PEDIDO`, `TAG_TAREFA`, `TAG_RESULTADO`, `TAG_FIM`) |
+| `mestre_escravo.cpp` | Versão MPI mestre/escravo |
 | `pingpong.cpp` | Ida e volta com os mesmos tamanhos de mensagem do mestre/escravo |
 | `scripts/preparar.sh` | Baixa o Eigen 3.4.0 e o MNIST |
-| `scripts/comum.sh` | Entrada de referência e a forma de lançar os processos nos nós |
+| `scripts/comum.sh` | Entrada de referência e o lançamento dos processos nos nós |
 | `scripts/*.sbatch` | Um script por experimento |
-| `scripts/analise.py` | Tabelas (mediana, mín., máx.), speed-up, eficiência e gráficos |
-| `resultados/` | Saídas brutas do Slurm usadas nas tabelas e o que `analise.py` gera |
-| `resultados/v1_tarefa_10ms/` | Primeira rodada, com a tarefa de 10 ms (ver o LEIAME da pasta) |
-
-**Passo a passo completo** (login, calibragem, rodada oficial e coleta dos resultados): [COMO_RODAR.md](COMO_RODAR.md).
+| `scripts/analise.py` | Tabelas (mediana/mín./máx.), speed-up, eficiência e gráficos |
+| `scripts/graficos.py` | Só os dois gráficos exigidos (atalho do `analise.py`) |
+| `resultados/` | Saídas brutas do Slurm e o que o `analise.py` gera |
+| `resultados/v1_tarefa_10ms/` | Primeira rodada, com a tarefa de ~10 ms |
 
 ## Preparar e compilar (na Atlântica)
 
 ```bash
 git clone https://github.com/heloysapelizon/MLP-comp-par-t2.git && cd MLP-comp-par-t2
 bash scripts/preparar.sh          # Eigen em eigen/, MNIST em MNIST/
-module load <openmpi>             # se o cluster exigir; confira com `module avail`
+module load <openmpi>             # se o cluster exigir; veja `module avail`
 make                              # sequencial, mestre_escravo, pingpong
 ```
 
-Flags: `-std=c++17 -O3 -Wall -DNDEBUG`, iguais nas duas versões, e as duas são compiladas
-pelo mesmo `mpicxx`; a sequencial não chama MPI. Sem `-fopenmp`, o Eigen roda
-com uma thread por processo. Sem `-march=native`, para o ponto flutuante (e portanto o
-checksum) não depender do nó.
-
-Teste rápido de equivalência (os três checksums devem ser iguais):
-
-```bash
-./sequencial 13
-srun -N 1 -n 2 ./mestre_escravo 1 13
-srun -N 1 -n 7 ./mestre_escravo 4 13
-```
+Flags iguais nas duas versões (`-std=c++17 -O3 -Wall -DNDEBUG`), ambas pelo mesmo `mpicxx`;
+a sequencial não chama MPI. Sem `-fopenmp` (Eigen com uma thread por processo) e sem
+`-march=native`, para o ponto flutuante — e portanto o checksum — não dependerem do nó.
 
 Uso dos programas:
 
 ```
-./sequencial [tarefas=25000] [amostras=20] [epocas=1] [passo=0]    # passo: checksums dos prefixos passo*2^k
-srun -n P ./mestre_escravo g [tarefas=25000] [amostras=20] [epocas=1]   # P >= 2, g = tarefas por mensagem
+./sequencial [tarefas=25000] [amostras=20] [epocas=1] [passo=0]
+srun -n P ./mestre_escravo g [tarefas=25000] [amostras=20] [epocas=1]   # P >= 2
 srun -n 2 ./pingpong g1 [g2 ...]
 ```
 
-## Experimentos
+## Ambiente e regras de medição
 
-A entrada de referência e a granularidade ficam em `scripts/comum.sh` (`TAREFAS`, `AMOSTRAS`,
-`EPOCAS`, `G`, `REPS`). Os nós são passados na linha de comando, sempre os mesmos dois.
+- Sempre nos **mesmos 2 nós**, com `--exclusive` e jobs em lote (`sbatch`).
+- O enunciado especifica nós de 2 × 8 núcleos físicos com HT (16 físicos, 32 threads por
+  nó). **Confirme com `lscpu`**: os scripts leem a topologia e escolhem o regime pelo número
+  de processos por nó — um processo por núcleo físico, HT quando passa dos núcleos físicos e
+  overcommit se passar das threads. O mestre ocupa um núcleo e conta em P.
+- Processos divididos em bloco entre os 2 nós (`srun --distribution=block`): ranks
+  `0..P/2-1` no primeiro, com o mestre. `--cpu-bind=verbose` registra onde cada rank ficou.
+- **Região medida**: `MPI_Wtime()` no mestre, do início da distribuição até o último
+  resultado; a leitura do MNIST fica fora, igual nas duas versões.
+- Entrada de referência dimensionada para **T1 entre 30 e 60 s**; **10 repetições** por
+  configuração (mediana, mínimo e máximo nas tabelas).
 
-Calibragem, com as saídas em `testes/`, fora do git: ajuste `TAREFAS` até T1 ficar entre
-30 e 60 s.
+## Reproduzir os resultados
 
-```bash
-mkdir -p testes
-srun -N 1 --exclusive ./sequencial 5000 | grep tempo     # tempo por tarefa; TAREFAS ≈ 42 s / esse tempo
-```
+Tudo roda na Atlântica (acesso via sparta, com o usuário do LAD). Os parâmetros ficam em
+`scripts/comum.sh` (`TAREFAS`, `AMOSTRAS`, `EPOCAS`, `G`, `REPS`).
 
-Experimentos, nesta ordem:
+1. **Compilar** (acima) e conferir a equivalência — os três checksums devem bater:
+   ```bash
+   ./sequencial 13 | grep CSV
+   srun -N 1 -n 2 ./mestre_escravo 1 13 | grep CSV
+   srun -N 1 -n 7 ./mestre_escravo 4 13 | grep CSV
+   ```
+2. **Calibrar** `TAREFAS` para T1 ∈ [30, 60] s (medição fora de `resultados/`) e pôr o valor
+   em `scripts/comum.sh`:
+   ```bash
+   srun -N 1 --exclusive ./sequencial 5000 | grep tempo   # TAREFAS ≈ 42 / tempo_por_tarefa
+   ```
+3. **Escolher 2 nós** livres e usar sempre os mesmos: `sinfo -N -o "%N %t"`, depois
+   `NOS=no1,no2`.
+4. **Rodar, nesta ordem** (a conta aceita no máx. 2 jobs na fila):
+   ```bash
+   # referência e escolha de g
+   sbatch --nodelist=${NOS%%,*} scripts/sequencial.sbatch
+   sbatch --nodelist=$NOS       scripts/granularidade.sbatch    # P = 32, g = 1..2048 + pingpong
+   python3 scripts/analise.py resultados   # veja "Granularidade, P = 32" e fixe G em comum.sh
+   # escalabilidade, já com o G escolhido
+   sbatch --nodelist=$NOS       scripts/forte.sbatch            # P = 2,4,8,16,32,64 (+ P=8 em 1 nó)
+   sbatch --nodelist=$NOS       scripts/fraca.sbatch            # tarefas = TAREFAS * P
+   sbatch --nodelist=${NOS%%,*} scripts/checksum_fraca.sbatch   # checksums de referência da fraca
+   ```
+   Acompanhe com `squeue -u $USER`. Se a partição não comportar a fraca inteira, divida por
+   P: `--export=ALL,P_LISTA="2 4 8"` e depois `"16 32 64"` (vale para a forte também).
+5. **Gerar tabelas e gráficos**:
+   ```bash
+   python3 scripts/analise.py resultados    # tabelas.md, escravos.csv, speedup.*, eficiencia.*
+   python3 scripts/graficos.py resultados   # só os 2 gráficos exigidos (precisa de matplotlib)
+   ```
 
-```bash
-NOS=<no1>,<no2>
-# 1. referência e escolha de g
-sbatch --nodelist=${NOS%%,*} scripts/sequencial.sbatch      # T1, 10 repetições, 1 nó       (~7 min)
-sbatch --nodelist=$NOS scripts/granularidade.sbatch         # P = 32, g = 1..2048, pingpong (~20 min)
-python3 scripts/analise.py resultados                       # escolha g e fixe G em scripts/comum.sh
-# 2. escalabilidade, já com o G escolhido
-sbatch --nodelist=$NOS scripts/forte.sbatch                 # P = 2..64, mais P = 8 em 1 nó  (~15 min na Atlântica)
-sbatch --nodelist=$NOS scripts/fraca.sbatch                 # tarefas = TAREFAS * P         (~1h50)
-sbatch --nodelist=${NOS%%,*} scripts/checksum_fraca.sbatch  # checksums de referência da fraca (~45 min)
-```
+O `analise.py` só lê os `.out` **diretamente** em `resultados/` — mantenha calibragens e
+testes fora dessa pasta. Execuções com outra entrada, ou com g diferente do escolhido, ficam
+de fora e aparecem em "Avisos" no topo de `tabelas.md`.
 
-Se o tempo máximo da partição não comportar a fraca, divida o job pelos valores de P:
-`sbatch --nodelist=$NOS --export=ALL,P_LISTA="2 4 8" scripts/fraca.sbatch` e depois
-`P_LISTA="16 32 64"`. Isso também vale para a forte.
+## Saídas da análise
 
-A fraca não tem uma sequencial de mesmo tamanho para comparar o checksum. Por isso o
-`checksum_fraca.sbatch` roda a sequencial uma vez com 64 × `TAREFAS` tarefas e imprime o
-checksum de cada prefixo `TAREFAS` × 2^k. O checksum de N tarefas é o do prefixo de tamanho N,
-então essa execução única serve de referência para todos os tamanhos da fraca.
+`analise.py` gera, em `resultados/`:
+- `tabelas.md` — equivalência, sequencial (T1), **forte** (S, E = S/P, E por escravo e a
+  decomposição E = (P−1)/P × t_seq/t_tarefa × ocupação), **fraca**, **granularidade**, carga
+  por escravo e pingpong (razão computação/comunicação);
+- `escravos.csv` — todas as linhas por escravo;
+- `speedup.pdf/.png` — speed-up da forte com a reta ideal (S = P);
+- `eficiencia.pdf/.png` — eficiência da forte (S/P) e da fraca (T1/TP).
 
-Todos usam `--exclusive`. Os processos se dividem igualmente entre os 2 nós, em bloco: ranks
-`0..P/2-1` no primeiro nó, com o mestre, e o resto no segundo
-(`srun --distribution=block`, como no Lab 3).
+`graficos.py` regenera só essas duas figuras, a partir das mesmas saídas.
 
-**Topologia medida.** Os nós da Atlântica são Xeon E5520, com 2 × 4 núcleos com HT: 8 núcleos
-físicos e 16 threads por nó, e não os 2 × 8 do enunciado. A ida e volta medida é de ~0,9 µs
-dentro do nó e ~200 µs entre nós. Os scripts leem a topologia com `lscpu` e escolhem o
-regime pelo número de processos por nó:
-
-| P | Processos por nó | Regime |
-| --- | --- | --- |
-| 2 a 16 | até 8 | um processo por núcleo físico (`--hint=nomultithread`) |
-| 32 | 16 | HT (`--hint=multithread`) |
-| 64 | 32 | mais processos que threads (`--overcommit`) |
-
-A "forte em 1 nó" usa P = 8, um processo por núcleo de um único nó, para comparar com P = 8
-dividido entre os 2 nós.
-
-`--cpu-bind=verbose` registra na saída onde cada rank ficou. **No primeiro job, confira**
-que com P = 16 cada rank caiu num núcleo físico diferente, sem dois ranks nas duas threads
-do mesmo núcleo. Para mudar a distribuição, altere só a função `lancar` em
-`scripts/comum.sh`.
-
-## Análise
-
-```bash
-python3 scripts/analise.py resultados    # precisa de matplotlib
-```
-
-Gera `resultados/tabelas.md`, com mediana, mínimo e máximo em todas as tabelas:
-- equivalência de checksums;
-- sequencial;
-- forte, com E = S/P, E por escravo = S/(P−1) e a decomposição E = (P−1)/P × t_seq/t_tarefa × ocupação;
-- fraca, com o trabalho relativo à referência;
-- granularidade;
-- carga por escravo no g escolhido;
-- pingpong, com a razão computação/comunicação.
-
-O `analise.py` só lê os `.out` que estão diretamente em `resultados/`; os das subpastas ficam
-guardados sem entrar nas tabelas. Gera também `resultados/escravos.csv`, com todas as linhas por escravo, e os gráficos
-`speedup.pdf` e `eficiencia.pdf`.
-
-A entrada de referência é a da sequencial. Execuções da forte, da fraca ou da granularidade
-com outra entrada, ou da forte e da fraca com outro g, ficam de fora e aparecem em "Avisos"
-no topo de `tabelas.md`. Mesmo assim, faça as calibragens fora de `resultados/` (por exemplo,
-`srun -N 1 ./sequencial 2000`), para que a pasta guarde só as execuções do relatório.
-
-Linhas que os programas imprimem e o `analise.py` lê:
+Linhas que os programas imprimem e a análise lê:
 
 ```
 RUN,experimento,P,processos_por_no,repeticao                  (scripts sbatch)
@@ -169,4 +160,3 @@ MESTRE,host
 ESCRAVO,P,tarefas,g,rank,host,tarefas_proc,mensagens,ocupado_s,ultimo_resultado_s
 PINGPONG,g,bytes_ida,bytes_volta,host0,host1,ida_e_volta_us
 ```
-
