@@ -11,3 +11,13 @@ Socket(s):                       2
 Model name:                      Intel(R) Xeon(R) CPU           E5520  @ 2.27GHz
 TOPOLOGIA,8,16
 RUN,checksum_fraca,1,1,1
+tarefas=1280000 amostras=20 epocas=1 (amostras treinadas = 25600000)
+tempo=2321.192499 s  tempo_por_tarefa=0.001813 s
+checksum soma=3656662 ordem=2339656331003
+CSV,sequencial,1,1280000,0,20,1,2321.192499,3656662,2339656331003
+CSV,sequencial_prefixo,1,20000,0,20,1,0,56993,569540234
+CSV,sequencial_prefixo,1,40000,0,20,1,0,114142,2284631396
+CSV,sequencial_prefixo,1,80000,0,20,1,0,228234,9128442321
+CSV,sequencial_prefixo,1,160000,0,20,1,0,456720,36553819825
+CSV,sequencial_prefixo,1,320000,0,20,1,0,914236,146326103724
+CSV,sequencial_prefixo,1,640000,0,20,1,0,1828861,585290151536
