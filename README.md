@@ -35,18 +35,6 @@ LEIAME da pasta).
 `ordem` = Σ (i+1)·acertos[i]. O segundo só coincide com o da sequencial se cada resultado
 voltou para a sua posição no saco.
 
-## Os seis requisitos do modelo, no código
-
-Todos em `mestre_escravo.cpp`:
-1. **Iniciativa do escravo** — pede trabalho ao iniciar; cada resultado vale como o próximo pedido (L75, 90).
-2. **Ordem de chegada** — `MPI_Recv` com `MPI_ANY_SOURCE`/`MPI_ANY_TAG`, resposta à fonte (L45, 62).
-3. **Ordem do saco mantida** — o resultado traz o índice inicial e volta para `acertos[início..]` (L48–50).
-4. **Saco vazio encerra** — `TAG_FIM` quando não há mais tarefas (L64–66).
-5. **Qualquer P ≥ 2 e qualquer N** — o último bloco leva `min(g, restantes)` (L61).
-6. **Granularidade é parâmetro** — `g` lido da linha de comando (L103).
-
-Tags: `TAG_PEDIDO`, `TAG_TAREFA {início, qtd}`, `TAG_RESULTADO {início, qtd, acertos…}`, `TAG_FIM`.
-
 ## Arquivos
 
 | Arquivo | Conteúdo |
